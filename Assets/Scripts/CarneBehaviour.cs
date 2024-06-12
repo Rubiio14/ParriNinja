@@ -8,13 +8,22 @@ public class CarneBehaviour : MonoBehaviour
     MeshCollider carneCollider;
     MeshRenderer meshCarneCompleta;
 
+    //MovimientoCarne
+    Rigidbody rb;
+    public bool needForce;
+
     void Start()
     {
        carneCollider = GetComponent<MeshCollider>();
+       rb = GetComponent<Rigidbody>();
+       needForce = true;
     }
     void Update()
     {
-        
+        if (needForce == true)
+        {
+            rb.AddForce(new Vector3(0, 1, 0), ForceMode.Impulse);
+        }
     }
 
 
@@ -25,6 +34,15 @@ public class CarneBehaviour : MonoBehaviour
         {
             carneCollider.enabled = false;
             meshCarneCompleta.enabled = false;
+        }
+        if (other.gameObject.tag == "Despawner")
+        {
+            Destroy(this);
+            //y activar Canvas de derrota o restar 1 vida
+        }
+        if(other.gameObject.tag == "MaxHeight")
+        {
+            needForce = false;
         }
     }
 }
