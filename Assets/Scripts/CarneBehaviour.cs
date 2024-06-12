@@ -26,7 +26,12 @@ public class CarneBehaviour : MonoBehaviour
         }
     }
 
-
+    //Reactivar gameObject
+    private void Reset()
+    {
+        carneCollider.enabled = true;
+        meshCarneCompleta.enabled = true;
+    }
     private void OnTriggerEnter(Collider other)
     {
         //que al hacer el corte se desactive el collider y la malla de la carne completa se desactive
@@ -37,7 +42,8 @@ public class CarneBehaviour : MonoBehaviour
         }
         if (other.gameObject.tag == "Despawner")
         {
-            Destroy(this);
+            //devolver objeto a la pool
+            gameObject.SetActive(false);
             //y activar Canvas de derrota o restar 1 vida
         }
         if(other.gameObject.tag == "MaxHeight")
