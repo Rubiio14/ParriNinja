@@ -18,9 +18,9 @@ public class HuesoBehaviour : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         //que al impactar con el jugador, se pierda la partida
-        if(other.gameObject.tag == "Jugador")
+        if(other.gameObject.tag == "Player")
         {
-
+            //derrota
         }
     }
 }
