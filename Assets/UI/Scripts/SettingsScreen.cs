@@ -32,7 +32,7 @@ public class SettingsScreen : MonoBehaviour
     public void MenuSettingsCame()
     {
         print("hola");
-        LeanTween.moveLocalX(PanelCredits, -300, 0.5f);  
+        LeanTween.moveLocalX(PanelCredits, -250, 0.5f);  
         LeanTween.moveLocalX(PanelAudio, 600, 0.5f);
         LeanTween.scale(Back, Vector3.one, 0.5f);
         LeanTween.scale(PrefabBombBack, Vector3.one, 0.5f);
