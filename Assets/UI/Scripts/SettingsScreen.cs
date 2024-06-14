@@ -14,24 +14,45 @@ public class SettingsScreen : MonoBehaviour
     [SerializeField] GameObject Audio;
     [SerializeField] GameObject PrefabBombBack;
 
+    [SerializeField] GameObject MenuInicial;
+    [SerializeField] InitialMenu initialmenu;
 
     // Start is called before the first frame update
     void Start()
     {
-        MenuSettingsCame();
+      
     }
 
     // Update is called once per frame
     void Update()
     {
-        print(PanelAudio.transform.position.y);
+       
     }
 
     public void MenuSettingsCame()
     {
-        LeanTween.moveLocal(PanelCredits, new Vector3(-300,0), 1f);  
-        LeanTween.moveLocalX(PanelAudio, 600, 1f);
-        LeanTween.scale(Back, Vector3.one, 1f);
-        LeanTween.scale(PrefabBombBack, Vector3.one, 1f);
+        print("hola");
+        LeanTween.moveLocalX(PanelCredits, -300, 0.5f);  
+        LeanTween.moveLocalX(PanelAudio, 600, 0.5f);
+        LeanTween.scale(Back, Vector3.one, 0.5f);
+        LeanTween.scale(PrefabBombBack, Vector3.one, 0.5f);
+    }
+
+    public void BackToInitialMenu()
+    {
+        LeanTween.moveLocalX(PanelCredits, -1753, 0.5f).setEase(LeanTweenType.linear).setOnComplete(() =>
+        {
+
+            MenuInicial.gameObject.SetActive(true);
+            initialmenu.MenuInicialCame();
+            this.gameObject.SetActive(false);
+
+        }); ;
+        LeanTween.scale(Back, Vector3.zero, 0.5f);
+        LeanTween.scale(PrefabBombBack, Vector3.zero, 0.5f);
+        LeanTween.moveLocalX(PanelAudio, 1299, 0.5f).setEase(LeanTweenType.linear);
+
+
+
     }
 }

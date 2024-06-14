@@ -7,6 +7,10 @@ public class InitialMenu : MonoBehaviour
     [SerializeField] GameObject Logo, ButtonStart, ButtonSettings, MeetToStart, MeetToSettings;
     [SerializeField] GameObject Opciones;
 
+    [SerializeField] SettingsScreen settingsScreen;
+
+    public float m_TimeOfTransition;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,26 +27,28 @@ public class InitialMenu : MonoBehaviour
 
     public void MenuInicialCame()
     {
-        LeanTween.moveLocal(Logo, new Vector2(0, 200), 0.5f).setEase(LeanTweenType.linear);
-        LeanTween.scale(ButtonStart, Vector3.one, 0.5f);
-        LeanTween.scale(ButtonSettings, Vector3.one, 0.5f);
-        LeanTween.scale(MeetToStart, Vector3.one, 0.5f);
-        LeanTween.scale(MeetToSettings, Vector3.one, 0.5f);
+        LeanTween.moveLocal(Logo, new Vector2(0, 200), m_TimeOfTransition).setEase(LeanTweenType.linear);
+        LeanTween.scale(ButtonStart, Vector3.one, m_TimeOfTransition);
+        LeanTween.scale(ButtonSettings, Vector3.one, m_TimeOfTransition);
+        LeanTween.scale(MeetToStart, Vector3.one, m_TimeOfTransition);
+        LeanTween.scale(MeetToSettings, Vector3.one, m_TimeOfTransition);
     }
 
     //funciones para los botones
     public void SettingsButton()
     {
-        LeanTween.moveLocal(Logo, new Vector2(0, 1164), 1f).setEase(LeanTweenType.linear).setOnComplete(() => 
+        LeanTween.moveLocal(Logo, new Vector2(0, 1164), m_TimeOfTransition).setEase(LeanTweenType.linear).setOnComplete(() => 
         { 
-            this.gameObject.SetActive(false);
+            
             Opciones.gameObject.SetActive(true);
+            settingsScreen.MenuSettingsCame();
+            this.gameObject.SetActive(false);
 
         }); ;
-        LeanTween.scale(ButtonStart, Vector3.zero, 0.5f);
-        LeanTween.scale(ButtonSettings, Vector3.zero, 0.5f);
-        LeanTween.scale(MeetToStart, Vector3.zero, 0.5f);
-        LeanTween.scale(MeetToSettings, Vector3.zero, 0.5f);
+        LeanTween.scale(ButtonStart, Vector3.zero, m_TimeOfTransition);
+        LeanTween.scale(ButtonSettings, Vector3.zero, m_TimeOfTransition);
+        LeanTween.scale(MeetToStart, Vector3.zero, m_TimeOfTransition);
+        LeanTween.scale(MeetToSettings, Vector3.zero, m_TimeOfTransition);
        
     }
 
