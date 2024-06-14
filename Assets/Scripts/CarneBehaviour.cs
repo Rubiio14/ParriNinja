@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CarneBehaviour : MonoBehaviour
 {
+    public static CarneBehaviour instance;
     public int puntosCarne;
     BoxCollider carneCollider;
 
@@ -21,18 +22,22 @@ public class CarneBehaviour : MonoBehaviour
     //rotaciónCarnesAleatorias
     Vector3 rotacionCarnes;
 
+    private void Awake()
+    {
+        instance = this;
+    }
     void Start()
     {
        carneCollider = GetComponent<BoxCollider>();
        rb = GetComponent<Rigidbody>();
        rb.AddForce(new Vector3(0, verticalVelocity, 0), ForceMode.Impulse);
-       rotacionCarnes = new Vector3(Random.Range(0.1f, 0.5f), Random.Range(0.1f, 0.5f), Random.Range(0.1f, 0.5f));
+       rotacionCarnes = new Vector3(Random.Range(0.05f, 0.25f), Random.Range(0.05f, 0.25f), Random.Range(0.05f, 0.25f));
     }
     void Update()
     {
-        carneEntera.transform.Rotate(rotacionCarnes, Space.Self);
-        carneParte1.transform.Rotate(rotacionCarnes, Space.Self);
-        carneParte2.transform.Rotate(rotacionCarnes, Space.Self);
+        carneEntera.transform.Rotate(rotacionCarnes);
+        carneParte1.transform.Rotate(rotacionCarnes);
+        carneParte2.transform.Rotate(rotacionCarnes);
 
         if(needTimer == true)
         {
