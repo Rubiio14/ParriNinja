@@ -12,24 +12,27 @@ public class CarneBehaviour : MonoBehaviour
 
     //MovimientoCarne
     Rigidbody rb;
-    public float y;
+    public float verticalVelocity = 15;
 
     //despawn o llevar a la pool
     public float despawnTimer = 0f;
     bool needTimer = false;
 
+    //rotaciónCarnesAleatorias
+    Vector3 rotacionCarnes;
+
     void Start()
     {
        carneCollider = GetComponent<BoxCollider>();
        rb = GetComponent<Rigidbody>();
-       rb.AddForce(new Vector3(0, y, 0), ForceMode.Impulse);
+       rb.AddForce(new Vector3(0, verticalVelocity, 0), ForceMode.Impulse);
+       rotacionCarnes = new Vector3(Random.Range(0.1f, 0.5f), Random.Range(0.1f, 0.5f), Random.Range(0.1f, 0.5f));
     }
     void Update()
     {
-
-        carneEntera.transform.Rotate(1, 1, 1);
-        carneParte1.transform.Rotate(1, 1, 1);
-        carneParte2.transform.Rotate(1, 1, 1);
+        carneEntera.transform.Rotate(rotacionCarnes, Space.Self);
+        carneParte1.transform.Rotate(rotacionCarnes, Space.Self);
+        carneParte2.transform.Rotate(rotacionCarnes, Space.Self);
 
         if(needTimer == true)
         {
@@ -76,7 +79,7 @@ public class CarneBehaviour : MonoBehaviour
     {
         carneParte1.SetActive(true);
         carneParte2.SetActive(true);
-        carneParte1.GetComponent<Rigidbody>().AddForce(new Vector3(0, 6, 0), ForceMode.Impulse);
-        carneParte2.GetComponent<Rigidbody>().AddForce(new Vector3(0, 6, 0), ForceMode.Impulse);
+        carneParte1.GetComponent<Rigidbody>().AddForce(new Vector3(-3, 6, 0), ForceMode.Impulse);
+        carneParte2.GetComponent<Rigidbody>().AddForce(new Vector3(3, 6, 0), ForceMode.Impulse);
     }
 }
