@@ -25,7 +25,7 @@ public class KeyMoment
 {
     public float m_MusicTiming;
     public float m_DelayLanzamientos;
-    public int[] spawns;
+    public Spawns[] m_Spawns;
     public ObjectTypes[] m_objectTypes;
     public float[] m_MeatVelocity;
 
@@ -53,9 +53,9 @@ public class RythmManager : MonoBehaviour
     }
     public void Update()
     {
+        //Tiempo de Juego
         m_GameTime += Time.deltaTime;
-        //Cuentas tiempo
-        //un indice del ultimo KeyMoment
+       
         if (actualMoment == gameLoop.Length)
         {
             Debug.Log("Fin juego");
