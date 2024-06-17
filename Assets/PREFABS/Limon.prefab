@@ -9,6 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2781955819938988826}
+  - component: {fileID: -3942217909622996745}
+  - component: {fileID: -4618891318507903954}
+  - component: {fileID: -7596529186203863970}
   m_Layer: 0
   m_Name: Limon
   m_TagString: Untagged
@@ -36,6 +39,72 @@ Transform:
   - {fileID: 7950963411004761240}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &-3942217909622996745
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1141453317336696702}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &-4618891318507903954
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1141453317336696702}
+  serializedVersion: 4
+  m_Mass: 1.25
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 120
+  m_CollisionDetection: 0
+--- !u!114 &-7596529186203863970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1141453317336696702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8311968acdd47f43901ceef5fdb8a6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puntosCarne: 1
+  m_Puntos: 0
+  carneEntera: {fileID: 4262204220208137054}
+  carneParte1: {fileID: 3837587566074148487}
+  carneParte2: {fileID: 8143995782824416309}
+  despawnTimer: 0
 --- !u!1001 &4028203742416371215
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -102,6 +171,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 92462b9003c8b674285fe27e928b2dc3, type: 3}
   m_PrefabInstance: {fileID: 4028203742416371215}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &4262204220208137054 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 92462b9003c8b674285fe27e928b2dc3, type: 3}
+  m_PrefabInstance: {fileID: 4028203742416371215}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4143505579018750934
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -158,11 +232,50 @@ PrefabInstance:
       propertyPath: m_Name
       value: limon-cortado1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4e53fb4196f763e448bcdb48689a695e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4e53fb4196f763e448bcdb48689a695e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3345029761913248086}
   m_SourcePrefab: {fileID: 100100000, guid: 4e53fb4196f763e448bcdb48689a695e, type: 3}
+--- !u!1 &3837587566074148487 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 4e53fb4196f763e448bcdb48689a695e, type: 3}
+  m_PrefabInstance: {fileID: 4143505579018750934}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &3345029761913248086
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3837587566074148487}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 8
+  m_CollisionDetection: 0
 --- !u!4 &4470395628412628029 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 4e53fb4196f763e448bcdb48689a695e, type: 3}
@@ -223,6 +336,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 395bf3fdf61ad554b869303d4ac6d67a, type: 3}
       propertyPath: m_Name
       value: limon-cortado3
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 395bf3fdf61ad554b869303d4ac6d67a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -290,6 +407,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: limon-cortado4
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f3958e3bd21f9604bb48cb04a13ee970, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -356,11 +477,50 @@ PrefabInstance:
       propertyPath: m_Name
       value: limon-cortado2
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4855bd33bb02f1f4c96e934aaa9e04b7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4855bd33bb02f1f4c96e934aaa9e04b7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2185538596745639220}
   m_SourcePrefab: {fileID: 100100000, guid: 4855bd33bb02f1f4c96e934aaa9e04b7, type: 3}
+--- !u!1 &8143995782824416309 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 4855bd33bb02f1f4c96e934aaa9e04b7, type: 3}
+  m_PrefabInstance: {fileID: 9062404453193902436}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &2185538596745639220
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8143995782824416309}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 8
+  m_CollisionDetection: 0
 --- !u!4 &8813150470281825935 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 4855bd33bb02f1f4c96e934aaa9e04b7, type: 3}
