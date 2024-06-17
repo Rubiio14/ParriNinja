@@ -207,6 +207,7 @@ MonoBehaviour:
   carneParte1: {fileID: 2841678657644280757}
   carneParte2: {fileID: 6829784606251021325}
   despawnTimer: 0
+  otherCollider: {fileID: 3316624286296007190}
 --- !u!1 &6829784606251021325 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8694841195268231974, guid: 008fca513cbd274498253063e721719d, type: 3}

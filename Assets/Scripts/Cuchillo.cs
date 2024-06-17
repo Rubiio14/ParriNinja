@@ -1,37 +1,37 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Cuchillo : MonoBehaviour
 {
     bool m_Pulsado = false;
+
     void Update()
     {
-        //Pulsa el ClickDerecho
+        // Pulsa el Click Izquierdo
         if (Input.GetMouseButtonDown(0))
         {
             m_Pulsado = true;
         }
-        //Suelta el CLickDerecho
+        // Suelta el Click Izquierdo
         if (Input.GetMouseButtonUp(0))
         {
             m_Pulsado = false;
         }
-        //Lanza un rayo desde la cámara hacia donde estas clickando con el ratón
+
         if (m_Pulsado)
         {
-            Vector3 m_Position = Input.mousePosition;
-            Ray ray = Camera.main.ScreenPointToRay(m_Position);
+            Vector3 mousePosition = Input.mousePosition;
+            Ray ray = Camera.main.ScreenPointToRay(mousePosition);
             RaycastHit hit;
-
-            //para mostrar el rayo en el debugger
             float rayLength = 100f;
+
+            
             Debug.DrawRay(ray.origin, ray.direction * rayLength, Color.red);
 
-            //Printea por pantalla con lo que choca
-            if (Physics.Raycast(ray, out hit, rayLength))
+            //El Querty es para que el Raycast detecte los Trigger
+            if (Physics.Raycast(ray, out hit, rayLength, Physics.DefaultRaycastLayers, QueryTriggerInteraction.Collide))
             {
                 Debug.Log("Raycast hit: " + hit.collider.name);
+                hit.collider.GetComponent<CarneBehaviour>().Cortado();
             }
         }
     }

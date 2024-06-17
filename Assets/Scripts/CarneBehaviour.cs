@@ -60,9 +60,19 @@ public class CarneBehaviour : MonoBehaviour
         carneEntera.SetActive(true);
         carneCollider.enabled = true;
     }
+
+    public void Cortado()
+    {
+        carneCollider.enabled = false;
+        rb.isKinematic = true;
+        carneEntera.SetActive(false);
+        needTimer = true;
+
+        Piezas();
+    }
     private void OnTriggerEnter(Collider other)
     {
-        //que al hacer el corte se desactive el collider, el rb y la malla de la carne completa se desactive, que se active la de la carne cortada y que se devuelva a la pool(?)
+        /*que al hacer el corte se desactive el collider, el rb y la malla de la carne completa se desactive, que se active la de la carne cortada y que se devuelva a la pool(?)
         if (other.gameObject.tag == "Player")
         {
             carneCollider.enabled = false;
@@ -73,6 +83,7 @@ public class CarneBehaviour : MonoBehaviour
             Piezas();
 
         }
+        */
         if (other.gameObject.tag == "Despawner")
         {
             //devolver objeto a la pool
@@ -80,11 +91,6 @@ public class CarneBehaviour : MonoBehaviour
             //en realidad que se haga la función de Reset();
             //y activar Canvas de derrota o restar 1 vida
         }
-    }
-
-    private void OnCollisionEnter(Collision col)
-    {
-        Debug.Log(col.gameObject);
     }
 
     public void Piezas()
