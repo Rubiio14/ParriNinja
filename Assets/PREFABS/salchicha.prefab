@@ -52,7 +52,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -98,10 +98,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   puntosCarne: 1
+  m_Puntos: 0
   carneEntera: {fileID: 5072262702507870404}
   carneParte1: {fileID: 6770288592011988432}
   carneParte2: {fileID: 1325493087483777644}
-  verticalVelocity: 15
   despawnTimer: 0
 --- !u!1001 &2208014105270939453
 PrefabInstance:

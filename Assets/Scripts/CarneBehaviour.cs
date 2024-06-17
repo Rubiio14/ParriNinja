@@ -8,12 +8,14 @@ public class CarneBehaviour : MonoBehaviour
     public int puntosCarne;
     BoxCollider carneCollider;
 
+    public int m_Puntos;
+
     [SerializeField]
     GameObject carneEntera, carneParte1, carneParte2;
 
     //MovimientoCarne
     Rigidbody rb;
-    public float verticalVelocity = 15;
+    //public float verticalVelocity = 15;
 
     //despawn o llevar a la pool
     public float despawnTimer = 0f;
@@ -30,7 +32,7 @@ public class CarneBehaviour : MonoBehaviour
     {
        carneCollider = GetComponent<BoxCollider>();
        rb = GetComponent<Rigidbody>();
-       rb.AddForce(new Vector3(0, verticalVelocity, 0), ForceMode.Impulse);
+       //rb.AddForce(new Vector3(0, verticalVelocity, 0), ForceMode.Impulse);
        rotacionCarnes = new Vector3(Random.Range(0.05f, 0.25f), Random.Range(0.05f, 0.25f), Random.Range(0.05f, 0.25f));
     }
     void Update()
@@ -78,6 +80,11 @@ public class CarneBehaviour : MonoBehaviour
             //en realidad que se haga la función de Reset();
             //y activar Canvas de derrota o restar 1 vida
         }
+    }
+
+    private void OnCollisionEnter(Collision col)
+    {
+        Debug.Log(col.gameObject);
     }
 
     public void Piezas()
