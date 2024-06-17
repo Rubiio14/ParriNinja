@@ -32,6 +32,7 @@ public class Cuchillo : MonoBehaviour
             {
                 Debug.Log("Raycast hit: " + hit.collider.name);
                 hit.collider.GetComponent<CarneBehaviour>().Cortado();
+                Score_Manager.instance.RestaCarne();
             }
         }
     }

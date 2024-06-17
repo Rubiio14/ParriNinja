@@ -59,6 +59,8 @@ public class RythmManager : MonoBehaviour
         if (actualMoment == gameLoop.Length)
         {
             Debug.Log("Fin juego");
+            StartCoroutine(DelayVictoryScreen(2f));
+            
         }
         else
         {
@@ -70,5 +72,10 @@ public class RythmManager : MonoBehaviour
             }
             
         }
+    }
+    IEnumerator DelayVictoryScreen(float time)
+    { 
+        yield return new WaitForSeconds(time);
+        Score_Manager.instance.VictoryScreen();
     }
 }
