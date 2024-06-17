@@ -8,11 +8,10 @@ using UnityEngine.SocialPlatforms.Impl;
 
 public class UI_GamePlay : MonoBehaviour
 {
+    public float m_TimeOfReadyGo;
+    public float m_TimeToWaitReadyGo;
 
-    // Pantalla de Inicio
-    [SerializeField] GameObject Buttonstart;
-    [SerializeField] GameObject ButtonSettings;
-    [SerializeField] GameObject Logo;
+
 
     // Pantalla de juego
     [SerializeField] GameObject crossBlue1;
@@ -21,17 +20,20 @@ public class UI_GamePlay : MonoBehaviour
     [SerializeField] GameObject crossRed1;
     [SerializeField] GameObject crossRed2;
     [SerializeField] GameObject crossRed3;
-    [SerializeField] GameObject crossRedMidle;
+    [SerializeField] GameObject crossRed1Midle;
     [SerializeField] GameObject crossRed2Midle;
     [SerializeField] GameObject crossRed3Midle;
     [SerializeField] GameObject ready;
-    [SerializeField] GameObject goooooooo;
+    [SerializeField] GameObject go;
     [SerializeField] GameObject Best;
-    [SerializeField] GameObject GameOver;
+   [SerializeField] CanvasGroup Ready;
+    [SerializeField] CanvasGroup Go;
     [SerializeField] GameObject ImageSandia;
     [SerializeField] GameObject NumberPoints;
     [SerializeField] GameObject Record;
+    [SerializeField] GameObject GameOver;
 
+    [SerializeField] GameObject UI_LifeAndScore;
     // Pantalla de derrota
     [SerializeField] GameObject ButtonRetry;
     [SerializeField] GameObject ButtonQuit;
@@ -39,21 +41,12 @@ public class UI_GamePlay : MonoBehaviour
     [SerializeField] GameObject Score;
     [SerializeField] GameObject NumberScore;
 
-    // Pantalla de Settings
-    [SerializeField] GameObject PanelCredits;
-    [SerializeField] GameObject PanelAudio;
-    [SerializeField] GameObject ButtonBack;
-    [SerializeField] GameObject ButtonAudioOn;
-    [SerializeField] GameObject ButtonAudioOff;
-    [SerializeField] GameObject ButtonEffectsOn;
-    [SerializeField] GameObject ButtonEffectsOff;
-    [SerializeField] GameObject Audio;
-    [SerializeField] GameObject PrefabBombBack;
-
+  
     // Start is called before the first frame update
     void Start()
     {
-        // Aquí puedes inicializar tu juego
+        GameStart();
+       
     }
 
     // Update is called once per frame
@@ -62,7 +55,60 @@ public class UI_GamePlay : MonoBehaviour
         // Aquí puedes manejar las actualizaciones por frame
     }
 
+    public void GameStart()
+    {
+        
+        LeanTween.moveLocalY(ready, 0, m_TimeOfReadyGo);
+        LeanTween.alphaCanvas(Ready, 1, m_TimeOfReadyGo).setOnComplete(() =>
+        {
+            LeanTween.moveLocalY(ready, 450, m_TimeOfReadyGo).setDelay(m_TimeToWaitReadyGo);
+            LeanTween.alphaCanvas(Ready, 0, m_TimeOfReadyGo).setDelay(m_TimeToWaitReadyGo).setOnComplete(() =>
+            {
+                LeanTween.moveLocalY(UI_LifeAndScore, 0, 0.5f).setOnComplete(() =>
+                {
+
+            LeanTween.moveLocalY(go, 0, 0.2f);
+            LeanTween.alphaCanvas(Go, 1, 0.2f).setOnComplete(() =>
+            {
+                LeanTween.moveLocalY (go, 450, 0.2f).setDelay(m_TimeToWaitReadyGo);
+                LeanTween.alphaCanvas(Go, 0, 0.2f).setDelay(m_TimeToWaitReadyGo);
+
+                CrossRed(crossBlue1, crossRed1, crossRed1Midle);
+            });
+
+            });
+
+               
+
+            });
+
+          
+        });
+        
+    }
+
+    public void AnimationPoints()
+    {
+        LeanTween.scale(ImageSandia, new Vector3(1.10f, 1.10f, 1), 0.15f).setOnComplete(() =>
+        {
+            LeanTween.scale(ImageSandia, Vector3.one, 0.15f);
+        });
+    }
+
+    public void CrossRed(GameObject crossBlue, GameObject crossRed, GameObject crossMiddleRed)
+    {
+        crossBlue.SetActive(false); 
+        crossRed.SetActive(true);
+
+        LeanTween.scale(crossMiddleRed, Vector2.one, 0.5f).setEase(LeanTweenType.easeOutBack).setOnComplete(() =>
+        {
+
+            LeanTween.scale(crossMiddleRed, Vector2.zero, 0.5f).setDelay(0.5f);
+        });
+
+       // LeanTween.moveLocal(crossRed, new Vector2(566.78f, 471), 1);
+    }
 
 
-   
+
 }
