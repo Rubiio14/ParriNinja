@@ -88,6 +88,7 @@ public class CarneBehaviour : MonoBehaviour
         {
             //devolver objeto a la pool
             gameObject.SetActive(false);
+            Health_Manager.instance.health--;
             //en realidad que se haga la función de Reset();
             //y activar Canvas de derrota o restar 1 vida
         }
