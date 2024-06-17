@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8311968acdd47f43901ceef5fdb8a6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  puntosCarne: 1
+  puntosCarne: 2
   m_Puntos: 0
   carneEntera: {fileID: 4262204220208137054}
   carneParte1: {fileID: 3837587566074148487}
