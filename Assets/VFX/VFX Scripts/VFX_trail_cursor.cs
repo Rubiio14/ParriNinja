@@ -18,17 +18,14 @@ public class VFX_trail_cursor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Vector3 mousePosition = Input.mousePosition;
+        mousePosition.z = 10f; 
+        Vector3 worldPosition = mainCamera.ScreenToWorldPoint(mousePosition);
+        transform.position = worldPosition;
+
         if (Input.GetMouseButtonDown(0))
         {
             trail.emitting = true; 
-        }
-
-        if (Input.GetMouseButton(0))
-        {
-            Vector3 mousePosition = Input.mousePosition;
-            mousePosition.z = 10f; 
-            Vector3 worldPosition = mainCamera.ScreenToWorldPoint(mousePosition);
-            transform.position = worldPosition;
         }
 
         if (Input.GetMouseButtonUp(0))
