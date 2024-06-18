@@ -21,6 +21,9 @@ public class Score_Manager : MonoBehaviour
     [SerializeField]
     public TextMeshProUGUI m_VScoreTxt;
 
+    //Referencia del script de la UI 
+    [SerializeField] UI_GamePlay ui_GamePlay;
+
     public void Awake()
     {
         if (instance == null)
@@ -77,7 +80,8 @@ public class Score_Manager : MonoBehaviour
     public void SumaPuntos(int puntos)
     {
         m_Score += puntos;
-        m_ScoreTxt.text = "Score: " + m_Score;
+        m_ScoreTxt.text = m_Score.ToString("00");
+        ui_GamePlay.AnimationPoints();
 
     }
 }

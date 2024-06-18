@@ -7,8 +7,10 @@ public class InitialMenu : MonoBehaviour
 {
     [SerializeField] GameObject Logo, ButtonStart, ButtonSettings, MeetToStart, MeetToSettings;
     [SerializeField] GameObject Opciones;
+    [SerializeField] GameObject MenuLevels;
 
     [SerializeField] SettingsScreen settingsScreen;
+    [SerializeField] MenuLevels menuLevels;
 
     public float m_TimeOfTransition;
 
@@ -17,6 +19,7 @@ public class InitialMenu : MonoBehaviour
     {
        MenuInicialCame();
         Opciones.gameObject.SetActive(false);
+        MenuLevels.gameObject.SetActive(false);
         this.gameObject.SetActive(true);
     }
 
@@ -59,13 +62,29 @@ public class InitialMenu : MonoBehaviour
        
     }
 
-    public void StartGame(string sceneName)
+    /*public void StartGame(string sceneName)
     {
         MenuInicialIsGone();
         LeanTween.moveLocal(Logo, new Vector2(0, 1300), m_TimeOfTransition).setEase(LeanTweenType.linear).setOnComplete(() =>
         {
             SceneManager.LoadScene(sceneName);
         }); ;
+    }*/
+    
+    public void GoToLevelMenu()
+    {
+        MenuInicialIsGone();
+        // MenuLevels.gameObject.SetActive(true);
+        LeanTween.moveLocal(Logo, new Vector2(0, 1300), m_TimeOfTransition).setEase(LeanTweenType.linear).setOnComplete(() =>
+        {
+           MenuLevels.gameObject.SetActive(true);
+           menuLevels.MenuLevelCome();
+
+
+            this.gameObject.SetActive(false);
+
+        }); ;
+
     }
 
   
