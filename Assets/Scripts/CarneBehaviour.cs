@@ -5,22 +5,20 @@ using UnityEngine;
 public class CarneBehaviour : MonoBehaviour
 {
     public static CarneBehaviour instance;
-    public int puntosCarne;
-    BoxCollider carneCollider;
+    public int m_PuntosCarne;
+    BoxCollider m_CarneCollider;
 
     [SerializeField]
     GameObject carneEntera, carneParte1, carneParte2;
 
     //MovimientoCarne
     Rigidbody rb;
-    public float verticalVelocity = 15;
 
-    //despawn o llevar a la pool
-    public float despawnTimer = 0f;
-    bool needTimer = false;
+    //Despawn
+    public float m_DespawnTimer = 0f;
+    bool m_NeedTimer = false;
 
-    //rotaciónCarnesAleatorias
-    Vector3 rotacionCarnes;
+    Vector3 m_RotacionCarnes;
 
     private void Awake()
     {
@@ -28,55 +26,52 @@ public class CarneBehaviour : MonoBehaviour
     }
     void Start()
     {
-       carneCollider = GetComponent<BoxCollider>();
+       m_CarneCollider = GetComponent<BoxCollider>();
        rb = GetComponent<Rigidbody>();
-       rb.AddForce(new Vector3(0, verticalVelocity, 0), ForceMode.Impulse);
-       rotacionCarnes = new Vector3(Random.Range(0.05f, 0.25f), Random.Range(0.05f, 0.25f), Random.Range(0.05f, 0.25f));
+
+       m_RotacionCarnes = new Vector3(Random.Range(0.05f, 0.25f), Random.Range(0.05f, 0.25f), Random.Range(0.05f, 0.25f));
     }
     void Update()
     {
-        carneEntera.transform.Rotate(rotacionCarnes);
-        carneParte1.transform.Rotate(rotacionCarnes);
-        carneParte2.transform.Rotate(rotacionCarnes);
+        carneEntera.transform.Rotate(m_RotacionCarnes);
+        carneParte1.transform.Rotate(m_RotacionCarnes);
+        carneParte2.transform.Rotate(m_RotacionCarnes);
 
-        if(needTimer == true)
+        if(m_NeedTimer == true)
         {
-            despawnTimer += Time.deltaTime;
+            m_DespawnTimer += Time.deltaTime;
         }
 
-        if (despawnTimer >= 2.5)
+        if (m_DespawnTimer >= 2.5)
         {
-            //devolver a la pool
             gameObject.SetActive(false);
-            despawnTimer = 0f;
+            m_DespawnTimer = 0f;
         }
     }
 
-    //Reactivar gameObject
     private void Reset()
     {
         carneEntera.SetActive(true);
-        carneCollider.enabled = true;
+        m_CarneCollider.enabled = true;
+    }
+
+    public void Cortado()
+    {
+        m_CarneCollider.enabled = false;
+        rb.isKinematic = true;
+        carneEntera.SetActive(false);
+        m_NeedTimer = true;
+        Score_Manager.instance.SumaPuntos(m_PuntosCarne);
+        Piezas();
     }
     private void OnTriggerEnter(Collider other)
     {
-        //que al hacer el corte se desactive el collider, el rb y la malla de la carne completa se desactive, que se active la de la carne cortada y que se devuelva a la pool(?)
-        if (other.gameObject.tag == "Player")
-        {
-            carneCollider.enabled = false;
-            rb.isKinematic = true;
-            carneEntera.SetActive(false);
-            needTimer = true;
-
-            Piezas();
-
-        }
+       
         if (other.gameObject.tag == "Despawner")
         {
-            //devolver objeto a la pool
             gameObject.SetActive(false);
-            //en realidad que se haga la función de Reset();
-            //y activar Canvas de derrota o restar 1 vida
+            Health_Manager.instance.health--;
+      
         }
     }
 

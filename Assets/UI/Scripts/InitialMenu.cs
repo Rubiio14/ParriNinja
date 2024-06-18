@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class InitialMenu : MonoBehaviour
 {
@@ -33,11 +34,20 @@ public class InitialMenu : MonoBehaviour
         LeanTween.scale(MeetToStart, Vector3.one, m_TimeOfTransition);
         LeanTween.scale(MeetToSettings, Vector3.one, m_TimeOfTransition);
     }
+    public void MenuInicialIsGone()
+    {
+        LeanTween.scale(ButtonStart, Vector3.zero, m_TimeOfTransition);
+        LeanTween.scale(ButtonSettings, Vector3.zero, m_TimeOfTransition);
+        LeanTween.scale(MeetToStart, Vector3.zero, m_TimeOfTransition);
+        LeanTween.scale(MeetToSettings, Vector3.zero, m_TimeOfTransition);
+        
+    }
 
     //funciones para los botones
     public void SettingsButton()
     {
-        LeanTween.moveLocal(Logo, new Vector2(0, 1164), m_TimeOfTransition).setEase(LeanTweenType.linear).setOnComplete(() => 
+        MenuInicialIsGone();
+        LeanTween.moveLocal(Logo, new Vector2(0, 1300), m_TimeOfTransition).setEase(LeanTweenType.linear).setOnComplete(() => 
         { 
             
             Opciones.gameObject.SetActive(true);
@@ -45,11 +55,18 @@ public class InitialMenu : MonoBehaviour
             this.gameObject.SetActive(false);
 
         }); ;
-        LeanTween.scale(ButtonStart, Vector3.zero, m_TimeOfTransition);
-        LeanTween.scale(ButtonSettings, Vector3.zero, m_TimeOfTransition);
-        LeanTween.scale(MeetToStart, Vector3.zero, m_TimeOfTransition);
-        LeanTween.scale(MeetToSettings, Vector3.zero, m_TimeOfTransition);
+       
        
     }
 
+    public void StartGame(string sceneName)
+    {
+        MenuInicialIsGone();
+        LeanTween.moveLocal(Logo, new Vector2(0, 1300), m_TimeOfTransition).setEase(LeanTweenType.linear).setOnComplete(() =>
+        {
+            SceneManager.LoadScene(sceneName);
+        }); ;
+    }
+
+  
 }

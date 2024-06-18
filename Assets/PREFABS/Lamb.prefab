@@ -156,7 +156,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -196,17 +196,16 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6150955258992551302}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d8311968acdd47f43901ceef5fdb8a6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  puntosCarne: 1
+  m_PuntosCarne: 10
   carneEntera: {fileID: 7044521031622761406}
   carneParte1: {fileID: 2841678657644280757}
   carneParte2: {fileID: 6829784606251021325}
-  verticalVelocity: 15
-  despawnTimer: 0
+  m_DespawnTimer: 0
 --- !u!1 &6829784606251021325 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8694841195268231974, guid: 008fca513cbd274498253063e721719d, type: 3}
