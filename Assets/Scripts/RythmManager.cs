@@ -30,7 +30,6 @@ public class KeyMoment
     public Spawns[] m_Spawns;
     public ObjectTypes[] m_objectTypes;
     public float[] m_MeatVelocity;
-
 }
 
 public class RythmManager : MonoBehaviour
