@@ -20,7 +20,7 @@ public class SettingsScreen : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-      
+        
     }
 
     // Update is called once per frame
@@ -32,15 +32,15 @@ public class SettingsScreen : MonoBehaviour
     public void MenuSettingsCame()
     {
         print("hola");
-        LeanTween.moveLocalX(PanelCredits, -250, 0.5f);  
-        LeanTween.moveLocalX(PanelAudio, 600, 0.5f);
+        LeanTween.moveLocalX(PanelCredits, -450, 0.5f);  
+        LeanTween.moveLocalX(PanelAudio, 800, 0.5f);
         LeanTween.scale(Back, Vector3.one, 0.5f);
         LeanTween.scale(PrefabBombBack, Vector3.one, 0.5f);
     }
 
     public void BackToInitialMenu()
     {
-        LeanTween.moveLocalX(PanelCredits, -1753, 0.5f).setEase(LeanTweenType.linear).setOnComplete(() =>
+        LeanTween.moveLocalX(PanelCredits, -2400, 0.5f).setEase(LeanTweenType.linear).setOnComplete(() =>
         {
 
             MenuInicial.gameObject.SetActive(true);
@@ -50,7 +50,7 @@ public class SettingsScreen : MonoBehaviour
         }); ;
         LeanTween.scale(Back, Vector3.zero, 0.5f);
         LeanTween.scale(PrefabBombBack, Vector3.zero, 0.5f);
-        LeanTween.moveLocalX(PanelAudio, 1299, 0.5f).setEase(LeanTweenType.linear);
+        LeanTween.moveLocalX(PanelAudio, 2000, 0.5f).setEase(LeanTweenType.linear);
 
 
 
