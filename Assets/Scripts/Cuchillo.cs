@@ -31,8 +31,18 @@ public class Cuchillo : MonoBehaviour
             if (Physics.Raycast(ray, out hit, rayLength, Physics.DefaultRaycastLayers, QueryTriggerInteraction.Collide))
             {
                 Debug.Log("Raycast hit: " + hit.collider.name);
-                hit.collider.GetComponent<CarneBehaviour>().Cortado();
-                Score_Manager.instance.RestaCarne();
+                if (hit.collider.CompareTag("Carne"))
+                {
+                    hit.collider.GetComponent<CarneBehaviour>().Cortado();
+                    Score_Manager.instance.RestaCarne();
+                }
+                if (hit.collider.CompareTag("Hueso"))
+                {
+                    hit.collider.GetComponent<HuesoBehaviour>().Hueso();
+                    Health_Manager.instance.RestaVida();
+                }
+
+
             }
         }
     }

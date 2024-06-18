@@ -31,22 +31,25 @@ public class UI_GamePlay : MonoBehaviour
     [SerializeField] GameObject ImageSandia;
     [SerializeField] GameObject NumberPoints;
     [SerializeField] GameObject Record;
+
     [SerializeField] GameObject GameOver;
+    [SerializeField] GameObject WinLevel;
 
     [SerializeField] GameObject UI_LifeAndScore;
-    // Pantalla de derrota
+    
+    /*// Pantalla de derrota
     [SerializeField] GameObject ButtonRetry;
     [SerializeField] GameObject ButtonQuit;
     [SerializeField] GameObject PanelGameOver;
     [SerializeField] GameObject Score;
-    [SerializeField] GameObject NumberScore;
+    [SerializeField] GameObject NumberScore;*/
 
   
     // Start is called before the first frame update
     void Start()
     {
         GameStart();
-       
+      
     }
 
     // Update is called once per frame
@@ -72,17 +75,10 @@ public class UI_GamePlay : MonoBehaviour
             {
                 LeanTween.moveLocalY (go, 450, 0.2f).setDelay(m_TimeToWaitReadyGo);
                 LeanTween.alphaCanvas(Go, 0, 0.2f).setDelay(m_TimeToWaitReadyGo);
-
-                CrossRed(crossBlue1, crossRed1, crossRed1Midle);
-            });
-
-            });
-
                
-
             });
-
-          
+            });
+            });      
         });
         
     }
@@ -100,15 +96,23 @@ public class UI_GamePlay : MonoBehaviour
         crossBlue.SetActive(false); 
         crossRed.SetActive(true);
 
-        LeanTween.scale(crossMiddleRed, Vector2.one, 0.5f).setEase(LeanTweenType.easeOutBack).setOnComplete(() =>
+        LeanTween.scale(crossMiddleRed, Vector3.one, 0.5f).setEase(LeanTweenType.easeOutBack).setOnComplete(() =>
         {
 
-            LeanTween.scale(crossMiddleRed, Vector2.zero, 0.5f).setDelay(0.5f);
+            LeanTween.scale(crossMiddleRed, Vector3.zero, 0.5f).setDelay(0.5f);
         });
 
        // LeanTween.moveLocal(crossRed, new Vector2(566.78f, 471), 1);
     }
 
+  
+    public void EndOfLevel(GameObject WinOrGameOver)
+    {
+        LeanTween.scale(WinOrGameOver, Vector3.one, 1).setOnComplete(() =>
+        {
+            LeanTween.scale(WinOrGameOver, Vector3.zero, 1).setDelay(1);
+            LeanTween.moveLocalY(UI_LifeAndScore, 600, 0.5f).setDelay(1);
 
-
+        });
+    }
 }

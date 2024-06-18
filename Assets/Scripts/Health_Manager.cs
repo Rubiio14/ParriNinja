@@ -15,9 +15,16 @@ public class Health_Manager : MonoBehaviour
     [SerializeField]
     CanvasGroup derrotaCanvasGroup;
 
-    private void Awake()
+    public void Awake()
     {
-        instance = this;
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(this);
+        }
     }
     private void Start()
     {
@@ -50,14 +57,25 @@ public class Health_Manager : MonoBehaviour
             vida2.SetActive(false);
             vida3.SetActive(false);
 
-            derrotaSound.SetActive(true);
-            backgroundMusic.SetActive(false);
-            lanzadores.SetActive(false);
+            Defeat();
+            
 
-            //pantalla Derrota
-            derrotaScreen.SetActive(true);
-            LeanTween.alphaCanvas(derrotaCanvasGroup, 1, 0.5f);
+            
 
         }
+    }
+
+    public void RestaVida()
+    {
+        health--;
+    }
+    public void Defeat()
+    {
+        derrotaSound.SetActive(true);
+        backgroundMusic.SetActive(false);
+        lanzadores.SetActive(false);
+        //pantalla Derrota
+        derrotaScreen.SetActive(true);
+        LeanTween.alphaCanvas(derrotaCanvasGroup, 1, 0.5f);
     }
 }

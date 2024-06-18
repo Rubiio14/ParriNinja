@@ -9,7 +9,9 @@ public enum ObjectTypes
     Lamb,
     Ribs,
     Bone,
-    PowerUp
+    PowerUp,
+    Sausage,
+    Meatball
 };
 public enum Spawns
 {
@@ -28,7 +30,6 @@ public class KeyMoment
     public Spawns[] m_Spawns;
     public ObjectTypes[] m_objectTypes;
     public float[] m_MeatVelocity;
-
 }
 
 public class RythmManager : MonoBehaviour
@@ -55,14 +56,16 @@ public class RythmManager : MonoBehaviour
     {
         //Tiempo de Juego
         m_GameTime += Time.deltaTime;
-       
+
         if (actualMoment == gameLoop.Length)
         {
-            Debug.Log("Fin juego");
-            StartCoroutine(DelayVictoryScreen(2f));
             
         }
-        else
+        else if (Score_Manager.instance.m_NCarnes == 0 || GameObject.FindGameObjectsWithTag("Carne") == null)
+        {
+            Score_Manager.instance.VictoryScreen();
+        }
+        else 
         {
             if (Mathf.Round(m_GameTime) == gameLoop[actualMoment].m_MusicTiming)
             {
@@ -70,12 +73,6 @@ public class RythmManager : MonoBehaviour
                 Lanzadores.instance.Lanzamientos(gameLoop[actualMoment]);
                 actualMoment++;
             }
-            
         }
-    }
-    IEnumerator DelayVictoryScreen(float time)
-    { 
-        yield return new WaitForSeconds(time);
-        Score_Manager.instance.VictoryScreen();
     }
 }

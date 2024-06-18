@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class Score_Manager : MonoBehaviour
 {
-    int m_NCarnes = 0;
-    int m_Score = 0;
+    public int m_NCarnes = 0;
+    public int m_Score = 0;
     [SerializeField]
     GameObject m_VictoryCanvas;
 
@@ -58,6 +58,8 @@ public class Score_Manager : MonoBehaviour
         
         m_VScoreTxt.text = "Score: " + m_Score;
         m_VictoryCanvas.SetActive(true);
+        m_ScoreTxt.gameObject.SetActive(false);
+        m_CarnesTxt.gameObject.SetActive(false);
     }
     public void RestaCarne()
     {
