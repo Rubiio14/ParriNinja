@@ -61,9 +61,20 @@ public class CarneBehaviour : MonoBehaviour
         rb.isKinematic = true;
         carneEntera.SetActive(false);
         m_NeedTimer = true;
-        Score_Manager.instance.SumaPuntos(m_PuntosCarne);
+        if (Random.RandomRange(1, 10) == Random.RandomRange(1, 10))
+        {
+            PowerUps.instance.CriticalHit(m_PuntosCarne);
+        }
+        else 
+        {
+            Score_Manager.instance.SumaPuntos(m_PuntosCarne);
+        }
+        
         Piezas();
     }
+
+   
+
     private void OnTriggerEnter(Collider other)
     {
        

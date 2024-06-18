@@ -5,7 +5,7 @@ using UnityEngine;
 public class PowerUps : MonoBehaviour
 {
     public static PowerUps instance;
-    public void Awake()
+    void Awake()
     {
         if (instance == null)
         {
@@ -15,6 +15,11 @@ public class PowerUps : MonoBehaviour
         {
             Destroy(this);
         }
+    }
+
+    public void CriticalHit(int m_Puntos)
+    {
+        Score_Manager.instance.SumaPuntos(m_Puntos * 2);
     }
 
 }
