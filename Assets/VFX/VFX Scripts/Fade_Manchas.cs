@@ -1,22 +1,38 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Fade_Manchas : MonoBehaviour
 {
-    [SerializeField] GameObject mancha;
-    
-    // Start is called before the first frame update
-    void Start()
+    public static Fade_Manchas instance;
+
+    [SerializeField] GameObject manchas;
+
+    public void Awake()
     {
-        
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(this);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    //Funcion para hacer aparecer una de las manchas y que esta desaparezca.
+    public void Mancha(GameObject mancha, GameObject objeto)
     {
-        
+        manchas.transform.position = objeto.transform.position;
+
+        manchas.SetActive(true);
+
+        CanvasGroup manchaCanvas = mancha.transform.GetChild(0).gameObject.GetComponent<CanvasGroup>();
+
+        LeanTween.alphaCanvas(manchaCanvas, 0, 1f).setOnComplete(() =>
+        {
+            manchas.SetActive(false);
+        });
     }
-
-
 }
