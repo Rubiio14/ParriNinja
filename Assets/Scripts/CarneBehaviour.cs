@@ -70,8 +70,9 @@ public class CarneBehaviour : MonoBehaviour
         if (other.gameObject.tag == "Despawner")
         {
             gameObject.SetActive(false);
-            Health_Manager.instance.health--;
-      
+            Health_Manager.instance.RestaVida();
+
+
         }
     }
 
