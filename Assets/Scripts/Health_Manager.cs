@@ -15,9 +15,16 @@ public class Health_Manager : MonoBehaviour
     [SerializeField]
     CanvasGroup derrotaCanvasGroup;
 
-    private void Awake()
+    public void Awake()
     {
-        instance = this;
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(this);
+        }
     }
     private void Start()
     {

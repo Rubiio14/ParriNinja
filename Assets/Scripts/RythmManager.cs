@@ -56,13 +56,7 @@ public class RythmManager : MonoBehaviour
         //Tiempo de Juego
         m_GameTime += Time.deltaTime;
        
-        if (actualMoment == gameLoop.Length)
-        {
-            Debug.Log("Fin juego");
-            StartCoroutine(DelayVictoryScreen(2f));
-            
-        }
-        else
+        if (actualMoment != gameLoop.Length)
         {
             if (Mathf.Round(m_GameTime) == gameLoop[actualMoment].m_MusicTiming)
             {
@@ -70,12 +64,14 @@ public class RythmManager : MonoBehaviour
                 Lanzadores.instance.Lanzamientos(gameLoop[actualMoment]);
                 actualMoment++;
             }
-            
         }
-    }
-    IEnumerator DelayVictoryScreen(float time)
-    { 
-        yield return new WaitForSeconds(time);
-        Score_Manager.instance.VictoryScreen();
+        else
+        {
+            if (Score_Manager.instance.m_NCarnes == 0 || GameObject.FindGameObjectsWithTag("Carne") == null)
+            {
+                Score_Manager.instance.VictoryScreen();
+            }
+
+        }
     }
 }

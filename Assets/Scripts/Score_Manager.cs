@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class Score_Manager : MonoBehaviour
 {
-    int m_NCarnes = 0;
-    int m_Score = 0;
+    public int m_NCarnes = 0;
+    public int m_Score = 0;
     [SerializeField]
     GameObject m_VictoryCanvas;
 
