@@ -34,10 +34,10 @@ public class MenuLevels : MonoBehaviour
 
     public void MenuLevelCome()
     {
-        LeanTween.moveLocalY(Levels, 550, 1.5f);
+        LeanTween.moveLocalY(Levels, 550, 0.5f);
 
-        LeanTween.scale(ButtonBack, Vector3.one, 1f);
-        LeanTween.scale(Prefab, Vector3.one, 1f);
+        LeanTween.scale(ButtonBack, Vector3.one, 0.5f);
+        LeanTween.scale(Prefab, Vector3.one, 0.5f);
          LeanTween.scale(ButtonLevelOne, Vector3.one, SpeedOfButtons).setOnComplete(() =>
          {
             LeanTween.scale(ButtonLevelTwo, Vector3.one, SpeedOfButtons).setOnComplete(() =>
@@ -56,10 +56,10 @@ public class MenuLevels : MonoBehaviour
 
     public void MenuLevelGone()
     {
-        LeanTween.moveLocalY(Levels, 800, 1.5f);
+        LeanTween.moveLocalY(Levels, 800, 0.5f);
 
-        LeanTween.scale(ButtonBack, Vector3.zero, 1f);
-        LeanTween.scale(Prefab, Vector3.zero, 1f);
+        LeanTween.scale(ButtonBack, Vector3.zero, 0.5f);
+        LeanTween.scale(Prefab, Vector3.zero, 0.5f);
         LeanTween.scale(ButtonLevelOne, Vector3.zero, SpeedOfButtons).setOnComplete(() =>
         {
             LeanTween.scale(ButtonLevelTwo, Vector3.zero, SpeedOfButtons).setOnComplete(() =>
@@ -81,6 +81,8 @@ public class MenuLevels : MonoBehaviour
     }
     public void StartGame(string sceneName)
     {
+        MenuLevelGone();
+        
             SceneManager.LoadScene(sceneName);       
     }
 }

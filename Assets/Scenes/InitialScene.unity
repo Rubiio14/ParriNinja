@@ -347,7 +347,7 @@ PrefabInstance:
       objectReference: {fileID: 457904699}
     - target: {fileID: 4092209685974521192, guid: 8293d33fcea47924e9938cc2ea9bc539, type: 3}
       propertyPath: SpeedOfButtons
-      value: 0.25
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 4092209685974521192, guid: 8293d33fcea47924e9938cc2ea9bc539, type: 3}
       propertyPath: ButtonLevelFive
@@ -425,6 +425,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8144156524510102919, guid: 8293d33fcea47924e9938cc2ea9bc539, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 269f7e0d4e8fef14a805fd515e5f2e58, type: 3}
     - target: {fileID: 8589764279765062585, guid: 8293d33fcea47924e9938cc2ea9bc539, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 5
@@ -1752,6 +1756,10 @@ PrefabInstance:
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5298489087983498534, guid: c69737b25f9044d40ae720716efd63f6, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 269f7e0d4e8fef14a805fd515e5f2e58, type: 3}
+    - target: {fileID: 5298489087983498534, guid: c69737b25f9044d40ae720716efd63f6, type: 3}
       propertyPath: m_PreserveAspect
       value: 1
       objectReference: {fileID: 0}
@@ -2054,7 +2062,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5779495337aea9c46af1c22491c95070, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 269f7e0d4e8fef14a805fd515e5f2e58, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2114,6 +2122,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2297765753244258667, guid: 88ceea7c48f11844e82c881c4463cd36, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 269f7e0d4e8fef14a805fd515e5f2e58, type: 3}
     - target: {fileID: 4899455058004569422, guid: 88ceea7c48f11844e82c881c4463cd36, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

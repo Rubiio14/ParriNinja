@@ -198,7 +198,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5779495337aea9c46af1c22491c95070, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 269f7e0d4e8fef14a805fd515e5f2e58, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -666,7 +666,9 @@ MonoBehaviour:
   MeetToStart: {fileID: 713022011127470346}
   MeetToSettings: {fileID: 5613506915457264861}
   Opciones: {fileID: 0}
+  MenuLevels: {fileID: 0}
   settingsScreen: {fileID: 0}
+  menuLevels: {fileID: 0}
   m_TimeOfTransition: 0.5
 --- !u!1 &8256359516163008648
 GameObject:
