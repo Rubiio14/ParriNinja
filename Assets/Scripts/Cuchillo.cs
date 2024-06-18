@@ -41,6 +41,11 @@ public class Cuchillo : MonoBehaviour
                     hit.collider.GetComponent<HuesoBehaviour>().Hueso();
                     Health_Manager.instance.RestaVida();
                 }
+                if (hit.collider.CompareTag("Limon"))
+                {
+                    hit.collider.GetComponent<Lemon_Behaviour>().Cortado();
+                    Score_Manager.instance.RestaCarne();
+                }
 
 
             }

@@ -19,6 +19,8 @@ public class CarneBehaviour : MonoBehaviour
     bool m_NeedTimer = false;
 
     Vector3 m_RotacionCarnes;
+    Vector3 m_RotacionPiezas;
+
 
     private void Awake()
     {
@@ -34,10 +36,12 @@ public class CarneBehaviour : MonoBehaviour
     void Update()
     {
         carneEntera.transform.Rotate(m_RotacionCarnes);
-        carneParte1.transform.Rotate(m_RotacionCarnes);
-        carneParte2.transform.Rotate(m_RotacionCarnes);
+        carneParte1.transform.Rotate(m_RotacionPiezas);
+        carneParte2.transform.Rotate(m_RotacionPiezas);
 
-        if(m_NeedTimer == true)
+        m_RotacionPiezas = new Vector3(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f));
+
+        if (m_NeedTimer == true)
         {
             m_DespawnTimer += Time.deltaTime;
         }
@@ -68,8 +72,7 @@ public class CarneBehaviour : MonoBehaviour
         else 
         {
             Score_Manager.instance.SumaPuntos(m_PuntosCarne);
-        }
-        
+        }      
         Piezas();
     }
 
@@ -82,8 +85,6 @@ public class CarneBehaviour : MonoBehaviour
         {
             gameObject.SetActive(false);
             Health_Manager.instance.RestaVida();
-
-
         }
     }
 
