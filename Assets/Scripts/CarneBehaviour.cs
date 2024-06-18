@@ -5,7 +5,7 @@ using UnityEngine;
 public class CarneBehaviour : MonoBehaviour
 {
     [SerializeField]
-    //GameObject[] manchas;
+    GameObject[] manchas;
     public int m_PuntosCarne;
     BoxCollider m_CarneCollider;
 
@@ -73,7 +73,7 @@ public class CarneBehaviour : MonoBehaviour
             Score_Manager.instance.SumaPuntos(m_PuntosCarne);
         }      
         Piezas();
-        //Fade_Manchas.instance.Mancha(manchas[Random.Range(0, 1)], carneEntera);
+        Fade_Manchas.instance.Mancha(manchas[Random.Range(0, 1)], carneEntera);
     }
 
    
