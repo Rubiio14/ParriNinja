@@ -9,7 +9,9 @@ public enum ObjectTypes
     Lamb,
     Ribs,
     Bone,
-    PowerUp
+    PowerUp,
+    Sausage,
+    Meatball
 };
 public enum Spawns
 {
