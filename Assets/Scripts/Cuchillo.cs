@@ -3,51 +3,90 @@ using UnityEngine;
 public class Cuchillo : MonoBehaviour
 {
     bool m_Pulsado = false;
+    Vector3 m_LastMousePosition;
+    public float m_MouseMoveOffset = 5f;
+    public AudioSource m_CutSound;
+    public AudioSource m_BoneSound;
 
     void Update()
     {
-        // Pulsa el Click Izquierdo
+        
+        DetectMouseClick();
+
+        if (m_Pulsado && MouseMoved())
+        {
+            PerformRaycast();
+        }
+    }
+
+    void DetectMouseClick()
+    {
         if (Input.GetMouseButtonDown(0))
         {
             m_Pulsado = true;
+            m_LastMousePosition = Input.mousePosition;
         }
-        // Suelta el Click Izquierdo
         if (Input.GetMouseButtonUp(0))
         {
             m_Pulsado = false;
         }
+    }
 
-        if (m_Pulsado)
+    bool MouseMoved()
+    {
+        Vector3 currentMousePosition = Input.mousePosition;
+        if (Vector3.Distance(currentMousePosition, m_LastMousePosition) >= m_MouseMoveOffset)
         {
-            Vector3 mousePosition = Input.mousePosition;
-            Ray ray = Camera.main.ScreenPointToRay(mousePosition);
-            RaycastHit hit;
-            float rayLength = 100f;
+            m_LastMousePosition = currentMousePosition;
+            return true;
+        }
+        return false;
+    }
 
-            
-            Debug.DrawRay(ray.origin, ray.direction * rayLength, Color.red);
+    void PerformRaycast()
+    {
+        Vector3 m_MousePosition = Input.mousePosition;
+        Ray ray = Camera.main.ScreenPointToRay(m_MousePosition);
+        RaycastHit hit;
+        float rayLength = 100f;
 
-            //El Querty es para que el Raycast detecte los Trigger
-            if (Physics.Raycast(ray, out hit, rayLength, Physics.DefaultRaycastLayers, QueryTriggerInteraction.Collide))
+        Debug.DrawRay(ray.origin, ray.direction * rayLength, Color.red);
+
+        // Asegurarse de que el raycast detecte los triggers
+        if (Physics.Raycast(ray, out hit, rayLength, Physics.DefaultRaycastLayers, QueryTriggerInteraction.Collide))
+        {
+            Debug.Log("Raycast hit: " + hit.collider.name);
+
+            if (hit.collider.CompareTag("Carne"))
             {
-                Debug.Log("Raycast hit: " + hit.collider.name);
-                if (hit.collider.CompareTag("Carne"))
+                CarneBehaviour carne = hit.collider.GetComponent<CarneBehaviour>();
+                if (carne != null)
                 {
-                    hit.collider.GetComponent<CarneBehaviour>().Cortado();
+                    carne.Cortado();
+                    m_CutSound.Play();
                     Score_Manager.instance.RestaCarne();
                 }
-                if (hit.collider.CompareTag("Hueso"))
+            }
+            else if (hit.collider.CompareTag("Hueso"))
+            {
+                HuesoBehaviour hueso = hit.collider.GetComponent<HuesoBehaviour>();
+                if (hueso != null)
                 {
-                    hit.collider.GetComponent<HuesoBehaviour>().Hueso();
+                    hueso.Hueso();
+                    m_CutSound.Play();
+                    m_BoneSound.Play();
                     Health_Manager.instance.RestaVida();
                 }
-                if (hit.collider.CompareTag("Limon"))
+            }
+            else if (hit.collider.CompareTag("Limon"))
+            {
+                Lemon_Behaviour limon = hit.collider.GetComponent<Lemon_Behaviour>();
+                if (limon != null)
                 {
-                    hit.collider.GetComponent<Lemon_Behaviour>().Cortado();
+                    limon.Cortado();
+                    m_CutSound.Play();
                     Score_Manager.instance.RestaCarne();
                 }
-
-
             }
         }
     }

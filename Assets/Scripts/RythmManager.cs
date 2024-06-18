@@ -11,7 +11,8 @@ public enum ObjectTypes
     Bone,
     PowerUp,
     Sausage,
-    Meatball
+    Meatball,
+    Lemon
 };
 public enum Spawns
 {

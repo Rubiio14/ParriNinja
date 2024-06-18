@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class CarneBehaviour : MonoBehaviour
 {
-    public static CarneBehaviour instance;
+    [SerializeField]
+    //GameObject[] manchas;
     public int m_PuntosCarne;
     BoxCollider m_CarneCollider;
 
@@ -22,10 +23,6 @@ public class CarneBehaviour : MonoBehaviour
     Vector3 m_RotacionPiezas;
 
 
-    private void Awake()
-    {
-        instance = this;
-    }
     void Start()
     {
        m_CarneCollider = GetComponent<BoxCollider>();
@@ -61,11 +58,13 @@ public class CarneBehaviour : MonoBehaviour
 
     public void Cortado()
     {
+        
+
         m_CarneCollider.enabled = false;
         rb.isKinematic = true;
         carneEntera.SetActive(false);
         m_NeedTimer = true;
-        if (Random.RandomRange(1, 10) == Random.RandomRange(1, 10))
+        if (Random.Range(1, 10) == Random.Range(1, 10))
         {
             PowerUps.instance.CriticalHit(m_PuntosCarne);
         }
@@ -74,6 +73,7 @@ public class CarneBehaviour : MonoBehaviour
             Score_Manager.instance.SumaPuntos(m_PuntosCarne);
         }      
         Piezas();
+        //Fade_Manchas.instance.Mancha(manchas[Random.Range(0, 1)], carneEntera);
     }
 
    
