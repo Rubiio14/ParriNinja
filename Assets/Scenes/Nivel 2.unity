@@ -403,7 +403,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2331621086117808526, guid: 9f43d47ec5ca3c64cb568bf378a0cf3f, type: 3}
       propertyPath: gameLoop.Array.data[15].m_MusicTiming
-      value: 33
+      value: 39
       objectReference: {fileID: 0}
     - target: {fileID: 2331621086117808526, guid: 9f43d47ec5ca3c64cb568bf378a0cf3f, type: 3}
       propertyPath: gameLoop.Array.data[0].spawns.Array.size
@@ -543,7 +543,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2331621086117808526, guid: 9f43d47ec5ca3c64cb568bf378a0cf3f, type: 3}
       propertyPath: gameLoop.Array.data[15].m_DelayLanzamientos
-      value: 0.8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2331621086117808526, guid: 9f43d47ec5ca3c64cb568bf378a0cf3f, type: 3}
       propertyPath: gameLoop.Array.data[15].m_Spawns.Array.size
@@ -947,7 +947,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2331621086117808526, guid: 9f43d47ec5ca3c64cb568bf378a0cf3f, type: 3}
       propertyPath: gameLoop.Array.data[15].m_MeatVelocity.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2331621086117808526, guid: 9f43d47ec5ca3c64cb568bf378a0cf3f, type: 3}
       propertyPath: gameLoop.Array.data[0].m_objectTypes.Array.data[0]
@@ -1235,15 +1235,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2331621086117808526, guid: 9f43d47ec5ca3c64cb568bf378a0cf3f, type: 3}
       propertyPath: gameLoop.Array.data[15].m_objectTypes.Array.data[1]
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2331621086117808526, guid: 9f43d47ec5ca3c64cb568bf378a0cf3f, type: 3}
-      propertyPath: gameLoop.Array.data[15].m_objectTypes.Array.data[2]
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2331621086117808526, guid: 9f43d47ec5ca3c64cb568bf378a0cf3f, type: 3}
-      propertyPath: gameLoop.Array.data[15].m_objectTypes.Array.data[3]
+      propertyPath: gameLoop.Array.data[15].m_objectTypes.Array.data[2]
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2331621086117808526, guid: 9f43d47ec5ca3c64cb568bf378a0cf3f, type: 3}
+      propertyPath: gameLoop.Array.data[15].m_objectTypes.Array.data[3]
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2331621086117808526, guid: 9f43d47ec5ca3c64cb568bf378a0cf3f, type: 3}
       propertyPath: gameLoop.Array.data[15].m_objectTypes.Array.data[4]
@@ -1499,11 +1499,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2331621086117808526, guid: 9f43d47ec5ca3c64cb568bf378a0cf3f, type: 3}
       propertyPath: gameLoop.Array.data[15].m_MeatVelocity.Array.data[0]
-      value: 16
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 2331621086117808526, guid: 9f43d47ec5ca3c64cb568bf378a0cf3f, type: 3}
       propertyPath: gameLoop.Array.data[15].m_MeatVelocity.Array.data[1]
-      value: 16
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 2331621086117808526, guid: 9f43d47ec5ca3c64cb568bf378a0cf3f, type: 3}
       propertyPath: gameLoop.Array.data[15].m_MeatVelocity.Array.data[2]
@@ -1511,7 +1511,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2331621086117808526, guid: 9f43d47ec5ca3c64cb568bf378a0cf3f, type: 3}
       propertyPath: gameLoop.Array.data[15].m_MeatVelocity.Array.data[3]
-      value: 16
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2331621086117808526, guid: 9f43d47ec5ca3c64cb568bf378a0cf3f, type: 3}
+      propertyPath: gameLoop.Array.data[15].m_MeatVelocity.Array.data[4]
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 8938994240772756432, guid: 9f43d47ec5ca3c64cb568bf378a0cf3f, type: 3}
       propertyPath: m_Name
@@ -3413,6 +3417,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be169fe31a597404ba5277a1518720cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_NCarnes: 0
+  m_Score: 0
   m_VictoryCanvas: {fileID: 648056702}
   m_CarnesTxt: {fileID: 1154197304}
   m_ScoreTxt: {fileID: 1205130862}
