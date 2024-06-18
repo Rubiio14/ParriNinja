@@ -128,16 +128,19 @@ public class Lanzadores : MonoBehaviour
     public GameObject CreaChiken()
     {
         GameObject m_ChickenClone = Instantiate(m_Chicken);
+        Score_Manager.instance.RestaCarne();
         return m_ChickenClone;
     }
     public GameObject CreaLamb()
     {
         GameObject m_LambClone = Instantiate(m_Lamb);
+        Score_Manager.instance.RestaCarne();
         return m_LambClone;
     }
     public GameObject CreaRibs()
     {
         GameObject m_RibsClone = Instantiate(m_Ribs);
+        Score_Manager.instance.RestaCarne();
         return m_RibsClone;
     }
     public GameObject CreaBone()
@@ -153,11 +156,13 @@ public class Lanzadores : MonoBehaviour
     public GameObject CreaSausage()
     {
         GameObject m_SausageClone = Instantiate(m_Sausage);
+        Score_Manager.instance.RestaCarne();
         return m_SausageClone;
     }
     public GameObject CreaMeatball()
     {
         GameObject m_MeatballClone = Instantiate(m_Meatball);
+        Score_Manager.instance.RestaCarne();
         return m_MeatballClone;
     }
     public GameObject CreaLemon() 

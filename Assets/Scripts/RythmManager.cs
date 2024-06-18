@@ -57,14 +57,13 @@ public class RythmManager : MonoBehaviour
     {
         //Tiempo de Juego
         m_GameTime += Time.deltaTime;
-
         if (actualMoment == gameLoop.Length)
         {
+            if (FindObjectOfType<CarneBehaviour>() == null)
+            {
+                Score_Manager.instance.VictoryScreen();
+            }
             
-        }
-        else if (Score_Manager.instance.m_NCarnes == 0 || GameObject.FindGameObjectsWithTag("Carne") == null)
-        {
-            Score_Manager.instance.VictoryScreen();
         }
         else 
         {

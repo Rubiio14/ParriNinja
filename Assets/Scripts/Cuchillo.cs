@@ -64,7 +64,7 @@ public class Cuchillo : MonoBehaviour
                 {
                     carne.Cortado();
                     m_CutSound.Play();
-                    Score_Manager.instance.RestaCarne();
+
                 }
             }
             else if (hit.collider.CompareTag("Hueso"))
