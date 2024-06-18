@@ -29,8 +29,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 5561836281551491710}
   - {fileID: 6250773313915803498}
@@ -97,12 +97,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8311968acdd47f43901ceef5fdb8a6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  puntosCarne: 2
-  m_Puntos: 0
+  m_PuntosCarne: 0
   carneEntera: {fileID: 5072262702507870404}
   carneParte1: {fileID: 6770288592011988432}
   carneParte2: {fileID: 1325493087483777644}
-  despawnTimer: 0
+  m_DespawnTimer: 0
 --- !u!1001 &2208014105270939453
 PrefabInstance:
   m_ObjectHideFlags: 0
