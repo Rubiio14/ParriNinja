@@ -147,7 +147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_PuntosCarne: 0
-  carneEntera: {fileID: 0}
-  carneParte1: {fileID: 0}
-  carneParte2: {fileID: 0}
+  carneEntera: {fileID: 7433338972482590277}
+  carneParte1: {fileID: 7433338972482590277}
+  carneParte2: {fileID: 7433338972482590277}
   m_DespawnTimer: 0
