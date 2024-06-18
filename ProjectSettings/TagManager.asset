@@ -8,6 +8,7 @@ TagManager:
   - MaxHeight
   - Carne
   - Hueso
+  - Limon
   layers:
   - Default
   - TransparentFX

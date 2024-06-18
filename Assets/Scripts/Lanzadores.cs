@@ -151,11 +151,11 @@ public class Lanzadores : MonoBehaviour
     public GameObject CreaSausage()
     {
         GameObject m_SausageClone = Instantiate(m_Sausage);
-        return m_Sausage;
+        return m_SausageClone;
     }
     public GameObject CreaMeatball()
     {
         GameObject m_MeatballClone = Instantiate(m_Meatball);
-        return m_Meatball;
+        return m_MeatballClone;
     }
 }
