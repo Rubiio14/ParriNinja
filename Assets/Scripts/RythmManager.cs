@@ -57,8 +57,16 @@ public class RythmManager : MonoBehaviour
     {
         //Tiempo de Juego
         m_GameTime += Time.deltaTime;
-       
-        if (actualMoment != gameLoop.Length)
+
+        if (actualMoment == gameLoop.Length)
+        {
+            
+        }
+        else if (Score_Manager.instance.m_NCarnes == 0 || GameObject.FindGameObjectsWithTag("Carne") == null)
+        {
+            Score_Manager.instance.VictoryScreen();
+        }
+        else 
         {
             if (Mathf.Round(m_GameTime) == gameLoop[actualMoment].m_MusicTiming)
             {
@@ -66,14 +74,6 @@ public class RythmManager : MonoBehaviour
                 Lanzadores.instance.Lanzamientos(gameLoop[actualMoment]);
                 actualMoment++;
             }
-        }
-        else
-        {
-            if (Score_Manager.instance.m_NCarnes == 0 || GameObject.FindGameObjectsWithTag("Carne") == null)
-            {
-                Score_Manager.instance.VictoryScreen();
-            }
-
         }
     }
 }
