@@ -4,23 +4,9 @@ using UnityEngine;
 
 public class HuesoBehaviour : MonoBehaviour
 {
-
-    void Start()
+    public void Hueso()
     {
-        
-    }
-
-    void Update()
-    {
-        
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        //que al impactar con el jugador, se pierda la partida
-        if(other.gameObject.tag == "Player")
-        {
-            //derrota
-        }
+        Health_Manager.instance.RestaVida();
+        Health_Manager.instance.Defeat();
     }
 }

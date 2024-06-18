@@ -9,6 +9,8 @@ public class Lanzadores : MonoBehaviour
     public GameObject m_Chicken;
     public GameObject m_Lamb;
     public GameObject m_Ribs;
+    public GameObject m_Sausage;
+    public GameObject m_Meatball;
     public GameObject m_Bone;
     public GameObject m_PowerUp;
     //public GameObject m_Chicken;
@@ -85,6 +87,12 @@ public class Lanzadores : MonoBehaviour
                 case ObjectTypes.PowerUp:
                     m_ObjetoCreado = CreaPowerUp();
                     break;
+                case ObjectTypes.Sausage:
+                    m_ObjetoCreado = CreaSausage();
+                    break;
+                case ObjectTypes.Meatball:
+                    m_ObjetoCreado = CreaMeatball();
+                    break;
             }
             //Lanzamiento
             m_ObjetoCreado.transform.position = m_Spawn.transform.position;
@@ -139,5 +147,15 @@ public class Lanzadores : MonoBehaviour
     {
         GameObject m_PowerUps = Instantiate(m_PowerUp);
         return m_PowerUps;
+    }
+    public GameObject CreaSausage()
+    {
+        GameObject m_SausageClone = Instantiate(m_Sausage);
+        return m_Sausage;
+    }
+    public GameObject CreaMeatball()
+    {
+        GameObject m_MeatballClone = Instantiate(m_Meatball);
+        return m_Meatball;
     }
 }
