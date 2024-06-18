@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7181240971261010531}
   - component: {fileID: 7160057772279530817}
   - component: {fileID: -3619121026967956228}
+  - component: {fileID: -9186350541649155834}
   m_Layer: 0
   m_Name: salchicha
   m_TagString: Untagged
@@ -101,6 +102,23 @@ MonoBehaviour:
   carneEntera: {fileID: 5072262702507870404}
   carneParte1: {fileID: 6770288592011988432}
   carneParte2: {fileID: 1325493087483777644}
+  m_DespawnTimer: 0
+--- !u!114 &-9186350541649155834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8245776200476150619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8311968acdd47f43901ceef5fdb8a6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PuntosCarne: 0
+  carneEntera: {fileID: 0}
+  carneParte1: {fileID: 0}
+  carneParte2: {fileID: 0}
   m_DespawnTimer: 0
 --- !u!1001 &2208014105270939453
 PrefabInstance:
