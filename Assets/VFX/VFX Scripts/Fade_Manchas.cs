@@ -7,8 +7,6 @@ public class Fade_Manchas : MonoBehaviour
 {
     public static Fade_Manchas instance;
 
-    [SerializeField] GameObject manchas;
-
     public void Awake()
     {
         if (instance == null)
@@ -24,15 +22,17 @@ public class Fade_Manchas : MonoBehaviour
     //Funcion para hacer aparecer una de las manchas y que esta desaparezca.
     public void Mancha(GameObject mancha, GameObject objeto)
     {
-        manchas.transform.position = objeto.transform.position;
+        mancha.transform.position = objeto.transform.position;
 
-        manchas.SetActive(true);
+        mancha.SetActive(true);
 
-        CanvasGroup manchaCanvas = mancha.transform.GetChild(0).gameObject.GetComponent<CanvasGroup>();
+        CanvasGroup manchaCanvas = mancha.GetComponent<CanvasGroup>();
+
+        manchaCanvas.gameObject.SetActive(true);
 
         LeanTween.alphaCanvas(manchaCanvas, 0, 1f).setOnComplete(() =>
         {
-            manchas.SetActive(false);
+            mancha.SetActive(false);
         });
     }
 }
