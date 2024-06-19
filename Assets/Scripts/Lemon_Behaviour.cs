@@ -34,16 +34,21 @@ public class Lemon_Behaviour : MonoBehaviour
         m_LimonCollider = GetComponent<BoxCollider>();
         rbLimon = GetComponent<Rigidbody>();
 
-        m_RotacionLimon = new Vector3(Random.Range(0.05f, 0.4f), Random.Range(0.05f, 0.4f), Random.Range(0.05f, 0.4f));
+        m_RotacionLimon = new Vector3(Random.Range(-0.4f, 0.4f), Random.Range(-0.4f, 0.4f), Random.Range(-0.4f, 0.4f));
+
+    }
+    private void OnEnable()
+    {
+        m_RotacionPiezas = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), Random.Range(-1f, 1f));
+
     }
     void Update()
     {
         limonEntero.transform.Rotate(m_RotacionLimon);
         limonParte1.transform.Rotate(m_RotacionPiezas);
         limonParte2.transform.Rotate(m_RotacionPiezas);
-        limonParte2.transform.Rotate(m_RotacionPiezas);
-        limonParte2.transform.Rotate(m_RotacionPiezas);
-        m_RotacionPiezas = new Vector3(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f));
+        limonParte3.transform.Rotate(m_RotacionPiezas);
+        limonParte4.transform.Rotate(m_RotacionPiezas);
 
 
 

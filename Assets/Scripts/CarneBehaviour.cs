@@ -28,7 +28,13 @@ public class CarneBehaviour : MonoBehaviour
        m_CarneCollider = GetComponent<BoxCollider>();
        rb = GetComponent<Rigidbody>();
 
-       m_RotacionCarnes = new Vector3(Random.Range(0.05f, 0.25f), Random.Range(0.05f, 0.25f), Random.Range(0.05f, 0.25f));
+       m_RotacionCarnes = new Vector3(Random.Range(-0.25f, 0.25f), Random.Range(-0.25f, 0.25f), Random.Range(-0.25f, 0.25f));
+
+    }
+    private void OnEnable()
+    {
+        m_RotacionPiezas = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), Random.Range(-1f, 1f));
+
     }
     void Update()
     {
@@ -36,7 +42,6 @@ public class CarneBehaviour : MonoBehaviour
         carneParte1.transform.Rotate(m_RotacionPiezas);
         carneParte2.transform.Rotate(m_RotacionPiezas);
 
-        m_RotacionPiezas = new Vector3(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f));
 
         if (m_NeedTimer == true)
         {
@@ -73,7 +78,7 @@ public class CarneBehaviour : MonoBehaviour
             Score_Manager.instance.SumaPuntos(m_PuntosCarne);
         }      
         Piezas();
-        Fade_Manchas.instance.Mancha(manchas[Random.Range(0, 1)], carneEntera);
+        Fade_Manchas.instance.Mancha(manchas[Random.Range(0, manchas.Length)], carneEntera);
     }
 
    
