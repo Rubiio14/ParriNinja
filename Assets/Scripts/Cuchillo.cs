@@ -48,7 +48,7 @@ public class Cuchillo : MonoBehaviour
         Vector3 m_MousePosition = Input.mousePosition;
         Ray ray = Camera.main.ScreenPointToRay(m_MousePosition);
         RaycastHit hit;
-        float rayLength = 100f;
+        float rayLength = 800f;
 
         Debug.DrawRay(ray.origin, ray.direction * rayLength, Color.red);
 
@@ -88,6 +88,12 @@ public class Cuchillo : MonoBehaviour
                     m_CutSound.Play();
                     Score_Manager.instance.RestaCarne();
                 }
+            }
+            else if (hit.collider.CompareTag("Limon_UI"))
+            {
+                InitialMenu.instance.SettingsButton();
+                CarneUIBehaviour.instance.Piezas();
+                print("corto");
             }
         }
     }

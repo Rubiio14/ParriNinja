@@ -14,7 +14,19 @@ public class InitialMenu : MonoBehaviour
 
     public float m_TimeOfTransition;
 
-    // Start is called before the first frame update
+    public static InitialMenu instance;
+
+    public void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(this);
+        }
+    }
     void Start()
     {
        MenuInicialCame();
@@ -49,6 +61,7 @@ public class InitialMenu : MonoBehaviour
     //funciones para los botones
     public void SettingsButton()
     {
+        print("hola");
         MenuInicialIsGone();
         LeanTween.moveLocal(Logo, new Vector2(0, 1300), m_TimeOfTransition).setEase(LeanTweenType.linear).setOnComplete(() => 
         { 
