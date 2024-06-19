@@ -15,7 +15,7 @@ public class Lemon_Behaviour : MonoBehaviour
 
     //Despawn
     public float m_DespawnTimerLimon = 0f;
-    bool m_NeedTimerLimon = false;
+    public bool m_NeedTimerLimon = false;
 
     Vector3 m_RotacionLimon;
     Vector3 m_RotacionPiezas;
@@ -82,7 +82,7 @@ public class Lemon_Behaviour : MonoBehaviour
 
         if(m_holdTimer >= 3f)
         {
-            Piezas();    
+            Piezas();
         }
     }
 
@@ -101,6 +101,7 @@ public class Lemon_Behaviour : MonoBehaviour
     {
         limonEntero.SetActive(false);
         m_LimonCollider.enabled = false;
+        RythmManager.instance.m_IsLemonActive = false;
 
         if (Random.Range(1, 10) == Random.Range(1, 10))
         {
