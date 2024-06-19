@@ -20,6 +20,9 @@ public class MenuLevels : MonoBehaviour
     [SerializeField] InitialMenu initialMenu;
     [SerializeField] GameObject InitialMenu;
 
+    [SerializeField] CanvasGroup Fondo2;
+    [SerializeField] CanvasGroup Fondo3;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -54,7 +57,7 @@ public class MenuLevels : MonoBehaviour
 
     }
 
-    public void MenuLevelGone()
+    public void MenuLevelToInitial()
     {
         LeanTween.moveLocalY(Levels, 800, 0.5f);
 
@@ -79,10 +82,42 @@ public class MenuLevels : MonoBehaviour
         });
 
     }
-    public void StartGame(string sceneName)
+    public void StartLevel(string sceneName)
     {
-        MenuLevelGone();
-        
-            SceneManager.LoadScene(sceneName);       
+        LeanTween.moveLocalY(Levels, 800, 0.5f);
+
+        LeanTween.scale(ButtonBack, Vector3.zero, 0.5f);
+        LeanTween.scale(Prefab, Vector3.zero, 0.5f);
+        LeanTween.scale(ButtonLevelOne, Vector3.zero, SpeedOfButtons).setOnComplete(() =>
+        {
+        LeanTween.scale(ButtonLevelTwo, Vector3.zero, SpeedOfButtons).setOnComplete(() =>
+        {
+            LeanTween.scale(ButtonLevelThree, Vector3.zero, SpeedOfButtons).setOnComplete(() =>
+            {
+                LeanTween.scale(ButtonLevelFour, Vector3.zero, SpeedOfButtons).setOnComplete(() =>
+                {
+                    LeanTween.scale(ButtonLevelFive, Vector3.zero, SpeedOfButtons).setOnComplete(() =>
+                    {
+                        LeanTween.alphaCanvas(Fondo2, 1, 1f).setOnComplete(() =>
+                        {
+                           
+                            
+                                LeanTween.alphaCanvas(Fondo3, 1, 1f).setOnComplete(() =>
+                             {
+                                 SceneManager.LoadScene(sceneName);
+                             });
+
+
+                         });
+
+
+
+                    });
+                });
+            });
+        });
+        });
+
     }
 }
+            
