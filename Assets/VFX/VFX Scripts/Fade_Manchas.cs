@@ -22,7 +22,7 @@ public class Fade_Manchas : MonoBehaviour
     //Funcion para hacer aparecer una de las manchas y que esta desaparezca.
     public void Mancha(GameObject mancha, GameObject objeto)
     {
-        mancha.transform.position = objeto.transform.position;
+        mancha.transform.position = new Vector3(objeto.transform.position.x, objeto.transform.position.y, 1f);
 
         mancha.SetActive(true);
 
@@ -30,7 +30,7 @@ public class Fade_Manchas : MonoBehaviour
 
         manchaCanvas.gameObject.SetActive(true);
 
-        LeanTween.alphaCanvas(manchaCanvas, 0, 1f).setOnComplete(() =>
+        LeanTween.alphaCanvas(manchaCanvas, 0, 2f).setEase(LeanTweenType.easeInOutBack).setOnComplete(() =>
         {
             mancha.SetActive(false);
         });
