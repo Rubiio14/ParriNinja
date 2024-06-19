@@ -1696,7 +1696,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4899455058004569422, guid: 88ceea7c48f11844e82c881c4463cd36, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 474
+      value: 471.3
       objectReference: {fileID: 0}
     - target: {fileID: 4899455058004569422, guid: 88ceea7c48f11844e82c881c4463cd36, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1716,11 +1716,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4899455058004569422, guid: 88ceea7c48f11844e82c881c4463cd36, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4899455058004569422, guid: 88ceea7c48f11844e82c881c4463cd36, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 1
+      value: 2.78
       objectReference: {fileID: 0}
     - target: {fileID: 4899455058004569422, guid: 88ceea7c48f11844e82c881c4463cd36, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1743,6 +1743,28 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 88ceea7c48f11844e82c881c4463cd36, type: 3}
+--- !u!114 &646069703 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1602228663063819083, guid: 88ceea7c48f11844e82c881c4463cd36, type: 3}
+  m_PrefabInstance: {fileID: 646069702}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &646069704 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7572164445811077965, guid: 88ceea7c48f11844e82c881c4463cd36, type: 3}
+  m_PrefabInstance: {fileID: 646069702}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &648056702
 GameObject:
   m_ObjectHideFlags: 0
@@ -3869,7 +3891,8 @@ MonoBehaviour:
   m_NCarnes: 0
   m_Score: 0
   m_VictoryCanvas: {fileID: 648056702}
-  m_CarnesTxt: {fileID: 1154197304}
+  m_MaxCarneTxt: {fileID: 646069703}
+  m_CarnesTxt: {fileID: 646069704}
   m_ScoreTxt: {fileID: 111945646}
   m_VCarnesTxt: {fileID: 724491777}
   m_VScoreTxt: {fileID: 2007100171}

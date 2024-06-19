@@ -10,6 +10,9 @@ public class Score_Manager : MonoBehaviour
     [SerializeField]
     GameObject m_VictoryCanvas;
 
+    [SerializeField]
+    public TextMeshProUGUI m_MaxCarneTxt;
+
     public static Score_Manager instance;
     // Start is called before the first frame update
     [SerializeField]
@@ -52,7 +55,8 @@ public class Score_Manager : MonoBehaviour
             }
             
         }
-        m_CarnesTxt.text = "Carnes: " + m_NCarnes;
+        m_CarnesTxt.text = m_NCarnes.ToString("00");
+        m_MaxCarneTxt.text = m_NCarnes.ToString("00");
         m_VCarnesTxt.text = "Te quedaron " + m_NCarnes + " por cortar";
     }
 
@@ -67,7 +71,7 @@ public class Score_Manager : MonoBehaviour
     public void RestaCarne()
     {
         m_NCarnes--;
-        m_CarnesTxt.text = "Carnes: " + m_NCarnes;
+        m_CarnesTxt.text =  m_NCarnes.ToString("00");
         if (m_NCarnes == 0)
         {
             m_VCarnesTxt.text = "Has cortado todas las carnes";
