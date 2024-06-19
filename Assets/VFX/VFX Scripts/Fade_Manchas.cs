@@ -26,7 +26,7 @@ public class Fade_Manchas : MonoBehaviour
 
         mancha.SetActive(true);
 
-        CanvasGroup manchaCanvas = mancha.GetComponent<CanvasGroup>();
+        CanvasGroup manchaCanvas = mancha.GetComponentInChildren<CanvasGroup>();
 
         manchaCanvas.gameObject.SetActive(true);
 
