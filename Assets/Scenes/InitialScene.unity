@@ -1642,6 +1642,10 @@ PrefabInstance:
       propertyPath: m_PreserveAspect
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1511663693906698531, guid: 581b2aff3353d344cb7df2e243e60cb6, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 55c23d30baca2dd4d83b92b0543454cf, type: 3}
     - target: {fileID: 1849190359516010563, guid: 581b2aff3353d344cb7df2e243e60cb6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 1
