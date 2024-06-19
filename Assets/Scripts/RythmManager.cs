@@ -31,6 +31,7 @@ public class KeyMoment
     public Spawns[] m_Spawns;
     public ObjectTypes[] m_objectTypes;
     public float[] m_MeatVelocity;
+    
 }
 
 public class RythmManager : MonoBehaviour
@@ -40,7 +41,7 @@ public class RythmManager : MonoBehaviour
     public KeyMoment[] gameLoop;
     int actualMoment = 0;
     public static RythmManager instance;
-
+    public bool m_IsLemonActive;
 
     public void Awake()
     {
@@ -56,7 +57,16 @@ public class RythmManager : MonoBehaviour
     public void Update()
     {
         //Tiempo de Juego
-        m_GameTime += Time.deltaTime;
+        float m_LastGameTime = m_GameTime;
+        if (m_IsLemonActive)
+        {
+            m_GameTime = m_LastGameTime;
+        }
+        else if(!m_IsLemonActive)
+        {
+            m_GameTime += Time.deltaTime;
+        }
+        
         if (actualMoment == gameLoop.Length)
         {
             if (FindObjectOfType<CarneBehaviour>() == null)

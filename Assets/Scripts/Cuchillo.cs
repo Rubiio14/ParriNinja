@@ -84,6 +84,7 @@ public class Cuchillo : MonoBehaviour
                 if (limon != null)
                 {
                     limon.Cortado();
+                    RythmManager.instance.m_IsLemonActive = true;
                     m_CutSound.Play();
                     Score_Manager.instance.RestaCarne();
                 }
