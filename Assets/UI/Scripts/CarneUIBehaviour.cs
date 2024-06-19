@@ -39,7 +39,9 @@ public class CarneUIBehaviour : MonoBehaviour
     }
     void Start()
     {
+        
         p_limonEntero = limonEntero.transform;
+        print(p_limonEntero.position);
         p_limonParte1 = limonParte1.transform;
         p_limonParte2 = limonParte2.transform;
         p_limonParte3 = limonParte3.transform;
@@ -109,12 +111,19 @@ public class CarneUIBehaviour : MonoBehaviour
         limonParte3.transform.position = p_limonParte3.transform.position;
         limonParte4.transform.position = p_limonParte4.transform.position;
 
-        //limonParte1.GetComponent<Rigidbody>().re
+       /* limonEntero.GetComponent<Rigidbody>() = rb_limonentero;
+        limonParte1.GetComponent<Rigidbody>() = rb_parte1;
+        limonParte2.GetComponent<Rigidbody>() = rb_parte2;
+        limonParte3.GetComponent<Rigidbody>() = rb_parte3;
+        limonParte4.GetComponent<Rigidbody>() = rb_parte4;*/
+        
+        /*limonParte1.GetComponent<Rigidbody>().re
         ResetRigidbody(this.gameObject.GetComponent<Rigidbody>());
         ResetRigidbody(limonParte1.GetComponent<Rigidbody>());
         ResetRigidbody(limonParte2.GetComponent<Rigidbody>());
         ResetRigidbody(limonParte3.GetComponent<Rigidbody>());
         ResetRigidbody(limonParte4.GetComponent<Rigidbody>());
+        */
     }
 
     private void ResetRigidbody(Rigidbody rb)

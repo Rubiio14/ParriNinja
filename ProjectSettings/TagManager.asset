@@ -9,6 +9,8 @@ TagManager:
   - Carne
   - Hueso
   - Limon
+  - FxTemporaire
+  - Limon_UI
   layers:
   - Default
   - TransparentFX
