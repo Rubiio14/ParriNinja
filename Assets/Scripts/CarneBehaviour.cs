@@ -6,6 +6,8 @@ public class CarneBehaviour : MonoBehaviour
 {
     [SerializeField]
     GameObject[] manchas;
+    [SerializeField]
+    GameObject[] particles;
     public int m_PuntosCarne;
     BoxCollider m_CarneCollider;
 
@@ -72,10 +74,12 @@ public class CarneBehaviour : MonoBehaviour
         if (Random.Range(1, 10) == Random.Range(1, 10))
         {
             PowerUps.instance.CriticalHit(m_PuntosCarne);
+            VFX_Particles.instance.Particles(particles[1], carneEntera);
         }
         else 
         {
             Score_Manager.instance.SumaPuntos(m_PuntosCarne);
+            VFX_Particles.instance.Particles(particles[0], carneEntera);
         }      
         Piezas();
         Fade_Manchas.instance.Mancha(manchas[Random.Range(0, manchas.Length)], carneEntera);

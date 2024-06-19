@@ -6,7 +6,19 @@ public class VFX_Particles : MonoBehaviour
 {
     public static VFX_Particles instance;
 
-    public void Partycles(GameObject particle, GameObject objeto)
+    public void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(this);
+        }
+    }
+
+    public void Particles(GameObject particle, GameObject objeto)
     {
         particle.transform.position = objeto.transform.position;
 
