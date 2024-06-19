@@ -71,7 +71,7 @@ public class RythmManager : MonoBehaviour
         
         if (actualMoment == gameLoop.Length)
         {
-            if (FindObjectOfType<CarneBehaviour>() == null)
+            if (FindObjectOfType<CarneBehaviour>() == null && Health_Manager.instance.health > 0)
             {
                 Score_Manager.instance.VictoryScreen();
                 StopTime();
