@@ -258,6 +258,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CFXR Hit A (Red)
       objectReference: {fileID: 0}
+    - target: {fileID: 4021103657954561961, guid: 5c755f9bc5253ea418e919994537dcc7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4096995433319591838, guid: 5c755f9bc5253ea418e919994537dcc7, type: 3}
       propertyPath: m_Materials.Array.size
       value: 1
@@ -594,6 +598,10 @@ PrefabInstance:
     - target: {fileID: 1750940742320366, guid: ec1383a81f8b26e41bd5795fba065567, type: 3}
       propertyPath: m_Name
       value: CFX4 Sparks Explosion B
+      objectReference: {fileID: 0}
+    - target: {fileID: 1750940742320366, guid: ec1383a81f8b26e41bd5795fba065567, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4461574346646038, guid: ec1383a81f8b26e41bd5795fba065567, type: 3}
       propertyPath: m_LocalPosition.x
