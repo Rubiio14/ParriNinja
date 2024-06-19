@@ -58,9 +58,10 @@ public class Health_Manager : MonoBehaviour
             vida3.SetActive(false);
 
             Defeat();
-            
+            RythmManager.instance.StopTime();
 
-            
+
+
 
         }
     }

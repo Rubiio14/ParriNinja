@@ -42,6 +42,8 @@ public class RythmManager : MonoBehaviour
     int actualMoment = 0;
     public static RythmManager instance;
     public bool m_IsLemonActive;
+    public float m_LastGameTime;
+
 
     public void Awake()
     {
@@ -57,10 +59,10 @@ public class RythmManager : MonoBehaviour
     public void Update()
     {
         //Tiempo de Juego
-        float m_LastGameTime = m_GameTime;
+        m_LastGameTime = m_GameTime;
         if (m_IsLemonActive)
         {
-            m_GameTime = m_LastGameTime;
+            StopTime();
         }
         else if(!m_IsLemonActive)
         {
@@ -72,6 +74,7 @@ public class RythmManager : MonoBehaviour
             if (FindObjectOfType<CarneBehaviour>() == null)
             {
                 Score_Manager.instance.VictoryScreen();
+                StopTime();
             }
             
         }
@@ -84,5 +87,11 @@ public class RythmManager : MonoBehaviour
                 actualMoment++;
             }
         }
+    }
+
+    public void StopTime()
+    {
+        //para el tiempom de lanzadores
+        m_GameTime = m_LastGameTime;
     }
 }
