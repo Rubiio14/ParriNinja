@@ -151,6 +151,14 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -8064509252830162973, guid: b16ca9ef4d4e9e241bfe2be3daf87ee1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c67d493e54994ca498bf4a5e59aa9fa6, type: 2}
+    - target: {fileID: -4267420321496182782, guid: b16ca9ef4d4e9e241bfe2be3daf87ee1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c67d493e54994ca498bf4a5e59aa9fa6, type: 2}
     - target: {fileID: 744923557683186414, guid: b16ca9ef4d4e9e241bfe2be3daf87ee1, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -163,6 +171,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Carne
       objectReference: {fileID: 0}
+    - target: {fileID: 5146020118894243041, guid: b16ca9ef4d4e9e241bfe2be3daf87ee1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c67d493e54994ca498bf4a5e59aa9fa6, type: 2}
     - target: {fileID: 5768469393616622874, guid: b16ca9ef4d4e9e241bfe2be3daf87ee1, type: 3}
       propertyPath: m_IsActive
       value: 0
