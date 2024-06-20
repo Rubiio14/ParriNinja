@@ -36,6 +36,7 @@ public class KeyMoment
 
 public class RythmManager : MonoBehaviour
 {
+    bool m_IsWin = false;
     public GameObject m_Lanzadores;
     public float m_GameTime;
     public KeyMoment[] gameLoop;
@@ -71,10 +72,11 @@ public class RythmManager : MonoBehaviour
         
         if (actualMoment == gameLoop.Length)
         {
-            if (FindObjectOfType<CarneBehaviour>() == null && Health_Manager.instance.health > 0)
+            if (FindObjectOfType<CarneBehaviour>() == null && Health_Manager.instance.health > 0 && m_IsWin == false)
             {
                 Score_Manager.instance.VictoryScreen();
                 StopTime();
+                m_IsWin = true;
             }
             
         }
