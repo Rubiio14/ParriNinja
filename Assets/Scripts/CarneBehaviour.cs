@@ -8,6 +8,8 @@ public class CarneBehaviour : MonoBehaviour
     GameObject[] manchas;
     [SerializeField]
     GameObject[] particles;
+    [SerializeField]
+    GameObject[] smoke;
     public int m_PuntosCarne;
     BoxCollider m_CarneCollider;
 
@@ -20,6 +22,7 @@ public class CarneBehaviour : MonoBehaviour
     //Despawn
     public float m_DespawnTimer = 0f;
     bool m_NeedTimer = false;
+    bool m_Smoke = false;
 
     Vector3 m_RotacionCarnes;
     Vector3 m_RotacionPiezas;
@@ -48,6 +51,19 @@ public class CarneBehaviour : MonoBehaviour
         if (m_NeedTimer == true)
         {
             m_DespawnTimer += Time.deltaTime;
+        }
+
+        if (m_DespawnTimer >= 1.5f)
+        {
+            if (m_Smoke == false)
+            {
+                print("puta");
+                VFX_Smoke.instance.Smoke(smoke[0], carneParte1);
+                VFX_Smoke.instance.Smoke(smoke[1], carneParte2);
+                m_Smoke = true;
+            }
+            carneParte1.SetActive(false);
+            carneParte2.SetActive(false);
         }
 
         if (m_DespawnTimer >= 2.5)
