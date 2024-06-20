@@ -9,6 +9,13 @@ public class Lemon_Behaviour : MonoBehaviour
     BoxCollider m_LimonCollider;
 
     [SerializeField]
+    GameObject manchas;
+    [SerializeField]
+    GameObject particles;
+    [SerializeField]
+    GameObject[] smoke;
+
+    [SerializeField]
     GameObject limonEntero, limonParte1, limonParte2, limonParte3, limonParte4;
 
     Rigidbody rbLimon;
@@ -16,6 +23,7 @@ public class Lemon_Behaviour : MonoBehaviour
     //Despawn
     public float m_DespawnTimerLimon = 0f;
     public bool m_NeedTimerLimon = false;
+    public bool m_Smoke = false;
 
     Vector3 m_RotacionLimon;
     Vector3 m_RotacionPiezas;
@@ -57,7 +65,23 @@ public class Lemon_Behaviour : MonoBehaviour
             m_DespawnTimerLimon += Time.deltaTime;
         }
 
-        if (m_DespawnTimerLimon >= 3.5)
+        if (m_DespawnTimerLimon >= 1.5)
+        {
+            if (m_Smoke == false)
+            {
+                VFX_Smoke.instance.Smoke(smoke[0], limonParte1);
+                VFX_Smoke.instance.Smoke(smoke[1], limonParte2);
+                VFX_Smoke.instance.Smoke(smoke[2], limonParte3);
+                VFX_Smoke.instance.Smoke(smoke[3], limonParte4);
+                m_Smoke = true;
+            }
+            limonParte1.SetActive(false);
+            limonParte2.SetActive(false);
+            limonParte3.SetActive(false);
+            limonParte4.SetActive(false);
+        }
+
+        if (m_DespawnTimerLimon >= 2.5)
         {
             gameObject.SetActive(false);
             m_DespawnTimerLimon = 0f;
@@ -84,8 +108,9 @@ public class Lemon_Behaviour : MonoBehaviour
         m_NeedHoldTimer = true;
         rbLimon.isKinematic = true;
         rbLimon.useGravity = false;
+        VFX_Particles.instance.Particles(particles, limonEntero);
 
-        if(m_holdTimer >= 3f)
+        if (m_holdTimer >= 3f)
         {
             Piezas();
         }
@@ -133,5 +158,6 @@ public class Lemon_Behaviour : MonoBehaviour
         limonParte3.GetComponent<Rigidbody>().AddForce(new Vector3(-3, 10, 0), ForceMode.Impulse);
         limonParte4.GetComponent<Rigidbody>().AddForce(new Vector3(3, 10, 0), ForceMode.Impulse);
 
+        Fade_Manchas.instance.Mancha(manchas, limonEntero);
     }
 }
