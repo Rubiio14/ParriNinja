@@ -73,16 +73,16 @@ public class CarneBehaviour : MonoBehaviour
         m_NeedTimer = true;
         if (Random.Range(1, 10) == Random.Range(1, 10))
         {
-            PowerUps.instance.CriticalHit(m_PuntosCarne);
-            VFX_Particles.instance.Particles(particles[1], carneEntera);
+            //PowerUps.instance.CriticalHit(m_PuntosCarne);
+            //VFX_Particles.instance.Particles(particles[1], carneEntera);
         }
         else 
         {
             Score_Manager.instance.SumaPuntos(m_PuntosCarne);
-            VFX_Particles.instance.Particles(particles[0], carneEntera);
+            //VFX_Particles.instance.Particles(particles[0], carneEntera);
         }      
         Piezas();
-        Fade_Manchas.instance.Mancha(manchas[Random.Range(0, manchas.Length)], carneEntera);
+        //Fade_Manchas.instance.Mancha(manchas[Random.Range(0, manchas.Length)], carneEntera);
     }
 
    

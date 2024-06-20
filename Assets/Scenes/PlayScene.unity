@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2508,7 +2508,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 833fa5650917b68439590b0d43ca64f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Chicken: {fileID: 3445572374794181677, guid: 7eb5e21a5b8be874480babde987203e6, type: 3}
+  m_Chicken: {fileID: 4333372726155644313, guid: 7eb5e21a5b8be874480babde987203e6, type: 3}
   m_Lamb: {fileID: 6150955258992551302, guid: a9e780d3c7baf574e8857a9de7b804a7, type: 3}
   m_Ribs: {fileID: 7433338972482590277, guid: b9d10f7265d647a4880710b130041383, type: 3}
   m_Sausage: {fileID: 8245776200476150619, guid: 4d5e8c45fc2110c408a8d0ba9c2b800e, type: 3}
@@ -4059,10 +4059,9 @@ MonoBehaviour:
   vida1: {fileID: 1812897429}
   vida2: {fileID: 133497484}
   vida3: {fileID: 723514802}
-  derrotaSound: {fileID: 1606417791}
-  backgroundMusic: {fileID: 1406326883}
   lanzadores: {fileID: 934952116}
   derrotaScreen: {fileID: 693651737}
+  m_DefeatSound: {fileID: 1606417793}
   derrotaCanvasGroup: {fileID: 693651738}
 --- !u!114 &1997197232
 MonoBehaviour:

@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Score_Manager : MonoBehaviour
 {
+    AudioSource m_VictorySound;
     public int m_NCarnes = 0;
     public int m_Score = 0;
     [SerializeField]
@@ -46,7 +47,9 @@ public class Score_Manager : MonoBehaviour
             {
                 if (RythmManager.instance.gameLoop[i].m_objectTypes[j] == ObjectTypes.Chicken ||
                     RythmManager.instance.gameLoop[i].m_objectTypes[j] == ObjectTypes.Lamb ||
-                    RythmManager.instance.gameLoop[i].m_objectTypes[j] == ObjectTypes.Ribs)
+                    RythmManager.instance.gameLoop[i].m_objectTypes[j] == ObjectTypes.Ribs||
+                    RythmManager.instance.gameLoop[i].m_objectTypes[j] == ObjectTypes.Sausage ||
+                    RythmManager.instance.gameLoop[i].m_objectTypes[j] == ObjectTypes.Meatball)
                 {
                     m_NCarnes++;
                 }
@@ -62,7 +65,7 @@ public class Score_Manager : MonoBehaviour
 
     public void VictoryScreen()
     {
-        
+        m_VictorySound.Play();
         m_VScoreTxt.text = "Score: " + m_Score;
         m_VictoryCanvas.SetActive(true);
         m_ScoreTxt.gameObject.SetActive(false);

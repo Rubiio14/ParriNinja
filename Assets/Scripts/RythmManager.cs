@@ -80,7 +80,7 @@ public class RythmManager : MonoBehaviour
         }
         else 
         {
-            if (Mathf.Round(m_GameTime) == gameLoop[actualMoment].m_MusicTiming)
+            if (Mathf.Round(m_GameTime) == gameLoop[actualMoment].m_MusicTiming && Lanzadores.instance != null)
             {
                 Debug.Log("LLama a Lanzadores");
                 Lanzadores.instance.Lanzamientos(gameLoop[actualMoment]);
@@ -91,7 +91,7 @@ public class RythmManager : MonoBehaviour
 
     public void StopTime()
     {
-        //para el tiempom de lanzadores
+        //para el tiempo de lanzadores
         m_GameTime = m_LastGameTime;
     }
 }

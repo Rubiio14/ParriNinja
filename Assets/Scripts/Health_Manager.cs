@@ -10,7 +10,9 @@ public class Health_Manager : MonoBehaviour
     GameObject vida1, vida2, vida3;
 
     [SerializeField]
-    GameObject derrotaSound, backgroundMusic, lanzadores, derrotaScreen;
+    GameObject lanzadores, derrotaScreen;
+
+    public AudioSource m_DefeatSound;
 
     [SerializeField]
     CanvasGroup derrotaCanvasGroup;
@@ -36,8 +38,9 @@ public class Health_Manager : MonoBehaviour
         }
     }
 
-    void Update()
+    public void RestaVida()
     {
+        health--;
         if (health == 2)
         {
             vida1.SetActive(true);
@@ -56,27 +59,29 @@ public class Health_Manager : MonoBehaviour
             vida1.SetActive(false);
             vida2.SetActive(false);
             vida3.SetActive(false);
-
             Defeat();
-            RythmManager.instance.StopTime();
-
-
-
-
-        }
+            
+        }  
     }
 
-    public void RestaVida()
-    {
-        health--;
-    }
     public void Defeat()
     {
-        derrotaSound.SetActive(true);
-        backgroundMusic.SetActive(false);
+        m_DefeatSound.Play();
+        Debug.Log("Defeat method called.");
+        if (m_DefeatSound != null)
+        {
+            m_DefeatSound.Play();
+            Debug.Log("Playing defeat sound.");
+        }
+        else
+        {
+            Debug.LogError("AudioSource is not assigned in the inspector.");
+        }
         lanzadores.SetActive(false);
+
         //pantalla Derrota
         derrotaScreen.SetActive(true);
         LeanTween.alphaCanvas(derrotaCanvasGroup, 1, 0.5f);
+        RythmManager.instance.StopTime();
     }
 }

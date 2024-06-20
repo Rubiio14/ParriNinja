@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class Cuchillo : MonoBehaviour
@@ -75,7 +76,8 @@ public class Cuchillo : MonoBehaviour
                     hueso.Hueso();
                     m_CutSound.Play();
                     m_BoneSound.Play();
-                    Health_Manager.instance.RestaVida();
+                    Health_Manager.instance.Defeat();
+
                 }
             }
             else if (hit.collider.CompareTag("Limon"))
@@ -86,7 +88,6 @@ public class Cuchillo : MonoBehaviour
                     limon.Cortado();
                     RythmManager.instance.m_IsLemonActive = true;
                     m_CutSound.Play();
-                    Score_Manager.instance.RestaCarne();
                 }
             }
             else if (hit.collider.CompareTag("Limon_UI"))
@@ -96,5 +97,11 @@ public class Cuchillo : MonoBehaviour
                 print("corto");
             }
         }
+    }
+    IEnumerator DelayDefeat()
+    {
+        yield return new WaitForSeconds(1f);
+        
+        
     }
 }
