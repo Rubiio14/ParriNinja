@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -458,7 +458,7 @@ ConstantForce:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 150777115}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Force: {x: 0, y: 0, z: -50}
   m_RelativeForce: {x: 50, y: 0, z: -50}
   m_Torque: {x: 0, y: 0, z: 0}
@@ -468,6 +468,38 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7150942551377616310, guid: 581b2aff3353d344cb7df2e243e60cb6, type: 3}
   m_PrefabInstance: {fileID: 751112681105674121}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &209460382 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4262204220208137054, guid: cbc4fc4bb059059428e467ac2a0ecfc8, type: 3}
+  m_PrefabInstance: {fileID: 310847195}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &209460386
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 209460382}
+  serializedVersion: 4
+  m_Mass: 1.25
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &241816885 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6706437072892059385, guid: c69737b25f9044d40ae720716efd63f6, type: 3}
@@ -593,6 +625,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4262204220208137054, guid: cbc4fc4bb059059428e467ac2a0ecfc8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 209460386}
     - targetCorrespondingSourceObject: {fileID: 3837587566074148487, guid: cbc4fc4bb059059428e467ac2a0ecfc8, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1177416535}
@@ -982,7 +1017,7 @@ ConstantForce:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1060770959}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Force: {x: 0, y: 0, z: -50}
   m_RelativeForce: {x: 50, y: 0, z: -50}
   m_Torque: {x: 0, y: 0, z: 0}
@@ -1138,7 +1173,7 @@ ConstantForce:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1177416530}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Force: {x: 20, y: 0, z: -50}
   m_RelativeForce: {x: 50, y: 0, z: -50}
   m_Torque: {x: 0, y: 0, z: 0}
@@ -1155,7 +1190,7 @@ ConstantForce:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1295997378}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Force: {x: 20, y: 0, z: -50}
   m_RelativeForce: {x: 50, y: 0, z: -50}
   m_Torque: {x: 0, y: 0, z: 0}

@@ -1,11 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.XR;
 
 public class CarneUIBehaviour : MonoBehaviour
 {
-  
     [SerializeField] MenuLevels menuLevels;
     [SerializeField] SettingsScreen settingsScreen;
 
@@ -20,14 +16,17 @@ public class CarneUIBehaviour : MonoBehaviour
 
     Rigidbody rbLimon;
 
-   
-
     BoxCollider m_LimonCollider;
-    // Start is called before the first frame update
+
+    // Variables para almacenar el estado inicial
+    Vector3 initialPositionLimonEntero, initialPositionParte1, initialPositionParte2, initialPositionParte3, initialPositionParte4;
+    Quaternion initialRotationLimonEntero, initialRotationParte1, initialRotationParte2, initialRotationParte3, initialRotationParte4;
+    bool initialActiveLimonEntero, initialActiveParte1, initialActiveParte2, initialActiveParte3, initialActiveParte4;
+    bool initialKinematicLimonEntero, initialKinematicParte1, initialKinematicParte2, initialKinematicParte3, initialKinematicParte4;
+    bool initialUseGravityLimonEntero, initialUseGravityParte1, initialUseGravityParte2, initialUseGravityParte3, initialUseGravityParte4;
 
     private void Awake()
     {
-
         if (instance == null)
         {
             instance = this;
@@ -37,9 +36,59 @@ public class CarneUIBehaviour : MonoBehaviour
             Destroy(this);
         }
     }
+
     void Start()
     {
-        
+        // Comprobaciones de null
+        if (limonEntero == null || limonParte1 == null || limonParte2 == null || limonParte3 == null || limonParte4 == null)
+        {
+            Debug.LogError("Uno o más GameObjects no están asignados en el Inspector.");
+            return;
+        }
+
+        // Almacenar el estado inicial
+        initialPositionLimonEntero = limonEntero.transform.position;
+        initialPositionParte1 = limonParte1.transform.position;
+        initialPositionParte2 = limonParte2.transform.position;
+        initialPositionParte3 = limonParte3.transform.position;
+        initialPositionParte4 = limonParte4.transform.position;
+
+        initialRotationLimonEntero = limonEntero.transform.rotation;
+        initialRotationParte1 = limonParte1.transform.rotation;
+        initialRotationParte2 = limonParte2.transform.rotation;
+        initialRotationParte3 = limonParte3.transform.rotation;
+        initialRotationParte4 = limonParte4.transform.rotation;
+
+        initialActiveLimonEntero = limonEntero.activeSelf;
+        initialActiveParte1 = limonParte1.activeSelf;
+        initialActiveParte2 = limonParte2.activeSelf;
+        initialActiveParte3 = limonParte3.activeSelf;
+        initialActiveParte4 = limonParte4.activeSelf;
+
+        rb_limonentero = limonEntero.GetComponent<Rigidbody>();
+        rb_parte1 = limonParte1.GetComponent<Rigidbody>();
+        rb_parte2 = limonParte2.GetComponent<Rigidbody>();
+        rb_parte3 = limonParte3.GetComponent<Rigidbody>();
+        rb_parte4 = limonParte4.GetComponent<Rigidbody>();
+
+        if (rb_limonentero == null || rb_parte1 == null || rb_parte2 == null || rb_parte3 == null || rb_parte4 == null)
+        {
+            Debug.LogError("Uno o más Rigidbodies no están asignados correctamente.");
+            return;
+        }
+
+        initialKinematicLimonEntero = rb_limonentero.isKinematic;
+        initialKinematicParte1 = rb_parte1.isKinematic;
+        initialKinematicParte2 = rb_parte2.isKinematic;
+        initialKinematicParte3 = rb_parte3.isKinematic;
+        initialKinematicParte4 = rb_parte4.isKinematic;
+
+        initialUseGravityLimonEntero = rb_limonentero.useGravity;
+        initialUseGravityParte1 = rb_parte1.useGravity;
+        initialUseGravityParte2 = rb_parte2.useGravity;
+        initialUseGravityParte3 = rb_parte3.useGravity;
+        initialUseGravityParte4 = rb_parte4.useGravity;
+
         p_limonEntero = limonEntero.transform;
         print(p_limonEntero.position);
         p_limonParte1 = limonParte1.transform;
@@ -50,36 +99,29 @@ public class CarneUIBehaviour : MonoBehaviour
         m_LimonCollider = GetComponent<BoxCollider>();
         rbLimon = GetComponent<Rigidbody>();
 
-        rb_limonentero = limonEntero.GetComponent<Rigidbody>();
-        rb_parte1 = limonParte1.GetComponent<Rigidbody>();
-        rb_parte2 = limonParte2.GetComponent<Rigidbody>();
-        rb_parte3 = limonParte3.GetComponent<Rigidbody>();
-        rb_parte4 = limonParte4.GetComponent<Rigidbody>();
-
-
+        if (m_LimonCollider == null || rbLimon == null)
+        {
+            Debug.LogError("BoxCollider o Rigidbody en el GameObject actual no están asignados correctamente.");
+            return;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
-        { 
-            ResetLimonUI(); 
+        {
+            ResetToFactorySettings();
         }
     }
     public void Piezas()
     {
         limonEntero.SetActive(false);
+        rbLimon.isKinematic = false;
+        rbLimon.useGravity = true;
         m_LimonCollider.enabled = false;
-        //RythmManager.instance.m_IsLemonActive = false;
-
-      
-        
-        
 
         rbLimon.isKinematic = false;
         rbLimon.useGravity = true;
-      
 
         limonParte1.SetActive(true);
         limonParte2.SetActive(true);
@@ -92,45 +134,52 @@ public class CarneUIBehaviour : MonoBehaviour
         limonParte4.GetComponent<Rigidbody>().AddForce(new Vector3(3, 10, 0), ForceMode.Impulse);
     }
 
-    public void ResetLimonUI()
+    public void ResetToFactorySettings()
     {
-        print("holareset");
-        //Objetos
-        limonEntero.SetActive(true);
-        limonParte1.SetActive(false);
-        limonParte2.SetActive(false);
-        limonParte3.SetActive(false);
-        limonParte4.SetActive(false);
-        //Colliders
-        m_LimonCollider.enabled = true;
-        rbLimon.useGravity = false;
-        //Transformaciones
-        limonEntero.transform.position = p_limonEntero.transform.position;
-        limonParte1.transform.position = p_limonParte1.transform.position;
-        limonParte2.transform.position = p_limonParte2.transform.position;
-        limonParte3.transform.position = p_limonParte3.transform.position;
-        limonParte4.transform.position = p_limonParte4.transform.position;
-
-       /* limonEntero.GetComponent<Rigidbody>() = rb_limonentero;
-        limonParte1.GetComponent<Rigidbody>() = rb_parte1;
-        limonParte2.GetComponent<Rigidbody>() = rb_parte2;
-        limonParte3.GetComponent<Rigidbody>() = rb_parte3;
-        limonParte4.GetComponent<Rigidbody>() = rb_parte4;*/
+        gameObject.transform.position = initialPositionLimonEntero;
+        limonEntero.transform.position = initialPositionLimonEntero;
+        limonEntero.transform.rotation = initialRotationLimonEntero;
+        limonParte1.transform.position = initialPositionParte1;
+        limonParte1.transform.rotation = initialRotationParte1;
+        limonParte2.transform.position = initialPositionParte2;
+        limonParte2.transform.rotation = initialRotationParte2;
+        limonParte3.transform.position = initialPositionParte3;
+        limonParte3.transform.rotation = initialRotationParte3;
+        limonParte4.transform.position = initialPositionParte4;
+        limonParte4.transform.rotation = initialRotationParte4;
         
-        /*limonParte1.GetComponent<Rigidbody>().re
-        ResetRigidbody(this.gameObject.GetComponent<Rigidbody>());
-        ResetRigidbody(limonParte1.GetComponent<Rigidbody>());
-        ResetRigidbody(limonParte2.GetComponent<Rigidbody>());
-        ResetRigidbody(limonParte3.GetComponent<Rigidbody>());
-        ResetRigidbody(limonParte4.GetComponent<Rigidbody>());
-        */
-    }
+        limonEntero.SetActive(initialActiveLimonEntero);
+        limonParte1.SetActive(initialActiveParte1);
+        limonParte2.SetActive(initialActiveParte2);
+        limonParte3.SetActive(initialActiveParte3);
+        limonParte4.SetActive(initialActiveParte4);
 
-    private void ResetRigidbody(Rigidbody rb)
-    {
-        rb.velocity = Vector3.zero;
-        rb.angularVelocity = Vector3.zero;
-        rb.Sleep(); // Opcional: Para asegurarse de que el Rigidbody está completamente en reposo
+        rb_limonentero.isKinematic = initialKinematicLimonEntero;
+        rb_parte1.isKinematic = initialKinematicParte1;
+        rb_parte2.isKinematic = initialKinematicParte2;
+        rb_parte3.isKinematic = initialKinematicParte3;
+        rb_parte4.isKinematic = initialKinematicParte4;
+
+        rb_limonentero.useGravity = initialUseGravityLimonEntero;
+        rb_parte1.useGravity = initialUseGravityParte1;
+        rb_parte2.useGravity = initialUseGravityParte2;
+        rb_parte3.useGravity = initialUseGravityParte3;
+        rb_parte4.useGravity = initialUseGravityParte4;
+
+        rb_limonentero.velocity = Vector3.zero;
+        rb_parte1.velocity = Vector3.zero;
+        rb_parte2.velocity = Vector3.zero;
+        rb_parte3.velocity = Vector3.zero;
+        rb_parte4.velocity = Vector3.zero;
+
+        rb_limonentero.angularVelocity = Vector3.zero;
+        rb_parte1.angularVelocity = Vector3.zero;
+        rb_parte2.angularVelocity = Vector3.zero;
+        rb_parte3.angularVelocity = Vector3.zero;
+        rb_parte4.angularVelocity = Vector3.zero;
+
+        m_LimonCollider.enabled = true;
+        rbLimon.isKinematic = true;
+        rbLimon.useGravity = false;
     }
 }
-
