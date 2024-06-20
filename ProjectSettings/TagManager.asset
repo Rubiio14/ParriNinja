@@ -12,6 +12,7 @@ TagManager:
   - FxTemporaire
   - Limon_UI
   - Pollo_UI
+  - Hueso_UI
   layers:
   - Default
   - TransparentFX
