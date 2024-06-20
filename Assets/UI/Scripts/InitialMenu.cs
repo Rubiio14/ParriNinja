@@ -35,11 +35,6 @@ public class InitialMenu : MonoBehaviour
         this.gameObject.SetActive(true);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-      
-    }
 
     public void MenuInicialCame()
     {

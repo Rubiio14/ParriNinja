@@ -57,7 +57,6 @@ public class CarneBehaviour : MonoBehaviour
         {
             if (m_Smoke == false)
             {
-                print("puta");
                 VFX_Smoke.instance.Smoke(smoke[0], carneParte1);
                 VFX_Smoke.instance.Smoke(smoke[1], carneParte2);
                 m_Smoke = true;
