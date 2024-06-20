@@ -90,18 +90,14 @@ public class Cuchillo : MonoBehaviour
                     m_CutSound.Play();
                 }
             }
+
+            //Menus
             else if (hit.collider.CompareTag("Limon_UI"))
             {
                 InitialMenu.instance.SettingsButton();
-                CarneUIBehaviour.instance.Piezas();
+                LimonUIBehaviour.instance.Piezas();
                 print("corto");
             }
         }
-    }
-    IEnumerator DelayDefeat()
-    {
-        yield return new WaitForSeconds(1f);
-        
-        
     }
 }

@@ -17,18 +17,6 @@ public class SettingsScreen : MonoBehaviour
     [SerializeField] GameObject MenuInicial;
     [SerializeField] InitialMenu initialmenu;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-       
-    }
-
     public void MenuSettingsCame()
     {
         print("hola");
@@ -51,8 +39,5 @@ public class SettingsScreen : MonoBehaviour
         LeanTween.scale(Back, Vector3.zero, 0.5f);
         LeanTween.scale(PrefabBombBack, Vector3.zero, 0.5f);
         LeanTween.moveLocalX(PanelAudio, 2000, 0.5f).setEase(LeanTweenType.linear);
-
-
-
     }
 }

@@ -1,9 +1,8 @@
 using UnityEngine;
 
-public class CarneUIBehaviour : MonoBehaviour
+public class LimonUIBehaviour : MonoBehaviour
 {
-    [SerializeField] MenuLevels menuLevels;
-    [SerializeField] SettingsScreen settingsScreen;
+   
 
     [SerializeField]
     GameObject limonEntero, limonParte1, limonParte2, limonParte3, limonParte4;
@@ -12,7 +11,7 @@ public class CarneUIBehaviour : MonoBehaviour
 
     Rigidbody rb_limonentero, rb_parte1, rb_parte2, rb_parte3, rb_parte4;
 
-    public static CarneUIBehaviour instance;
+    public static LimonUIBehaviour instance;
 
     Rigidbody rbLimon;
 
