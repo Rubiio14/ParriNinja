@@ -98,6 +98,13 @@ public class Cuchillo : MonoBehaviour
                 LimonUIBehaviour.instance.Piezas();
                 print("corto");
             }
+
+            else if (hit.collider.CompareTag("Pollo_UI"))
+            {
+                InitialMenu.instance.SettingsButton();
+                Pollo_UI_Behaviour.instance.Piezas();
+                print("corto");
+            }
         }
     }
 }
