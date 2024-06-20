@@ -96,20 +96,33 @@ public class Cuchillo : MonoBehaviour
             {
                 InitialMenu.instance.SettingsButton();
                 LimonUIBehaviour.instance.Piezas();
-                print("corto");
+                Pollo_UI_Behaviour.instance.gameObject.SetActive(false);
             }
 
             else if (hit.collider.CompareTag("Pollo_UI"))
             {
-                InitialMenu.instance.SettingsButton();
-                //Pollo_UI_Behaviour.instance.Piezas();
-                print("corto");
+                InitialMenu.instance.GoToLevelMenu();
+                Pollo_UI_Behaviour.instance.Piezas();
+                LimonUIBehaviour.instance.gameObject.SetActive(false);
+                Hueso_UI_Levels.instance.HuesoInstanciado();
             }
             else if (hit.collider.CompareTag("Hueso_UI")) 
             {
-                print("cortoHueso");
-                SettingsScreen.instance.BackToInitialMenu(); 
+                SettingsScreen.instance.BackToInitialMenu();
+                LimonUIBehaviour.instance.gameObject.SetActive(true);
+                Pollo_UI_Behaviour.instance.gameObject.SetActive(true);
+                LimonUIBehaviour.instance.ResetToFactorySettings();
+                Pollo_UI_Behaviour.instance.ResetToFactorySettings();
                 Hueso_UI.instance.HuesoCortado();
+            }
+            else if (hit.collider.CompareTag("Hueso_UI_Levels"))
+            {
+                MenuLevels.instance.MenuLevelToInitial();
+                LimonUIBehaviour.instance.gameObject.SetActive(true);
+                Pollo_UI_Behaviour.instance.gameObject.SetActive(true);
+                LimonUIBehaviour.instance.ResetToFactorySettings();
+                Pollo_UI_Behaviour.instance.ResetToFactorySettings();
+                Hueso_UI_Levels.instance.HuesoCortado();
             }
         }
     }

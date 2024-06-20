@@ -13,6 +13,7 @@ TagManager:
   - Limon_UI
   - Pollo_UI
   - Hueso_UI
+  - Hueso_UI_Levels
   layers:
   - Default
   - TransparentFX

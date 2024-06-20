@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Hueso_UI : MonoBehaviour
+public class Hueso_UI_Levels : MonoBehaviour
 {
-    public static Hueso_UI instance;
+    public static Hueso_UI_Levels instance;
 
     [SerializeField]
     GameObject HuesoUI; 
@@ -46,17 +46,6 @@ public class Hueso_UI : MonoBehaviour
 
     }
 
-    public void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.H))
-        {
-            HuesoCortado();
-        }
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            HuesoInstanciado();
-        }
-    }
 
     public void HuesoInstanciado()
     {
@@ -66,6 +55,7 @@ public class Hueso_UI : MonoBehaviour
         //HuesoRb.useGravity = false;
         HuesoCollider.enabled = true;
         HuesoRotoVFX.SetActive(false);
+
 
     }
 
