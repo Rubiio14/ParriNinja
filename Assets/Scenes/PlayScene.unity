@@ -1014,7 +1014,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2331621086117808526, guid: 9f43d47ec5ca3c64cb568bf378a0cf3f, type: 3}
       propertyPath: gameLoop.Array.data[0].m_objectTypes.Array.data[0]
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2331621086117808526, guid: 9f43d47ec5ca3c64cb568bf378a0cf3f, type: 3}
       propertyPath: gameLoop.Array.data[0].m_objectTypes.Array.data[1]
