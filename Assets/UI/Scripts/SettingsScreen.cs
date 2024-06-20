@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SettingsScreen : MonoBehaviour
 {
+    public static SettingsScreen instance;
+
     [SerializeField] GameObject PanelCredits;
     [SerializeField] GameObject PanelAudio;
     [SerializeField] GameObject Back;
@@ -17,6 +19,17 @@ public class SettingsScreen : MonoBehaviour
     [SerializeField] GameObject MenuInicial;
     [SerializeField] InitialMenu initialmenu;
 
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(this);
+        }
+    }
     public void MenuSettingsCame()
     {
         print("hola");

@@ -69,6 +69,7 @@ public class InitialMenu : MonoBehaviour
             Opciones.gameObject.SetActive(true);
             settingsScreen.MenuSettingsCame();
             this.gameObject.SetActive(false);
+            Hueso_UI.instance.HuesoInstanciado();
 
         }); ;
        

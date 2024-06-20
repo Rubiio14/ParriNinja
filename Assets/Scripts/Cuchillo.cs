@@ -102,8 +102,14 @@ public class Cuchillo : MonoBehaviour
             else if (hit.collider.CompareTag("Pollo_UI"))
             {
                 InitialMenu.instance.SettingsButton();
-                Pollo_UI_Behaviour.instance.Piezas();
+                //Pollo_UI_Behaviour.instance.Piezas();
                 print("corto");
+            }
+            else if (hit.collider.CompareTag("Hueso_UI")) 
+            {
+                print("cortoHueso");
+                SettingsScreen.instance.BackToInitialMenu(); 
+                Hueso_UI.instance.HuesoCortado();
             }
         }
     }
