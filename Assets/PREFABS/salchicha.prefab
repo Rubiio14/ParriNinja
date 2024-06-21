@@ -114,11 +114,12 @@ MonoBehaviour:
   smoke:
   - {fileID: 815320676689433789}
   - {fileID: 1963915252972334312}
-  m_PuntosCarne: 0
+  m_PuntosCarne: 4
   carneEntera: {fileID: 5072262702507870404}
   carneParte1: {fileID: 6770288592011988432}
   carneParte2: {fileID: 1325493087483777644}
   m_DespawnTimer: 0
+  m_HPTimer: 0
 --- !u!1001 &218157918579000689
 PrefabInstance:
   m_ObjectHideFlags: 0

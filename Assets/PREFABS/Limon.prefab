@@ -105,7 +105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad110d284892004469b516fc76d18156, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_PuntosLimon: 2
+  m_PuntosLimon: 4
   manchas: {fileID: 3879008601602286908}
   particles: {fileID: 7365093834524297154}
   smoke:

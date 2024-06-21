@@ -484,7 +484,7 @@ MonoBehaviour:
   - {fileID: 5736227436780920292}
   - {fileID: 324539967085761625}
   - {fileID: 4887566504422317550}
-  m_PuntosCarne: 0
+  m_PuntosCarne: 7
   carneEntera: {fileID: 2588891672060924192}
   carneParte1: {fileID: 4437942116277334822}
   carneParte2: {fileID: 5901606102545858592}

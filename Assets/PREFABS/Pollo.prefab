@@ -93,11 +93,12 @@ MonoBehaviour:
   smoke:
   - {fileID: 2311787973740756392}
   - {fileID: 1602062173472730063}
-  m_PuntosCarne: 0
+  m_PuntosCarne: 15
   carneEntera: {fileID: 6348104522508400444}
   carneParte1: {fileID: 6177153613774864896}
   carneParte2: {fileID: 2930167469620760075}
   m_DespawnTimer: 0
+  m_HPTimer: 0
 --- !u!65 &5764641765216814446
 BoxCollider:
   m_ObjectHideFlags: 0

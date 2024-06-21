@@ -775,11 +775,12 @@ MonoBehaviour:
   smoke:
   - {fileID: 7313906853432298559}
   - {fileID: 7037469917777035362}
-  m_PuntosCarne: 10
+  m_PuntosCarne: 2
   carneEntera: {fileID: 1783888885274585580}
   carneParte1: {fileID: 4144904568017400402}
   carneParte2: {fileID: 7196348549757382054}
   m_DespawnTimer: 0
+  m_HPTimer: 0
 --- !u!4 &7927084776674295971 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b16ca9ef4d4e9e241bfe2be3daf87ee1, type: 3}
