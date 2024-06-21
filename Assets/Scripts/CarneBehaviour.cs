@@ -84,8 +84,6 @@ public class CarneBehaviour : MonoBehaviour
 
     public void Cortado()
     {
-        
-
         m_CarneCollider.enabled = false;
         rb.isKinematic = true;
         carneEntera.SetActive(false);
@@ -102,17 +100,6 @@ public class CarneBehaviour : MonoBehaviour
         }      
         Piezas();
         Fade_Manchas.instance.Mancha(manchas[Random.Range(0, manchas.Length)], carneEntera);
-    }
-
-   
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == "Despawner")
-        {
-            gameObject.SetActive(false);
-            Health_Manager.instance.RestaVida();
-        }
     }
 
     public void Piezas()
