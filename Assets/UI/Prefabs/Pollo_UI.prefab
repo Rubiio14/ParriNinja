@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 8865108472080294132}
   - component: {fileID: 8887085264195111385}
   - component: {fileID: 5764641765216814446}
+  - component: {fileID: 8890732177392830763}
+  - component: {fileID: 8049043668442709865}
   m_Layer: 0
   m_Name: Pollo_UI
   m_TagString: Carne
@@ -90,6 +92,35 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 0.8133198, z: 1.8129517}
   m_Center: {x: 0, y: 0.023021415, z: -0.25469214}
+--- !u!114 &8890732177392830763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4333372726155644313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42f731ae7d628c340bc6cdd0bb782476, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  polloEntero: {fileID: 6348104522508400444}
+  polloParte1: {fileID: 6177153613774864896}
+  polloParte2: {fileID: 2930167469620760075}
+--- !u!114 &8049043668442709865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4333372726155644313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2703cc10da547742bfddb3ede56c2a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 100
+  rotationAxis: {x: 0, y: 0, z: 1}
 --- !u!1001 &938324792289733758
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -206,7 +237,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4584936124286561185, guid: b374b771b7873e34aa34e83547f9d1da, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6447326231030251196, guid: b374b771b7873e34aa34e83547f9d1da, type: 3}
       propertyPath: m_LocalScale.x
@@ -747,6 +778,11 @@ PrefabInstance:
 --- !u!4 &6004195236062539142 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8b4a73438a72d1a4089bfb506ac6f2c4, type: 3}
+  m_PrefabInstance: {fileID: 6114083703617800813}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6348104522508400444 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 8b4a73438a72d1a4089bfb506ac6f2c4, type: 3}
   m_PrefabInstance: {fileID: 6114083703617800813}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6447115803478163281

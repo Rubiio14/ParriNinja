@@ -5,6 +5,12 @@ using UnityEngine;
 public class Pollo_UI_Behaviour : MonoBehaviour
 {
     [SerializeField]
+    GameObject[] manchas;
+    [SerializeField]
+    GameObject[] particles;
+    [SerializeField]
+    GameObject[] smoke;
+    [SerializeField]
     GameObject polloEntero, polloParte1, polloParte2;
 
     Transform p_polloEntero, p_polloParte1, p_polloParte2;
@@ -96,6 +102,7 @@ public class Pollo_UI_Behaviour : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.A))
         {
             Piezas();
+            Fade_Manchas.instance.Mancha(manchas[Random.Range(0, manchas.Length)], this.gameObject);
         }
         if (Input.GetKeyDown(KeyCode.Space))
         {
