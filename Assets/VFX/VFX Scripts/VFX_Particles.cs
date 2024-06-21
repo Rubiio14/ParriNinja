@@ -26,6 +26,10 @@ public class VFX_Particles : MonoBehaviour
 
         ParticleSystem newparticles = particle.GetComponent<ParticleSystem>();
 
+        float yRotation = particle.transform.rotation.y;
+
+        yRotation = Random.value;
+
         newparticles.Play();
     }
 }
