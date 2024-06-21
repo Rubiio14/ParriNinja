@@ -104,15 +104,6 @@ public class CostillarBehaviour : MonoBehaviour
         Fade_Manchas.instance.Mancha(manchas[Random.Range(0, manchas.Length)], carneEntera);
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == "Despawner")
-        {
-            gameObject.SetActive(false);
-            Health_Manager.instance.RestaVida();
-        }
-    }
-
     public void Piezas()
     {
         carneParte1.SetActive(true);

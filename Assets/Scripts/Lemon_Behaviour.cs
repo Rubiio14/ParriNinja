@@ -122,17 +122,6 @@ public class Lemon_Behaviour : MonoBehaviour
         }
     }
 
-
-    private void OnTriggerEnter(Collider other)
-    {
-
-        if (other.gameObject.tag == "Despawner")
-        {
-            gameObject.SetActive(false);
-            Health_Manager.instance.RestaVida();
-        }
-    }
-
     public void Piezas()
     {
         limonEntero.SetActive(false);

@@ -11,22 +11,21 @@ public class VFX_HP : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Carne") && hp[0]==true)
+        if (other.gameObject.CompareTag("Carne") && hp[0] == true || other.gameObject.CompareTag("Limon") && hp[0] == true || other.gameObject.CompareTag("Costillar") && hp[0]==true)
         {
             hp[0].transform.position = other.transform.position;
             BrokenHeart();
-            print("cae");
             other.gameObject.SetActive(false);
             Health_Manager.instance.RestaVida();
         }
-        else if (other.gameObject.CompareTag("Carne") && hp[1] == true)
+        else if (other.gameObject.CompareTag("Carne") && hp[1] == true || other.gameObject.CompareTag("Limon") && hp[1] == true || other.gameObject.CompareTag("Costillar") && hp[1] == true)
         {
             hp[1].transform.position = other.transform.position;
             BrokenHeart1();
             other.gameObject.SetActive(false);
             Health_Manager.instance.RestaVida();
         }
-        else if (other.gameObject.CompareTag("Carne") && hp[2] == true)
+        else if (other.gameObject.CompareTag("Carne") && hp[2] == true || other.gameObject.CompareTag("Limon") && hp[2] == true || other.gameObject.CompareTag("Costillar") && hp[2] == true)
         {
             hp[2].transform.position = other.transform.position;
             BrokenHeart2();
@@ -37,6 +36,8 @@ public class VFX_HP : MonoBehaviour
 
     public void BrokenHeart()
     {
+        hp[0].SetActive(true);
+
         ParticleSystem heart = hp[0].GetComponent<ParticleSystem>();
 
         heart.Play();
@@ -51,6 +52,8 @@ public class VFX_HP : MonoBehaviour
 
     public void BrokenHeart1()
     {
+        hp[1].SetActive(true);
+
         ParticleSystem heart1 = hp[1].GetComponent<ParticleSystem>();
 
         heart1.Play();
@@ -65,6 +68,8 @@ public class VFX_HP : MonoBehaviour
 
     public void BrokenHeart2()
     {
+        hp[2].SetActive(true);
+
         ParticleSystem heart2 = hp[2].GetComponent<ParticleSystem>();
 
         heart2.Play();
