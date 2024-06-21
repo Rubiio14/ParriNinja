@@ -10,6 +10,11 @@ public class Cuchillo : MonoBehaviour
     public AudioSource m_BoneSound;
     public AudioSource m_MeatCutSound;
     public static Cuchillo instance;
+
+    public bool initialMenuActive;
+    public bool settingsActive;
+    public bool menuLevelActive;
+
     private void Awake()
     {
         if (instance == null)
@@ -118,6 +123,9 @@ public class Cuchillo : MonoBehaviour
                 InitialMenu.instance.SettingsButton();
                 LimonUIBehaviour.instance.Piezas();
                 Pollo_UI_Behaviour.instance.gameObject.SetActive(false);
+                initialMenuActive = false;
+                settingsActive = true;
+                menuLevelActive = false;
             }
 
             else if (hit.collider.CompareTag("Pollo_UI"))
@@ -127,6 +135,10 @@ public class Cuchillo : MonoBehaviour
                 Pollo_UI_Behaviour.instance.Piezas();
                 LimonUIBehaviour.instance.gameObject.SetActive(false);
                 Hueso_UI_Levels.instance.HuesoInstanciado();
+                initialMenuActive = false;
+                settingsActive = false;
+                menuLevelActive = true;
+
             }
             else if (hit.collider.CompareTag("Hueso_UI")) 
             {
@@ -136,6 +148,9 @@ public class Cuchillo : MonoBehaviour
                 LimonUIBehaviour.instance.ResetToFactorySettings();
                 Pollo_UI_Behaviour.instance.ResetToFactorySettings();
                 Hueso_UI.instance.HuesoCortado();
+                initialMenuActive = true;
+                settingsActive = false;
+                menuLevelActive = false;
             }
             else if (hit.collider.CompareTag("Hueso_UI_Levels"))
             {
@@ -145,6 +160,9 @@ public class Cuchillo : MonoBehaviour
                 LimonUIBehaviour.instance.ResetToFactorySettings();
                 Pollo_UI_Behaviour.instance.ResetToFactorySettings();
                 Hueso_UI_Levels.instance.HuesoCortado();
+                initialMenuActive = true;
+                settingsActive = false;
+                menuLevelActive = false;
             }
         }
     }

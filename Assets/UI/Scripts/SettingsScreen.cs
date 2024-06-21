@@ -37,6 +37,7 @@ public class SettingsScreen : MonoBehaviour
         LeanTween.moveLocalX(PanelAudio, 800, 0.5f);
         LeanTween.scale(Back, Vector3.one, 0.5f);
         LeanTween.scale(PrefabBombBack, Vector3.one, 0.5f);
+
     }
 
     public void BackToInitialMenu()

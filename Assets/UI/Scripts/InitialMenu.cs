@@ -16,6 +16,7 @@ public class InitialMenu : MonoBehaviour
 
     public static InitialMenu instance;
 
+
     public void Awake()
     {
         if (instance == null)
@@ -50,7 +51,7 @@ public class InitialMenu : MonoBehaviour
         LeanTween.scale(ButtonSettings, Vector3.zero, m_TimeOfTransition);
         LeanTween.scale(MeetToStart, Vector3.zero, m_TimeOfTransition);
         LeanTween.scale(MeetToSettings, Vector3.zero, m_TimeOfTransition);
-        
+
     }
 
     //funciones para los botones
@@ -83,7 +84,7 @@ public class InitialMenu : MonoBehaviour
     public void GoToLevelMenu()
     {
         MenuInicialIsGone();
-        // MenuLevels.gameObject.SetActive(true);
+        MenuLevels.gameObject.SetActive(true);
         LeanTween.moveLocal(Logo, new Vector2(0, 1300), m_TimeOfTransition).setEase(LeanTweenType.linear).setOnComplete(() =>
         {
            MenuLevels.gameObject.SetActive(true);
