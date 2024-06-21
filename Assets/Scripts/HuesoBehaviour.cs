@@ -35,7 +35,10 @@ public class HuesoBehaviour : MonoBehaviour
     {
         Health_Manager.instance.RestaVida();
         VFX_Particles.instance.Particles(particles, this.gameObject);
-        Health_Manager.instance.Defeat();
+        if (Health_Manager.instance.IsDefeat == false)
+        {
+            Health_Manager.instance.Defeat();
+        }
     }
     private void OnTriggerEnter(Collider other)
     {

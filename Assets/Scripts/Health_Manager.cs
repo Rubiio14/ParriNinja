@@ -16,7 +16,7 @@ public class Health_Manager : MonoBehaviour
 
     [SerializeField]
     CanvasGroup derrotaCanvasGroup;
-
+    public bool IsDefeat = false;
     public void Awake()
     {
         if (instance == null)
@@ -59,13 +59,16 @@ public class Health_Manager : MonoBehaviour
             vida1.SetActive(false);
             vida2.SetActive(false);
             vida3.SetActive(false);
-            Defeat();
-            
+            if (IsDefeat == false)
+            {
+                Defeat();
+            }  
         }  
     }
 
     public void Defeat()
     {
+        IsDefeat = true;
         m_DefeatSound.Play();
         Debug.Log("Defeat method called.");
         if (m_DefeatSound != null)

@@ -93,8 +93,6 @@ public class Cuchillo : MonoBehaviour
                     hueso.Hueso();
                     m_CutSound.Play();
                     m_BoneSound.Play();
-                    Health_Manager.instance.Defeat();
-
                 }
             }
             else if (hit.collider.CompareTag("Limon"))
