@@ -93,6 +93,7 @@ public class Cuchillo : MonoBehaviour
             //Menus
             else if (hit.collider.CompareTag("Limon_UI"))
             {
+                m_CutSound.Play();
                 InitialMenu.instance.SettingsButton();
                 LimonUIBehaviour.instance.Piezas();
                 Pollo_UI_Behaviour.instance.gameObject.SetActive(false);
@@ -100,6 +101,7 @@ public class Cuchillo : MonoBehaviour
 
             else if (hit.collider.CompareTag("Pollo_UI"))
             {
+                m_CutSound.Play();
                 InitialMenu.instance.GoToLevelMenu();
                 Pollo_UI_Behaviour.instance.Piezas();
                 LimonUIBehaviour.instance.gameObject.SetActive(false);
