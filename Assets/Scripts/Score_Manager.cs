@@ -15,7 +15,7 @@ public class Score_Manager : MonoBehaviour
     public TextMeshProUGUI m_MaxCarneTxt;
 
     public static Score_Manager instance;
-    // Start is called before the first frame update
+
     [SerializeField]
     public TextMeshProUGUI m_CarnesTxt;
     [SerializeField]
@@ -25,8 +25,12 @@ public class Score_Manager : MonoBehaviour
     [SerializeField]
     public TextMeshProUGUI m_VScoreTxt;
 
-    //Referencia del script de la UI 
-    [SerializeField] UI_GamePlay ui_GamePlay;
+    [SerializeField]
+    UI_GamePlay ui_GamePlay;
+
+    // Add a reference to the Bloqueos_Nivel script
+    [SerializeField]
+    Bloqueos_Nivel bloqueos_Nivel;
 
     public void Awake()
     {
@@ -39,6 +43,7 @@ public class Score_Manager : MonoBehaviour
             Destroy(this);
         }
     }
+
     void Start()
     {
         for (int i = 0; i < RythmManager.instance.gameLoop.Length; i++)
@@ -47,16 +52,13 @@ public class Score_Manager : MonoBehaviour
             {
                 if (RythmManager.instance.gameLoop[i].m_objectTypes[j] == ObjectTypes.Chicken ||
                     RythmManager.instance.gameLoop[i].m_objectTypes[j] == ObjectTypes.Lamb ||
-                    RythmManager.instance.gameLoop[i].m_objectTypes[j] == ObjectTypes.Ribs||
+                    RythmManager.instance.gameLoop[i].m_objectTypes[j] == ObjectTypes.Ribs ||
                     RythmManager.instance.gameLoop[i].m_objectTypes[j] == ObjectTypes.Sausage ||
                     RythmManager.instance.gameLoop[i].m_objectTypes[j] == ObjectTypes.Meatball)
                 {
                     m_NCarnes++;
                 }
-                
-                
             }
-            
         }
         m_CarnesTxt.text = m_NCarnes.ToString("00");
         m_MaxCarneTxt.text = m_NCarnes.ToString("00");
@@ -71,10 +73,11 @@ public class Score_Manager : MonoBehaviour
         m_ScoreTxt.gameObject.SetActive(false);
         m_CarnesTxt.gameObject.SetActive(false);
     }
+
     public void RestaCarne()
     {
         m_NCarnes--;
-        m_CarnesTxt.text =  m_NCarnes.ToString("00");
+        m_CarnesTxt.text = m_NCarnes.ToString("00");
         if (m_NCarnes == 0)
         {
             m_VCarnesTxt.text = "Has cortado todas las carnes";
@@ -84,11 +87,11 @@ public class Score_Manager : MonoBehaviour
             m_VCarnesTxt.text = "Te quedaron " + m_NCarnes + " por cortar";
         }
     }
+
     public void SumaPuntos(int puntos)
     {
         m_Score += puntos;
         m_ScoreTxt.text = m_Score.ToString("00");
         ui_GamePlay.AnimationPoints();
-
     }
 }

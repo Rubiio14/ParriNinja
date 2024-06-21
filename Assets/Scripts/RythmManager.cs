@@ -72,7 +72,7 @@ public class RythmManager : MonoBehaviour
         
         if (actualMoment == gameLoop.Length)
         {
-            if (FindObjectOfType<CarneBehaviour>() == null && Health_Manager.instance.health > 0 && m_IsWin == false)
+            if (FindObjectOfType<CarneBehaviour>() == null && FindObjectOfType<CostillarBehaviour>() == null && FindObjectOfType<Lemon_Behaviour>() == null && Health_Manager.instance.health > 0 && m_IsWin == false && Score_Manager.instance.m_Score >= Bloqueos_Nivel.instance.SelectorBloqueo())
             {
                 Score_Manager.instance.VictoryScreen();
                 StopTime();
