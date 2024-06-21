@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.ParticleSystem;
 
 public class Hueso_UI_Levels : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class Hueso_UI_Levels : MonoBehaviour
     GameObject HuesoUI; 
         
     [SerializeField]
-    GameObject HuesoRotoVFX;
+    GameObject particles;
 
     //Rigidbody HuesoRb;
     CapsuleCollider HuesoCollider;
@@ -42,7 +43,6 @@ public class Hueso_UI_Levels : MonoBehaviour
         //HuesoRb.isKinematic = true;
         //HuesoRb.useGravity = false;
         HuesoCollider.enabled = false;
-        HuesoRotoVFX.SetActive(false);
 
     }
 
@@ -54,7 +54,6 @@ public class Hueso_UI_Levels : MonoBehaviour
         //HuesoRb.isKinematic = true;
         //HuesoRb.useGravity = false;
         HuesoCollider.enabled = true;
-        HuesoRotoVFX.SetActive(false);
 
 
     }
@@ -67,7 +66,7 @@ public class Hueso_UI_Levels : MonoBehaviour
         HuesoCollider.enabled = false;
 
         HuesoUIAudio.Play();
-        HuesoRotoVFX.SetActive(true);
+        VFX_Particles.instance.Particles(particles, this.gameObject);
 
     }
 
