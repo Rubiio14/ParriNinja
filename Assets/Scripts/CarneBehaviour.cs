@@ -21,6 +21,7 @@ public class CarneBehaviour : MonoBehaviour
 
     //Despawn
     public float m_DespawnTimer = 0f;
+    public float m_HPTimer = 0f;
     bool m_NeedTimer = false;
     bool m_Smoke = false;
 
@@ -104,7 +105,6 @@ public class CarneBehaviour : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-       
         if (other.gameObject.tag == "Despawner")
         {
             gameObject.SetActive(false);

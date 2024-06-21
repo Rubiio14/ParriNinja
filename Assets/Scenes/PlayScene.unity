@@ -1014,7 +1014,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2331621086117808526, guid: 9f43d47ec5ca3c64cb568bf378a0cf3f, type: 3}
       propertyPath: gameLoop.Array.data[0].m_objectTypes.Array.data[0]
-      value: 7
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2331621086117808526, guid: 9f43d47ec5ca3c64cb568bf378a0cf3f, type: 3}
       propertyPath: gameLoop.Array.data[0].m_objectTypes.Array.data[1]
@@ -4538,6 +4538,7 @@ MonoBehaviour:
   vida3: {fileID: 723514802}
   lanzadores: {fileID: 934952116}
   derrotaScreen: {fileID: 693651737}
+  particles: {fileID: 0}
   m_DefeatSound: {fileID: 1606417793}
   derrotaCanvasGroup: {fileID: 693651738}
 --- !u!114 &1997197232

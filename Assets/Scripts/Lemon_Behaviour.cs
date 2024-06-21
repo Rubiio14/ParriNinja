@@ -108,7 +108,9 @@ public class Lemon_Behaviour : MonoBehaviour
         m_NeedHoldTimer = true;
         rbLimon.isKinematic = true;
         rbLimon.useGravity = false;
+        RythmManager.instance.m_IsLemonActive = true;
         VFX_Particles.instance.Particles(particles, limonEntero);
+        Score_Manager.instance.SumaPuntos(m_PuntosLimon);
 
         if (m_holdTimer >= 3f)
         {
@@ -133,18 +135,8 @@ public class Lemon_Behaviour : MonoBehaviour
         m_LimonCollider.enabled = false;
         RythmManager.instance.m_IsLemonActive = false;
 
-        if (Random.Range(1, 10) == Random.Range(1, 10))
-        {
-            PowerUps.instance.CriticalHit(m_PuntosLimon);
-        }
-        else
-        {
-            Score_Manager.instance.SumaPuntos(m_PuntosLimon);
-        }
         m_NeedTimerLimon = true;
 
-        rbLimon.isKinematic = false;
-        rbLimon.useGravity = true;
         m_NeedHoldTimer = false;
         m_holdTimer = 0f;
 
@@ -158,6 +150,6 @@ public class Lemon_Behaviour : MonoBehaviour
         limonParte3.GetComponent<Rigidbody>().AddForce(new Vector3(-3, 10, 0), ForceMode.Impulse);
         limonParte4.GetComponent<Rigidbody>().AddForce(new Vector3(3, 10, 0), ForceMode.Impulse);
 
-        Fade_Manchas.instance.Mancha(manchas, limonEntero);
+        Fade_Manchas.instance.Mancha(manchas, this.gameObject);
     }
 }

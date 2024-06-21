@@ -6,6 +6,9 @@ public class HuesoBehaviour : MonoBehaviour
 {
     Vector3 m_RotacionHueso;
 
+    [SerializeField]
+    GameObject particles;
+
     //Despawn
     public float m_DespawnTimer = 0f;
     bool m_NeedTimer = false;
@@ -31,6 +34,7 @@ public class HuesoBehaviour : MonoBehaviour
     public void Hueso()
     {
         Health_Manager.instance.RestaVida();
+        VFX_Particles.instance.Particles(particles, this.gameObject);
         Health_Manager.instance.Defeat();
     }
     private void OnTriggerEnter(Collider other)
@@ -39,7 +43,6 @@ public class HuesoBehaviour : MonoBehaviour
         if (other.gameObject.tag == "Despawner")
         {
             m_NeedTimer = true;
-          
         }
     }
 }

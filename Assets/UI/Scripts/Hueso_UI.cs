@@ -7,10 +7,10 @@ public class Hueso_UI : MonoBehaviour
     public static Hueso_UI instance;
 
     [SerializeField]
-    GameObject HuesoUI; 
-        
+    GameObject HuesoUI;
+
     [SerializeField]
-    GameObject HuesoRotoVFX;
+    GameObject particles;
 
     //Rigidbody HuesoRb;
     CapsuleCollider HuesoCollider;
@@ -42,8 +42,6 @@ public class Hueso_UI : MonoBehaviour
         //HuesoRb.isKinematic = true;
         //HuesoRb.useGravity = false;
         HuesoCollider.enabled = false;
-        HuesoRotoVFX.SetActive(false);
-
     }
 
     public void Update()
@@ -65,8 +63,6 @@ public class Hueso_UI : MonoBehaviour
         //HuesoRb.isKinematic = true;
         //HuesoRb.useGravity = false;
         HuesoCollider.enabled = true;
-        HuesoRotoVFX.SetActive(false);
-
     }
 
     public void HuesoCortado()
@@ -77,8 +73,7 @@ public class Hueso_UI : MonoBehaviour
         HuesoCollider.enabled = false;
 
         HuesoUIAudio.Play();
-        HuesoRotoVFX.SetActive(true);
-
+        VFX_Particles.instance.Particles(particles, this.gameObject);
     }
 
 }
