@@ -101,6 +101,15 @@ public class Cuchillo : MonoBehaviour
                     m_CutSound.Play();
                 }
             }
+            else if (hit.collider.CompareTag("Costillar"))
+            {
+                CostillarBehaviour costillar = hit.collider.GetComponent<CostillarBehaviour>();
+                if (costillar != null)
+                {
+                    costillar.Cortado();
+                    m_CutSound.Play();
+                }
+            }
 
             //Menus
             else if (hit.collider.CompareTag("Limon_UI"))
