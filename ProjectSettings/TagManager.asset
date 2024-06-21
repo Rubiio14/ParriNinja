@@ -14,6 +14,7 @@ TagManager:
   - Pollo_UI
   - Hueso_UI
   - Hueso_UI_Levels
+  - Costillar
   layers:
   - Default
   - TransparentFX
