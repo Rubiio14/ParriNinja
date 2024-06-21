@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class LimonUIBehaviour : MonoBehaviour
 {
-   
 
     [SerializeField]
     GameObject limonEntero, limonParte1, limonParte2, limonParte3, limonParte4;
@@ -103,6 +102,9 @@ public class LimonUIBehaviour : MonoBehaviour
             Debug.LogError("BoxCollider o Rigidbody en el GameObject actual no están asignados correctamente.");
             return;
         }
+
+        // Asegúrate de que la simulación no esté en cámara lenta
+        Time.timeScale = 1f;
     }
 
     public void Update()
@@ -112,15 +114,11 @@ public class LimonUIBehaviour : MonoBehaviour
             ResetToFactorySettings();
         }
     }
+
     public void Piezas()
     {
         limonEntero.SetActive(false);
-        rbLimon.isKinematic = false;
-        rbLimon.useGravity = true;
         m_LimonCollider.enabled = false;
-
-        rbLimon.isKinematic = false;
-        rbLimon.useGravity = true;
 
         limonParte1.SetActive(true);
         limonParte2.SetActive(true);
@@ -131,6 +129,26 @@ public class LimonUIBehaviour : MonoBehaviour
         limonParte2.GetComponent<Rigidbody>().AddForce(new Vector3(3, 6, 0), ForceMode.Impulse);
         limonParte3.GetComponent<Rigidbody>().AddForce(new Vector3(-3, 10, 0), ForceMode.Impulse);
         limonParte4.GetComponent<Rigidbody>().AddForce(new Vector3(3, 10, 0), ForceMode.Impulse);
+
+        // Asegúrate de que la gravedad esté habilitada y que las masas sean apropiadas
+        rb_parte1.useGravity = true;
+        rb_parte2.useGravity = true;
+        rb_parte3.useGravity = true;
+        rb_parte4.useGravity = true;
+
+        rb_parte1.mass = 1f;
+        rb_parte2.mass = 1f;
+        rb_parte3.mass = 1f;
+        rb_parte4.mass = 1f;
+
+        rb_parte1.drag = 0f;
+        rb_parte1.angularDrag = 0.05f;
+        rb_parte2.drag = 0f;
+        rb_parte2.angularDrag = 0.05f;
+        rb_parte3.drag = 0f;
+        rb_parte3.angularDrag = 0.05f;
+        rb_parte4.drag = 0f;
+        rb_parte4.angularDrag = 0.05f;
     }
 
     public void ResetToFactorySettings()
@@ -146,18 +164,12 @@ public class LimonUIBehaviour : MonoBehaviour
         limonParte3.transform.rotation = initialRotationParte3;
         limonParte4.transform.position = initialPositionParte4;
         limonParte4.transform.rotation = initialRotationParte4;
-        
+
         limonEntero.SetActive(initialActiveLimonEntero);
         limonParte1.SetActive(initialActiveParte1);
         limonParte2.SetActive(initialActiveParte2);
         limonParte3.SetActive(initialActiveParte3);
         limonParte4.SetActive(initialActiveParte4);
-
-        rb_limonentero.isKinematic = initialKinematicLimonEntero;
-        rb_parte1.isKinematic = initialKinematicParte1;
-        rb_parte2.isKinematic = initialKinematicParte2;
-        rb_parte3.isKinematic = initialKinematicParte3;
-        rb_parte4.isKinematic = initialKinematicParte4;
 
         rb_limonentero.useGravity = initialUseGravityLimonEntero;
         rb_parte1.useGravity = initialUseGravityParte1;
@@ -178,7 +190,5 @@ public class LimonUIBehaviour : MonoBehaviour
         rb_parte4.angularVelocity = Vector3.zero;
 
         m_LimonCollider.enabled = true;
-        rbLimon.isKinematic = true;
-        rbLimon.useGravity = false;
     }
 }
