@@ -69,6 +69,10 @@ public class Lemon_Behaviour : MonoBehaviour
         {
             if (m_Smoke == false)
             {
+                if(!Cuchillo.instance.m_MeatCutSound.isPlaying)
+                {
+                    Cuchillo.instance.m_MeatCutSound.Play();
+                }
                 VFX_Smoke.instance.Smoke(smoke[0], limonParte1);
                 VFX_Smoke.instance.Smoke(smoke[1], limonParte2);
                 VFX_Smoke.instance.Smoke(smoke[2], limonParte3);

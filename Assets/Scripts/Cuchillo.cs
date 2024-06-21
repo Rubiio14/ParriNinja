@@ -8,7 +8,19 @@ public class Cuchillo : MonoBehaviour
     public float m_MouseMoveOffset = 5f;
     public AudioSource m_CutSound;
     public AudioSource m_BoneSound;
-
+    public AudioSource m_MeatCutSound;
+    public static Cuchillo instance;
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(this);
+        }
+    }
     void Update()
     {
         

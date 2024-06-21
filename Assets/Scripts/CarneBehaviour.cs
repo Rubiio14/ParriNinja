@@ -11,8 +11,7 @@ public class CarneBehaviour : MonoBehaviour
     [SerializeField]
     GameObject[] smoke;
     public int m_PuntosCarne;
-    BoxCollider m_CarneCollider;
-
+    BoxCollider m_CarneCollider; 
     [SerializeField]
     GameObject carneEntera, carneParte1, carneParte2;
 
@@ -58,6 +57,10 @@ public class CarneBehaviour : MonoBehaviour
         {
             if (m_Smoke == false)
             {
+                if (!Cuchillo.instance.m_MeatCutSound.isPlaying)
+                {
+                    Cuchillo.instance.m_MeatCutSound.Play();
+                }
                 VFX_Smoke.instance.Smoke(smoke[0], carneParte1);
                 VFX_Smoke.instance.Smoke(smoke[1], carneParte2);
                 m_Smoke = true;
