@@ -20,7 +20,6 @@ public class CarneBehaviour : MonoBehaviour
 
     //Despawn
     public float m_DespawnTimer = 0f;
-    public float m_HPTimer = 0f;
     bool m_NeedTimer = false;
     bool m_Smoke = false;
 
@@ -69,7 +68,7 @@ public class CarneBehaviour : MonoBehaviour
             carneParte2.SetActive(false);
         }
 
-        if (m_DespawnTimer >= 2.5)
+        if (m_DespawnTimer >= 2.5f)
         {
             gameObject.SetActive(false);
             m_DespawnTimer = 0f;

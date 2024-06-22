@@ -130,6 +130,7 @@ public class Cuchillo : MonoBehaviour
             {
                 m_CutSound.Play();
                 InitialMenu.instance.GoToLevelMenu();
+                Pollo_UI_Behaviour.instance.ActivateParticles();
                 Pollo_UI_Behaviour.instance.Piezas();
                 LimonUIBehaviour.instance.gameObject.SetActive(false);
                 Hueso_UI_Levels.instance.HuesoInstanciado();

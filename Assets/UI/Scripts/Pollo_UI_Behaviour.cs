@@ -7,9 +7,14 @@ public class Pollo_UI_Behaviour : MonoBehaviour
     [SerializeField]
     GameObject[] manchas;
     [SerializeField]
-    GameObject[] particles;
+    GameObject particles;
     [SerializeField]
     GameObject[] smoke;
+
+    public float m_DespawnTimer = 0f;
+    bool m_NeedTimer = false;
+    bool m_Smoke = false;
+
     [SerializeField]
     GameObject polloEntero, polloParte1, polloParte2;
 
@@ -44,6 +49,8 @@ public class Pollo_UI_Behaviour : MonoBehaviour
 
     void Start()
     {
+        LeanTween.init(2400);
+
         // Comprobaciones de null
         if (polloEntero == null || polloParte1 == null || polloParte2 == null)
         {
@@ -99,14 +106,30 @@ public class Pollo_UI_Behaviour : MonoBehaviour
 
     public void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A))
+        //Effects
+        if (m_NeedTimer == true)
         {
-            Piezas();
-            Fade_Manchas.instance.Mancha(manchas[Random.Range(0, manchas.Length)], this.gameObject);
+            m_DespawnTimer += Time.deltaTime;
         }
-        if (Input.GetKeyDown(KeyCode.Space))
+
+        if (m_DespawnTimer >= 0.5f)
         {
-            ResetToFactorySettings();
+            if (m_Smoke == false)
+            {
+                if (!Cuchillo.instance.m_MeatCutSound.isPlaying)
+                {
+                    Cuchillo.instance.m_MeatCutSound.Play();
+                }
+                print("reset");
+                VFX_Smoke.instance.Smoke(smoke[0], polloParte1);
+                VFX_Smoke.instance.Smoke(smoke[1], polloParte2);
+                m_Smoke = true;
+            }
+            polloParte1.SetActive(false);
+            polloParte2.SetActive(false);
+            m_DespawnTimer = 0;
+            m_NeedTimer = false;
+            m_Smoke = false;
         }
     }
 
@@ -125,6 +148,14 @@ public class Pollo_UI_Behaviour : MonoBehaviour
 
         polloParte1.GetComponent<Rigidbody>().AddForce(new Vector3(-3, 6, 0), ForceMode.Impulse);
         polloParte2.GetComponent<Rigidbody>().AddForce(new Vector3(3, 6, 0), ForceMode.Impulse);
+    }
+
+    //Effects
+    public void ActivateParticles()
+    {
+        VFX_Particles.instance.Particles(particles, polloEntero);
+        Fade_Manchas.instance.Mancha(manchas[Random.Range(0, manchas.Length)], polloEntero);
+        m_NeedTimer = true;
     }
 
     public void ResetToFactorySettings()
