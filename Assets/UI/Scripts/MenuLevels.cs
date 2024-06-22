@@ -100,22 +100,63 @@ public class MenuLevels : MonoBehaviour
                     {
                         LeanTween.alphaCanvas(Fondo2, 1, 1f).setOnComplete(() =>
                         {
-                           
-                            
+                            if (sceneName == "PlayScene" && PlayerPrefs.GetInt("IsLvL1") == 1)
+                            {
                                 LeanTween.alphaCanvas(Fondo3, 1, 1f).setOnComplete(() =>
-                             {
-                                 SceneManager.LoadScene(sceneName);
-                             });
+                                {
 
+                                    SceneManager.LoadScene(sceneName);
+
+                                });
+                                
+                            }
+                            else if (sceneName == "Nivel 2" && PlayerPrefs.GetInt("IsLvL2") == 1)
+                            {
+                                LeanTween.alphaCanvas(Fondo3, 1, 1f).setOnComplete(() =>
+                                {
+
+                                    SceneManager.LoadScene(sceneName);
+
+                                });
+                                
+                            }
+                            else if (sceneName == "Nivel 3" && PlayerPrefs.GetInt("IsLvL3") == 1)
+                            {
+                                LeanTween.alphaCanvas(Fondo3, 1, 1f).setOnComplete(() =>
+                                {
+
+                                    SceneManager.LoadScene(sceneName);
+
+                                });
+                                
+                            }
+                            else if (sceneName == "Nivel 4" && PlayerPrefs.GetInt("IsLvL4") == 1)
+                            {
+                                LeanTween.alphaCanvas(Fondo3, 1, 1f).setOnComplete(() =>
+                                {
+
+                                    SceneManager.LoadScene(sceneName);
+
+                                });
+                                
+                            }
+                            else if (sceneName == "Nivel 5" && PlayerPrefs.GetInt("IsLvL5") == 1)
+                            {
+                                LeanTween.alphaCanvas(Fondo3, 1, 1f).setOnComplete(() =>
+                                {
+
+                                    SceneManager.LoadScene(sceneName);
+
+                                });
+                                
+                            }
 
                          });
-
-
-
                     });
                 });
             });
         });
+            Debug.Log(sceneName + "Bloqueado");
         });
 
     }
