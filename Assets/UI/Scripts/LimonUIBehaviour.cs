@@ -2,6 +2,16 @@ using UnityEngine;
 
 public class LimonUIBehaviour : MonoBehaviour
 {
+    [SerializeField]
+    GameObject[] manchas;
+    [SerializeField]
+    GameObject particles;
+    [SerializeField]
+    GameObject[] smoke;
+
+    public float m_DespawnTimer = 0f;
+    bool m_NeedTimer = false;
+    bool m_Smoke = false;
 
     [SerializeField]
     GameObject limonEntero, limonParte1, limonParte2, limonParte3, limonParte4;
@@ -37,6 +47,8 @@ public class LimonUIBehaviour : MonoBehaviour
 
     void Start()
     {
+        LeanTween.init(2400);
+
         // Comprobaciones de null
         if (limonEntero == null || limonParte1 == null || limonParte2 == null || limonParte3 == null || limonParte4 == null)
         {
@@ -109,9 +121,33 @@ public class LimonUIBehaviour : MonoBehaviour
 
     public void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        //Effects
+        if (m_NeedTimer == true)
         {
-            ResetToFactorySettings();
+            m_DespawnTimer += Time.deltaTime;
+        }
+
+        if (m_DespawnTimer >= 0.5f)
+        {
+            if (m_Smoke == false)
+            {
+                if (!Cuchillo.instance.m_MeatCutSound.isPlaying)
+                {
+                    Cuchillo.instance.m_MeatCutSound.Play();
+                }
+                VFX_Smoke.instance.Smoke(smoke[0], limonParte1);
+                VFX_Smoke.instance.Smoke(smoke[1], limonParte2);
+                VFX_Smoke.instance.Smoke(smoke[2], limonParte3);
+                VFX_Smoke.instance.Smoke(smoke[3], limonParte4);
+                m_Smoke = true;
+            }
+            limonParte1.SetActive(false);
+            limonParte2.SetActive(false);
+            limonParte3.SetActive(false);
+            limonParte4.SetActive(false);
+            m_DespawnTimer = 0;
+            m_NeedTimer = false;
+            m_Smoke = false;
         }
     }
 
@@ -149,6 +185,16 @@ public class LimonUIBehaviour : MonoBehaviour
         rb_parte3.angularDrag = 0.05f;
         rb_parte4.drag = 0f;
         rb_parte4.angularDrag = 0.05f;
+    }
+
+    //Effects
+    public void ActivateParticles()
+    {
+        VFX_Particles.instance.Particles(particles, limonEntero);
+        int randomIndex = Random.Range(0, manchas.Length);
+        Fade_Manchas.instance.Mancha(manchas[randomIndex], limonEntero);
+        manchas[randomIndex].GetComponentInChildren<CanvasGroup>().alpha = 1;
+        m_NeedTimer = true;
     }
 
     public void ResetToFactorySettings()

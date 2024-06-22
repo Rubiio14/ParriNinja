@@ -154,7 +154,9 @@ public class Pollo_UI_Behaviour : MonoBehaviour
     public void ActivateParticles()
     {
         VFX_Particles.instance.Particles(particles, polloEntero);
-        Fade_Manchas.instance.Mancha(manchas[Random.Range(0, manchas.Length)], polloEntero);
+        int randomIndex = Random.Range(0, manchas.Length);
+        Fade_Manchas.instance.Mancha(manchas[randomIndex], polloEntero);
+        manchas[randomIndex].GetComponentInChildren<CanvasGroup>().alpha = 1;
         m_NeedTimer = true;
     }
 
