@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.000017033932, g: 0.000000025772884, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1425,6 +1425,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f43d47ec5ca3c64cb568bf378a0cf3f, type: 3}
+--- !u!1 &315917129 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 660577312528316343, guid: 88ceea7c48f11844e82c881c4463cd36, type: 3}
+  m_PrefabInstance: {fileID: 646069702}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &357407923
 GameObject:
   m_ObjectHideFlags: 0
@@ -2749,6 +2754,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 724491775}
   m_CullTransparentMesh: 1
+--- !u!1 &779649221 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8776797938981215238, guid: 88ceea7c48f11844e82c881c4463cd36, type: 3}
+  m_PrefabInstance: {fileID: 646069702}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &804378266
 GameObject:
   m_ObjectHideFlags: 0
@@ -2958,6 +2968,11 @@ MonoBehaviour:
   m_ObjetoCreado: {fileID: 6201180298312807719, guid: 686531e598de76f439fdb3af679039e2, type: 3}
   m_Spawn: {fileID: 0}
   m_SpawnRotation: 0
+--- !u!1 &970525028 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5647152466145258606, guid: 88ceea7c48f11844e82c881c4463cd36, type: 3}
+  m_PrefabInstance: {fileID: 646069702}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1091414369
 GameObject:
   m_ObjectHideFlags: 0
@@ -3553,6 +3568,11 @@ RectTransform:
   m_AnchoredPosition: {x: -194.3, y: -189}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1218017285 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3115893890574382369, guid: 88ceea7c48f11844e82c881c4463cd36, type: 3}
+  m_PrefabInstance: {fileID: 646069702}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1252495230
 GameObject:
   m_ObjectHideFlags: 0
@@ -3621,6 +3641,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1298016711 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5471717112705525332, guid: 88ceea7c48f11844e82c881c4463cd36, type: 3}
+  m_PrefabInstance: {fileID: 646069702}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1306021695
 GameObject:
   m_ObjectHideFlags: 0
@@ -3966,6 +3991,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af13c3eeea4bc8c40b0625f87d407aca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1502956590 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2359297743018677606, guid: 88ceea7c48f11844e82c881c4463cd36, type: 3}
+  m_PrefabInstance: {fileID: 646069702}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1606417791
 GameObject:
   m_ObjectHideFlags: 0
@@ -4094,6 +4124,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &1618873628 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1625203366929230198, guid: 88ceea7c48f11844e82c881c4463cd36, type: 3}
+  m_PrefabInstance: {fileID: 646069702}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1627142664 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8858577914360524443, guid: 88ceea7c48f11844e82c881c4463cd36, type: 3}
+  m_PrefabInstance: {fileID: 646069702}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1641240417 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3016431126860404516, guid: 88ceea7c48f11844e82c881c4463cd36, type: 3}
+  m_PrefabInstance: {fileID: 646069702}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1654383034
 GameObject:
   m_ObjectHideFlags: 0
@@ -4593,9 +4638,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 3
-  vida1: {fileID: 1812897429}
-  vida2: {fileID: 133497484}
-  vida3: {fileID: 723514802}
+  vida1: {fileID: 779649221}
+  vida2: {fileID: 315917129}
+  vida3: {fileID: 1641240417}
+  vida1_r: {fileID: 1618873628}
+  vida2_r: {fileID: 1218017285}
+  vida3_r: {fileID: 970525028}
+  vida1_b: {fileID: 1298016711}
+  vida2_b: {fileID: 1502956590}
+  vida3_b: {fileID: 1627142664}
   lanzadores: {fileID: 934952116}
   derrotaScreen: {fileID: 693651737}
   m_DefeatSound: {fileID: 1606417793}

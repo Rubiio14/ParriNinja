@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.000017033932, g: 0.000000025772884, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2080,11 +2080,6 @@ Transform:
 --- !u!1 &468723683 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2359297743018677606, guid: 88ceea7c48f11844e82c881c4463cd36, type: 3}
-  m_PrefabInstance: {fileID: 1258653670}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &574245455 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1865072037656437979, guid: 88ceea7c48f11844e82c881c4463cd36, type: 3}
   m_PrefabInstance: {fileID: 1258653670}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &575357816
@@ -4364,6 +4359,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 88ceea7c48f11844e82c881c4463cd36, type: 3}
+--- !u!1 &1258653671 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5647152466145258606, guid: 88ceea7c48f11844e82c881c4463cd36, type: 3}
+  m_PrefabInstance: {fileID: 1258653670}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1306021695
 GameObject:
   m_ObjectHideFlags: 0
@@ -5482,12 +5482,12 @@ MonoBehaviour:
   vida1: {fileID: 361151188}
   vida2: {fileID: 1696529418}
   vida3: {fileID: 1610277799}
-  vida1_r: {fileID: 1309575704}
-  vida2_r: {fileID: 468723683}
-  vida3_r: {fileID: 177061873}
-  vida1_b: {fileID: 1169099726}
-  vida2_b: {fileID: 1065012432}
-  vida3_b: {fileID: 574245455}
+  vida1_r: {fileID: 1169099726}
+  vida2_r: {fileID: 1065012432}
+  vida3_r: {fileID: 1258653671}
+  vida1_b: {fileID: 1309575704}
+  vida2_b: {fileID: 468723683}
+  vida3_b: {fileID: 177061873}
   lanzadores: {fileID: 934952116}
   derrotaScreen: {fileID: 693651737}
   m_DefeatSound: {fileID: 824555327}
