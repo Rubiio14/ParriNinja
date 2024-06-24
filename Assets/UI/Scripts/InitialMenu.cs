@@ -39,9 +39,9 @@ public class InitialMenu : MonoBehaviour
 
     public void MenuInicialCame()
     {
-        LeanTween.moveLocal(Logo, new Vector2(0, 330), m_TimeOfTransition).setEase(LeanTweenType.linear);
-        LeanTween.scale(ButtonStart, Vector3.one, m_TimeOfTransition);
-        LeanTween.scale(ButtonSettings, Vector3.one, m_TimeOfTransition);
+        LeanTween.moveLocal(Logo, new Vector2(0, 0), m_TimeOfTransition).setEase(LeanTweenType.linear);
+        LeanTween.scale(ButtonStart, new Vector3(3.5f,3.5f,3.5f), m_TimeOfTransition);
+        LeanTween.scale(ButtonSettings, new Vector3 (3.5f, 3.5f, 3.5f), m_TimeOfTransition);
         LeanTween.scale(MeetToStart, Vector3.one, m_TimeOfTransition);
         LeanTween.scale(MeetToSettings, Vector3.one, m_TimeOfTransition);
     }
@@ -72,14 +72,6 @@ public class InitialMenu : MonoBehaviour
        
     }
 
-    /*public void StartGame(string sceneName)
-    {
-        MenuInicialIsGone();
-        LeanTween.moveLocal(Logo, new Vector2(0, 1300), m_TimeOfTransition).setEase(LeanTweenType.linear).setOnComplete(() =>
-        {
-            SceneManager.LoadScene(sceneName);
-        }); ;
-    }*/
     
     public void GoToLevelMenu()
     {

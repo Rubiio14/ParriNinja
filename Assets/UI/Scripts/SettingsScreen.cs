@@ -34,8 +34,8 @@ public class SettingsScreen : MonoBehaviour
     {
         print("hola");
         LeanTween.moveLocalX(PanelCredits, -450, 0.5f);  
-        LeanTween.moveLocalX(PanelAudio, 800, 0.5f);
-        LeanTween.scale(Back, Vector3.one, 0.5f);
+        LeanTween.moveLocalX(PanelAudio, 900, 0.5f);
+        LeanTween.scale(Back, new Vector3(3,3,3), 0.5f);
         LeanTween.scale(PrefabBombBack, Vector3.one, 0.5f);
 
     }
@@ -49,7 +49,7 @@ public class SettingsScreen : MonoBehaviour
             initialmenu.MenuInicialCame();
             this.gameObject.SetActive(false);
 
-        }); ;
+        }); 
         LeanTween.scale(Back, Vector3.zero, 0.5f);
         LeanTween.scale(PrefabBombBack, Vector3.zero, 0.5f);
         LeanTween.moveLocalX(PanelAudio, 2000, 0.5f).setEase(LeanTweenType.linear);

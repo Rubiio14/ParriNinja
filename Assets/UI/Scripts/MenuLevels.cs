@@ -28,7 +28,7 @@ public class MenuLevels : MonoBehaviour
     {
         LeanTween.moveLocalY(Levels, 550, 0.5f);
 
-        LeanTween.scale(ButtonBack, Vector3.one, 0.5f);
+        LeanTween.scale(ButtonBack, new Vector3(3,3,3), 0.5f);
         LeanTween.scale(Prefab, Vector3.one, 0.5f);
          LeanTween.scale(ButtonLevelOne, Vector3.one, SpeedOfButtons).setOnComplete(() =>
          {
