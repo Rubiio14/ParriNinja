@@ -82,6 +82,7 @@ public class MenuLevels : MonoBehaviour
             Destroy(this);
         }
     }
+    /*
     public void StartLevel(string sceneName)
     {
         LeanTween.moveLocalY(Levels, 800, 0.5f);
@@ -156,9 +157,96 @@ public class MenuLevels : MonoBehaviour
                 });
             });
         });
-            Debug.Log(sceneName + "Bloqueado");
+            Debug.Log(sceneName + " Bloqueado");
         });
 
+    }
+    */
+    public void Nivel_1(string sceneName)
+    {
+        if (sceneName == "PlayScene" && PlayerPrefs.GetInt("IsLvL1") == 1)
+        {
+            LeanTween.alphaCanvas(Fondo3, 1, 1f).setOnComplete(() =>
+            {
+
+                SceneManager.LoadScene(sceneName);
+
+            });
+
+        }
+        else
+        {
+            Debug.Log(sceneName + " Bloqueado");
+        }
+    }
+
+    public void Nivel_2(string sceneName)
+    {
+        if (sceneName == "Nivel 2" && PlayerPrefs.GetInt("IsLvL2") == 1)
+        {
+            LeanTween.alphaCanvas(Fondo3, 1, 1f).setOnComplete(() =>
+            {
+
+                SceneManager.LoadScene(sceneName);
+
+            });
+
+        }
+        else 
+        {
+            Debug.Log(sceneName + " Bloqueado");
+        }
+    }
+    public void Nivel_3(string sceneName)
+    {
+        if (sceneName == "Nivel 3" && PlayerPrefs.GetInt("IsLvL3") == 1)
+        {
+            LeanTween.alphaCanvas(Fondo3, 1, 1f).setOnComplete(() =>
+            {
+
+                SceneManager.LoadScene(sceneName);
+
+            });
+
+        }
+        else
+        {
+            Debug.Log(sceneName + " Bloqueado");
+        }
+    }
+    public void Nivel_4(string sceneName)
+    {
+        if (sceneName == "Nivel 4" && PlayerPrefs.GetInt("IsLvL4") == 1)
+        {
+            LeanTween.alphaCanvas(Fondo3, 1, 1f).setOnComplete(() =>
+            {
+
+                SceneManager.LoadScene(sceneName);
+
+            });
+
+        }
+        else
+        {
+            Debug.Log(sceneName + " Bloqueado");
+        }
+    }
+    public void Nivel_5(string sceneName)
+    {
+        if (sceneName == "Nivel 5" && PlayerPrefs.GetInt("IsLvL5") == 1)
+        {
+            LeanTween.alphaCanvas(Fondo3, 1, 1f).setOnComplete(() =>
+            {
+
+                SceneManager.LoadScene(sceneName);
+
+            });
+
+        }
+        else
+        {
+            Debug.Log(sceneName + " Bloqueado");
+        }
     }
 }
             

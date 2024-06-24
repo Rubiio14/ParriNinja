@@ -31,12 +31,28 @@ public class Bloqueos_Nivel : MonoBehaviour
         switch (sceneIndex)
         {
             case 1:
+                if (Score_Manager.instance.m_Score >= B_Nivel1)
+                {
+                    PlayerPrefs.SetInt("IsLvL2", 1);
+                }
                 return B_Nivel1;
             case 2:
+                if (Score_Manager.instance.m_Score >= B_Nivel1)
+                {
+                    PlayerPrefs.SetInt("IsLvL3", 1);
+                }
                 return B_Nivel2;
             case 3:
+                if (Score_Manager.instance.m_Score >= B_Nivel1)
+                {
+                    PlayerPrefs.SetInt("IsLvL4", 1);
+                }
                 return B_Nivel3;
             case 4:
+                if (Score_Manager.instance.m_Score >= B_Nivel1)
+                {
+                    PlayerPrefs.SetInt("IsLvL5", 1);
+                }
                 return B_Nivel4;
             case 5:
                 return B_Nivel5;
