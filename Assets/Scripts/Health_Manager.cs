@@ -8,6 +8,10 @@ public class Health_Manager : MonoBehaviour
     public float health = 3;
     [SerializeField]
     GameObject vida1, vida2, vida3;
+    [SerializeField]
+    GameObject vida1_r, vida2_r, vida3_r;
+    [SerializeField]
+    GameObject vida1_b, vida2_b, vida3_b;
 
     [SerializeField]
     GameObject lanzadores, derrotaScreen;
@@ -43,22 +47,16 @@ public class Health_Manager : MonoBehaviour
         health--;
         if (health == 2)
         {
-            vida1.SetActive(true);
-            vida2.SetActive(true);
-            vida3.SetActive(false);
+            UI_GamePlay.instance.CrossRed(vida3, vida3_b, vida3_r);
         }
         if (health == 1)
         {
-            vida1.SetActive(true);
-            vida2.SetActive(false);
-            vida3.SetActive(false);
+            UI_GamePlay.instance.CrossRed(vida2, vida2_b, vida2_r);
         }
 
         if (health <= 0)
         {
-            vida1.SetActive(false);
-            vida2.SetActive(false);
-            vida3.SetActive(false);
+            UI_GamePlay.instance.CrossRed(vida1, vida1_b, vida1_r);
             if (IsDefeat == false)
             {
                 Defeat();

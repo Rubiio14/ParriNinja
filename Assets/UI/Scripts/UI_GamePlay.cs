@@ -10,7 +10,7 @@ public class UI_GamePlay : MonoBehaviour
 {
     public float m_TimeOfReadyGo;
     public float m_TimeToWaitReadyGo;
-
+    public static UI_GamePlay instance;
 
 
     // Pantalla de juego
@@ -36,7 +36,7 @@ public class UI_GamePlay : MonoBehaviour
     [SerializeField] GameObject WinLevel;
 
     [SerializeField] GameObject UI_LifeAndScore;
-    
+
     /*// Pantalla de derrota
     [SerializeField] GameObject ButtonRetry;
     [SerializeField] GameObject ButtonQuit;
@@ -44,7 +44,18 @@ public class UI_GamePlay : MonoBehaviour
     [SerializeField] GameObject Score;
     [SerializeField] GameObject NumberScore;*/
 
-  
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(this);
+        }
+    }
     // Start is called before the first frame update
     void Start()
     {
