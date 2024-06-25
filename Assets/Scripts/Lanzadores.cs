@@ -36,7 +36,10 @@ public class Lanzadores : MonoBehaviour
 
     public void Lanzamientos(KeyMoment m_Actualmovement)
     {
-        StartCoroutine(DelayCarne(m_Actualmovement));  
+        if (isActiveAndEnabled)
+        {
+            StartCoroutine(DelayCarne(m_Actualmovement));
+        }     
     }
     IEnumerator DelayCarne(KeyMoment m_Actualmovement)
     {
