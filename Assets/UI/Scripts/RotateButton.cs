@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class RotateButton : MonoBehaviour
 {
-    public float rotationSpeed = 100f;
+    public float m_RotationSpeed;
 
-    // Eje sobre el cual rotar.
-    public Vector3 rotationAxis = Vector3.up;
+   
+    public Vector3 m_RotationAxis;
 
-    // Update se llama una vez por frame.
+    
     void Update()
     {
-        // Si el objeto está activo.
+        
         if (gameObject.activeSelf)
         {
-            // Aplica la rotación.
-            transform.Rotate(rotationAxis, rotationSpeed * Time.deltaTime);
+            
+            transform.Rotate(m_RotationAxis, m_RotationSpeed * Time.deltaTime);
         }
     }
 }
