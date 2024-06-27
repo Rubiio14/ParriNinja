@@ -164,20 +164,7 @@ public class MenuLevels : MonoBehaviour
     */
     public void Nivel_1(string sceneName)
     {
-        if (sceneName == "PlayScene" && PlayerPrefs.GetInt("IsLvL1") == 1)
-        {
-            LeanTween.alphaCanvas(Fondo3, 1, 1f).setOnComplete(() =>
-            {
-
-                SceneManager.LoadScene(sceneName);
-
-            });
-
-        }
-        else
-        {
-            Debug.Log(sceneName + " Bloqueado");
-        }
+        SceneManager.LoadScene(sceneName);
     }
 
     public void Nivel_2(string sceneName)

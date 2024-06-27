@@ -37,8 +37,7 @@ public class Bloqueos_Ui : MonoBehaviour
 
     }
     public void PlayerPrefsReset()
-    {
-        PlayerPrefs.SetInt("IsLvL1", 1);
+    {       
         PlayerPrefs.SetInt("IsLvL2", 0);
         PlayerPrefs.SetInt("IsLvL3", 0);
         PlayerPrefs.SetInt("IsLvL4", 0);
@@ -46,7 +45,6 @@ public class Bloqueos_Ui : MonoBehaviour
     }
     public void PlayerPrefsSaved()
     {
-        PlayerPrefs.SetInt("IsLvL1", PlayerPrefs.GetInt("IsLvL1"));
         PlayerPrefs.SetInt("IsLvL2", PlayerPrefs.GetInt("IsLvL2"));
         PlayerPrefs.SetInt("IsLvL3", PlayerPrefs.GetInt("IsLvL3"));
         PlayerPrefs.SetInt("IsLvL4", PlayerPrefs.GetInt("IsLvL4"));
