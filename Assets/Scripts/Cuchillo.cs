@@ -118,26 +118,25 @@ public class Cuchillo : MonoBehaviour
             else if (hit.collider.CompareTag("Limon_UI"))
             {
                 m_CutSound.Play();
-                InitialMenu.instance.SettingsButton();
-                LimonUIBehaviour.instance.ActivateParticles();
-                LimonUIBehaviour.instance.Piezas();
-                Pollo_UI_Behaviour.instance.gameObject.SetActive(false);
-                initialMenuActive = false;
-                settingsActive = true;
-                menuLevelActive = false;
-            }
+                hit.collider.GetComponent<SlizableItem>().Slice();
 
+            }
             else if (hit.collider.CompareTag("Pollo_UI"))
             {
                 m_CutSound.Play();
-                InitialMenu.instance.GoToLevelMenu();
-                Pollo_UI_Behaviour.instance.ActivateParticles();
-                Pollo_UI_Behaviour.instance.Piezas();
-                LimonUIBehaviour.instance.gameObject.SetActive(false);
-                Hueso_UI_Levels.instance.HuesoInstanciado();
-                initialMenuActive = false;
-                settingsActive = false;
-                menuLevelActive = true;
+                  //NUEVO!!
+                //En vez de en cada caso de cortar algo... elseif.
+                //Podemos crear diferentes compotamientos usando la nueva clase SlizableItem
+                //Ver UIPOlloExample y SlizableItem
+
+                //SlizableItem es una clase vacía que servirá para que otras puedan crear su propia función de Slice.
+                //Entonces yo creo una clase como UIPollo donde si nos fijamos pone
+                //public class UIPolloExample: MonoBehaviour, SlizableItem
+                //Esto me OBLIGA a crear la función Slice()
+                //Y ahora ya da igual si es pollo UI o LimonUI, directamente dentro del script del polloUI o Limon UI en la función slice
+                //Haré todo lo que haga falta!
+                hit.collider.GetComponent<SlizableItem>().Slice();
+
 
             }
             else if (hit.collider.CompareTag("Hueso_UI")) 
