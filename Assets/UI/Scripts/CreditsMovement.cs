@@ -22,7 +22,7 @@ public class CreditsMovement : MonoBehaviour
         {
            
             Credits.transform.position += Vector3.up * m_UpSpeed * Time.deltaTime;
-            if (Credits.transform.position.y > 640)
+            if (Credits.transform.position.y > 850)
             {
                 Credits.transform.position = new Vector3 (Credits.transform.position.x, m_InitialPosition.y, Credits.transform.position.z);
             }

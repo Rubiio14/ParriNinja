@@ -76,7 +76,7 @@ public class InitialMenu : MonoBehaviour
     public void GoToLevelMenu()
     {
         MenuInicialIsGone();
-        MenuLevels.gameObject.SetActive(true);
+       
         LeanTween.moveLocal(Logo, new Vector2(0, 1300), m_TimeOfTransition).setEase(LeanTweenType.linear).setOnComplete(() =>
         {
            MenuLevels.gameObject.SetActive(true);

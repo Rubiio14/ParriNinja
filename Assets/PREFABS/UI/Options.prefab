@@ -65,9 +65,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\n\n\nLucia Aleman\n\n\nCristian Perez\nSergio H.\n\n\nSara\nOmar Chaglez\n\n\t\nAriana
-    Mendoza\nLucia Fumero\n\n\nLuc\xEDa Fumero\nOmar Chaglez\n\n\nSergio\nCristian
-    Perez\n\n\nJoaquin\nSergio D."
+  m_text: "\n\n\nLucia Aleman\n\n\nSergio\n\n\nCristian Perez Torres\nSergio H.\n\n\nSara\nOmar
+    Chaglez\n\n\t\nAriana Mendoza Correa\nLucia Real Fumero\n\n\nLuc\xEDa Real Fumero\nOmar
+    Chaglez\n\n\nSergio\nCristian Perez Torres\n\n\nJoaquin Rodriguez Alonso Lennard\nSergio
+    Delgado Salas"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 37f165587bf554540a62357b287de375, type: 2}
   m_sharedMaterial: {fileID: 1325611690263357321, guid: 37f165587bf554540a62357b287de375, type: 2}
@@ -173,7 +174,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -9.615731, y: -1865.9257}
+  m_AnchoredPosition: {x: -9.615731, y: -726}
   m_SizeDelta: {x: 352.56494, y: 1251.851}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3053364958661227327
@@ -891,7 +892,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1681,8 +1682,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Credits\n\nUI Ilustrator\n\n\nGameplay Code\n\n\n\n3D Models\n\n\n\n    
-    UI Code   \t\n\n\n\nTextured\n\n\n\nAudio Code\n\n\n\nEffects"
+  m_text: "Credits\n\nUI Ilustrator\n\n\nGame Designer\n\n\nGameplay Code\n\n\n\n3D
+    Models\n\n\n\n     UI Code   \t\n\n\n\nTextured\n\n\n\nAudio Code\n\n\n\nVisual
+    Effects"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 37f165587bf554540a62357b287de375, type: 2}
   m_sharedMaterial: {fileID: 1325611690263357321, guid: 37f165587bf554540a62357b287de375, type: 2}
