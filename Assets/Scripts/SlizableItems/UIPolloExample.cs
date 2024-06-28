@@ -13,9 +13,7 @@ public class UIPolloExample: MonoBehaviour, SlizableItem
         Pollo_UI_Behaviour.instance.Piezas();
         LimonUIBehaviour.instance.gameObject.SetActive(false);
         Hueso_UI_Levels.instance.HuesoInstanciado();
-        Cuchillo.instance.initialMenuActive = false;
-        Cuchillo.instance.settingsActive = false;
-        Cuchillo.instance.menuLevelActive = true;
+        LeanScale_Botones.instance.EnterInLevelMenu();
 
         Debug.Log("Slice pollo UI");   
     }

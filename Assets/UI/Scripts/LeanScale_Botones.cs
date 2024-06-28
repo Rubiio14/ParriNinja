@@ -27,15 +27,44 @@ public class LeanScale_Botones : MonoBehaviour
     }
     private void Start()
     {
-        Cuchillo.instance.initialMenuActive = true;
+       // Cuchillo.instance.initialMenuActive = true;
 
-        botonesFullScale = new Vector3 (1.6f, 1.6f, 1.6f);
+        botonesFullScale = new Vector3(1.6f, 1.6f, 1.6f);
         huesosFullScale = new Vector3(25f, 25f, 25f);
+        EnterInitialMenu();
+    }
+
+    public void EnterInitialMenu()
+    {
+        LeanTween.scale(pollo_UI, botonesFullScale, 0.75f);
+        LeanTween.scale(LemonSett_UI, botonesFullScale, 0.75f);
+
+        huesoSett_UI.transform.localScale -= huesoSett_UI.transform.localScale;
+        HuesoNiv_UI.transform.localScale -= HuesoNiv_UI.transform.localScale;
+
+    }
+
+    public void EnterInSettings()
+    {
+        LeanTween.scale(huesoSett_UI, huesosFullScale, 1f);
+
+        pollo_UI.transform.localScale -= pollo_UI.transform.localScale;
+        LemonSett_UI.transform.localScale -= LemonSett_UI.transform.localScale;
+
+    }
+
+    public void EnterInLevelMenu()
+    {
+        LeanTween.scale(HuesoNiv_UI, huesosFullScale, 0.75f);
+
+        pollo_UI.transform.localScale -= pollo_UI.transform.localScale;
+        LemonSett_UI.transform.localScale -= LemonSett_UI.transform.localScale;
+
     }
 
     void Update()
     {
-        if (Cuchillo.instance.initialMenuActive == true)
+       /* if (Cuchillo.instance.initialMenuActive == true)
         {
             LeanTween.scale(pollo_UI, botonesFullScale, 0.75f);
             LeanTween.scale(LemonSett_UI, botonesFullScale, 0.75f);
@@ -56,6 +85,6 @@ public class LeanScale_Botones : MonoBehaviour
 
             pollo_UI.transform.localScale -= pollo_UI.transform.localScale;
             LemonSett_UI.transform.localScale -= LemonSett_UI.transform.localScale;
-        }
+        }*/
     }
 }

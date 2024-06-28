@@ -11,9 +11,9 @@ public class Cuchillo : MonoBehaviour
     public AudioSource m_MeatCutSound;
     public static Cuchillo instance;
 
-    public bool initialMenuActive;
+    /*public bool initialMenuActive;
     public bool settingsActive;
-    public bool menuLevelActive;
+    public bool menuLevelActive;*/
 
     private void Awake()
     {
@@ -147,9 +147,10 @@ public class Cuchillo : MonoBehaviour
                 LimonUIBehaviour.instance.ResetToFactorySettings();
                 Pollo_UI_Behaviour.instance.ResetToFactorySettings();
                 Hueso_UI.instance.HuesoCortado();
-                initialMenuActive = true;
+                LeanScale_Botones.instance.EnterInitialMenu();
+                /*initialMenuActive = true;
                 settingsActive = false;
-                menuLevelActive = false;
+                menuLevelActive = false;*/
             }
             else if (hit.collider.CompareTag("Hueso_UI_Levels"))
             {
@@ -159,9 +160,11 @@ public class Cuchillo : MonoBehaviour
                 LimonUIBehaviour.instance.ResetToFactorySettings();
                 Pollo_UI_Behaviour.instance.ResetToFactorySettings();
                 Hueso_UI_Levels.instance.HuesoCortado();
-                initialMenuActive = true;
+
+                LeanScale_Botones.instance.EnterInitialMenu();
+                /*initialMenuActive = true;
                 settingsActive = false;
-                menuLevelActive = false;
+                menuLevelActive = false;*/
             }
         }
     }

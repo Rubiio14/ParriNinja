@@ -11,10 +11,8 @@ public class UILemonExample : MonoBehaviour, SlizableItem
         LimonUIBehaviour.instance.Piezas();
         Pollo_UI_Behaviour.instance.gameObject.SetActive(false);
 
+        LeanScale_Botones.instance.EnterInSettings();
 
-        Cuchillo.instance.initialMenuActive = false;
-        Cuchillo.instance.settingsActive = true;
-        Cuchillo.instance.menuLevelActive = false;
         Debug.Log("Slice Lemon UI");
     }
 }
