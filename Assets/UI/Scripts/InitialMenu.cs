@@ -39,11 +39,17 @@ public class InitialMenu : MonoBehaviour
 
     public void MenuInicialCame()
     {
-        LeanTween.moveLocal(Logo, new Vector2(0, 0), m_TimeOfTransition).setEase(LeanTweenType.linear);
+        LeanTween.moveLocal(Logo, new Vector2(0, 0), m_TimeOfTransition).setEase(LeanTweenType.linear).setOnComplete(() =>
+        {
         LeanTween.scale(ButtonStart, new Vector3(3.5f,3.5f,3.5f), m_TimeOfTransition);
         LeanTween.scale(ButtonSettings, new Vector3 (3.5f, 3.5f, 3.5f), m_TimeOfTransition);
+        LeanScale_Botones.instance.EnterInitialMenu();
+
+        });
+       
         LeanTween.scale(MeetToStart, Vector3.one, m_TimeOfTransition);
         LeanTween.scale(MeetToSettings, Vector3.one, m_TimeOfTransition);
+        
     }
     public void MenuInicialIsGone()
     {

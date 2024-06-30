@@ -147,7 +147,7 @@ public class Cuchillo : MonoBehaviour
                 LimonUIBehaviour.instance.ResetToFactorySettings();
                 Pollo_UI_Behaviour.instance.ResetToFactorySettings();
                 Hueso_UI.instance.HuesoCortado();
-                LeanScale_Botones.instance.EnterInitialMenu();
+              // LeanScale_Botones.instance.EnterInitialMenu();
                 /*initialMenuActive = true;
                 settingsActive = false;
                 menuLevelActive = false;*/
@@ -161,7 +161,7 @@ public class Cuchillo : MonoBehaviour
                 Pollo_UI_Behaviour.instance.ResetToFactorySettings();
                 Hueso_UI_Levels.instance.HuesoCortado();
 
-                LeanScale_Botones.instance.EnterInitialMenu();
+                
                 /*initialMenuActive = true;
                 settingsActive = false;
                 menuLevelActive = false;*/
