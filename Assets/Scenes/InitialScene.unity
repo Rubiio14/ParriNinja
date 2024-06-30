@@ -3747,58 +3747,10 @@ PrefabInstance:
       propertyPath: initialmenu
       value: 
       objectReference: {fileID: 8502237017226202438}
-    - target: {fileID: 982510176126293278, guid: c69737b25f9044d40ae720716efd63f6, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -106
-      objectReference: {fileID: 0}
-    - target: {fileID: 1393417978758062297, guid: c69737b25f9044d40ae720716efd63f6, type: 3}
-      propertyPath: m_Color.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1539015401439378139, guid: c69737b25f9044d40ae720716efd63f6, type: 3}
-      propertyPath: m_fontSize
-      value: 80
-      objectReference: {fileID: 0}
-    - target: {fileID: 1539015401439378139, guid: c69737b25f9044d40ae720716efd63f6, type: 3}
-      propertyPath: m_fontSizeBase
-      value: 80
-      objectReference: {fileID: 0}
-    - target: {fileID: 1546901229081554991, guid: c69737b25f9044d40ae720716efd63f6, type: 3}
-      propertyPath: m_text
-      value: "\n\n\nLucia Aleman\n\n\nSergio Delgado Salas\n\n\nCristian Perez Torres\nSergio
-        Hernandez Gonzalez\n\n\nSara Isabel Perez Monroy\nOmar Chavez Gonzalez\n\n\t\nAriana
-        Mendoza Correa\nLucia Real Fumero\n\n\nLuc\xEDa Real Fumero\nOmar Chavez
-        Gonzalez\n\n\nSergio Delgado Salas\nCristian Perez Torres\n\n\nJoaquin Rodriguez
-        Alonso Lennard\nSergio Delgado Salas"
-      objectReference: {fileID: 0}
-    - target: {fileID: 1546901229081554991, guid: c69737b25f9044d40ae720716efd63f6, type: 3}
-      propertyPath: m_fontSize
-      value: 80
-      objectReference: {fileID: 0}
-    - target: {fileID: 1546901229081554991, guid: c69737b25f9044d40ae720716efd63f6, type: 3}
-      propertyPath: m_fontSizeBase
-      value: 80
-      objectReference: {fileID: 0}
-    - target: {fileID: 1970065100864049375, guid: c69737b25f9044d40ae720716efd63f6, type: 3}
-      propertyPath: m_RotationSpeed
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 1970065100864049375, guid: c69737b25f9044d40ae720716efd63f6, type: 3}
-      propertyPath: m_RotationAxis.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2137939747236127592, guid: c69737b25f9044d40ae720716efd63f6, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -110.999954
-      objectReference: {fileID: 0}
     - target: {fileID: 2322331702386273024, guid: c69737b25f9044d40ae720716efd63f6, type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1602764706}
-    - target: {fileID: 3452175176067983772, guid: c69737b25f9044d40ae720716efd63f6, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -1779
-      objectReference: {fileID: 0}
     - target: {fileID: 5290886313501813455, guid: c69737b25f9044d40ae720716efd63f6, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -3806,10 +3758,6 @@ PrefabInstance:
     - target: {fileID: 5290886313501813455, guid: c69737b25f9044d40ae720716efd63f6, type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5290886313501813455, guid: c69737b25f9044d40ae720716efd63f6, type: 3}
-      propertyPath: m_RootOrder
-      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 5290886313501813455, guid: c69737b25f9044d40ae720716efd63f6, type: 3}
       propertyPath: m_AnchorMax.x
@@ -3882,22 +3830,6 @@ PrefabInstance:
     - target: {fileID: 5290886313501813455, guid: c69737b25f9044d40ae720716efd63f6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5518627385277263642, guid: c69737b25f9044d40ae720716efd63f6, type: 3}
-      propertyPath: m_PreserveAspect
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6232739137598150478, guid: c69737b25f9044d40ae720716efd63f6, type: 3}
-      propertyPath: m_Color.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6559362976976827661, guid: c69737b25f9044d40ae720716efd63f6, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -106.000015
-      objectReference: {fileID: 0}
-    - target: {fileID: 7916978668366334553, guid: c69737b25f9044d40ae720716efd63f6, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -111
       objectReference: {fileID: 0}
     - target: {fileID: 8755227088685491840, guid: c69737b25f9044d40ae720716efd63f6, type: 3}
       propertyPath: m_Name
