@@ -25,8 +25,8 @@ public class UI_GamePlay : MonoBehaviour
     [SerializeField] GameObject crossRed3Midle;
     [SerializeField] GameObject ready;
     [SerializeField] GameObject go;
-    [SerializeField] GameObject Best;
-   [SerializeField] CanvasGroup Ready;
+    [SerializeField] GameObject Pausa;
+    [SerializeField] CanvasGroup Ready;
     [SerializeField] CanvasGroup Go;
     [SerializeField] GameObject ImageSandia;
     [SerializeField] GameObject NumberPoints;
@@ -36,6 +36,9 @@ public class UI_GamePlay : MonoBehaviour
     [SerializeField] GameObject WinLevel;
 
     [SerializeField] GameObject UI_LifeAndScore;
+
+    [SerializeField] CanvasGroup Fondo2;
+    [SerializeField] CanvasGroup Fondo1;
 
     /*// Pantalla de derrota
     [SerializeField] GameObject ButtonRetry;
@@ -71,7 +74,8 @@ public class UI_GamePlay : MonoBehaviour
 
     public void GameStart()
     {
-        
+       
+       
         LeanTween.moveLocalY(ready, 0, m_TimeOfReadyGo);
         LeanTween.alphaCanvas(Ready, 1, m_TimeOfReadyGo).setOnComplete(() =>
         {
@@ -80,7 +84,7 @@ public class UI_GamePlay : MonoBehaviour
             {
                 LeanTween.moveLocalY(UI_LifeAndScore, 0, 0.5f).setOnComplete(() =>
                 {
-
+                LeanTween.scale(Pausa, Vector3.one,1.5f).setEaseOutBack();
             LeanTween.moveLocalY(go, 0, 0.2f);
             LeanTween.alphaCanvas(Go, 1, 0.2f).setOnComplete(() =>
             {
@@ -117,12 +121,20 @@ public class UI_GamePlay : MonoBehaviour
     }
 
   
-    public void EndOfLevel(GameObject WinOrGameOver)
+    public void EndOfLevel(GameObject WinOrGameOver, GameObject Screen)
     {
-        LeanTween.scale(WinOrGameOver, Vector3.one, 1).setOnComplete(() =>
+        LeanTween.scale(WinOrGameOver, Vector3.one, 1).setEaseOutBack().setOnComplete(() =>
         {
-            LeanTween.scale(WinOrGameOver, Vector3.zero, 1).setDelay(1);
-            LeanTween.moveLocalY(UI_LifeAndScore, 600, 0.5f).setDelay(1);
+            LeanTween.scale(WinOrGameOver, Vector3.zero, 1f).setEaseInBack().setDelay(0.2f);
+            LeanTween.moveLocalY(UI_LifeAndScore, 600, 1f).setDelay(0.2f);
+            LeanTween.scale(Pausa, Vector3.zero, 1f).setDelay(0.2f).setEaseInBack();
+            LeanTween.alphaCanvas(Fondo2, 1, 1f).setOnComplete(() =>
+            {
+                LeanTween.alphaCanvas(Fondo1, 1, 1f).setOnComplete(() =>
+                {
+                    Screen.SetActive(true);
+                });
+            });
 
         });
     }

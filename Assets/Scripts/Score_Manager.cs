@@ -28,6 +28,8 @@ public class Score_Manager : MonoBehaviour
     [SerializeField]
     UI_GamePlay ui_GamePlay;
 
+    [SerializeField] GameObject Win;
+
     // Add a reference to the Bloqueos_Nivel script
     [SerializeField]
     Bloqueos_Nivel bloqueos_Nivel;
@@ -69,9 +71,11 @@ public class Score_Manager : MonoBehaviour
     {
         m_VictorySound.Play();
         m_VScoreTxt.text = "Score: " + m_Score;
-        m_VictoryCanvas.SetActive(true);
-        m_ScoreTxt.gameObject.SetActive(false);
-        m_CarnesTxt.gameObject.SetActive(false); 
+        /* m_VictoryCanvas.SetActive(true);
+         m_ScoreTxt.gameObject.SetActive(false);
+         m_CarnesTxt.gameObject.SetActive(false); */
+        UI_GamePlay.instance.EndOfLevel(Win, m_VictoryCanvas);
+
     }
 
     public void RestaCarne()

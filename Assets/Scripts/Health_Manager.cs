@@ -21,6 +21,8 @@ public class Health_Manager : MonoBehaviour
     [SerializeField]
     CanvasGroup derrotaCanvasGroup;
     public bool IsDefeat = false;
+
+    [SerializeField] GameObject GameOver;
     public void Awake()
     {
         if (instance == null)
@@ -81,7 +83,8 @@ public class Health_Manager : MonoBehaviour
         lanzadores.SetActive(false);
 
         //pantalla Derrota
-        derrotaScreen.SetActive(true);
+        // derrotaScreen.SetActive(true);
+        UI_GamePlay.instance.EndOfLevel(GameOver, derrotaScreen);
         LeanTween.alphaCanvas(derrotaCanvasGroup, 1, 0.5f);
         RythmManager.instance.StopTime();
     }
