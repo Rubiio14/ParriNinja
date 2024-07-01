@@ -48,8 +48,8 @@ public class LeanScale_Botones : MonoBehaviour
     {
         LeanTween.scale(huesoSett_UI, huesosFullScale, 1f);
 
-        pollo_UI.transform.localScale -= pollo_UI.transform.localScale;
-        LemonSett_UI.transform.localScale -= LemonSett_UI.transform.localScale;
+        StartCoroutine(DelayPolloLimon());
+        
 
     }
 
@@ -57,8 +57,8 @@ public class LeanScale_Botones : MonoBehaviour
     {
         LeanTween.scale(HuesoNiv_UI, huesosFullScale, 0.75f).setDelay(0.2f);
 
-        pollo_UI.transform.localScale -= pollo_UI.transform.localScale;
-        LemonSett_UI.transform.localScale -= LemonSett_UI.transform.localScale;
+        StartCoroutine(DelayPolloLimon());
+        
 
     }
 
@@ -70,30 +70,11 @@ public class LeanScale_Botones : MonoBehaviour
        
        
     }
-
-    void Update()
+    IEnumerator DelayPolloLimon()
     {
-       /* if (Cuchillo.instance.initialMenuActive == true)
-        {
-            LeanTween.scale(pollo_UI, botonesFullScale, 0.75f);
-            LeanTween.scale(LemonSett_UI, botonesFullScale, 0.75f);
-
-            huesoSett_UI.transform.localScale -= huesoSett_UI.transform.localScale;
-            HuesoNiv_UI.transform.localScale -= HuesoNiv_UI.transform.localScale;
-        }
-        if (Cuchillo.instance.settingsActive == true)
-        {
-            LeanTween.scale(huesoSett_UI, huesosFullScale, 1f);
-
-            pollo_UI.transform.localScale -= pollo_UI.transform.localScale;
-            LemonSett_UI.transform.localScale -= LemonSett_UI.transform.localScale;
-        }
-        if (Cuchillo.instance.menuLevelActive == true)
-        {
-            LeanTween.scale(HuesoNiv_UI, huesosFullScale, 0.75f);
-
-            pollo_UI.transform.localScale -= pollo_UI.transform.localScale;
-            LemonSett_UI.transform.localScale -= LemonSett_UI.transform.localScale;
-        }*/
+        yield return new WaitForSeconds(1f);
+        pollo_UI.transform.localScale -= pollo_UI.transform.localScale;
+        LemonSett_UI.transform.localScale -= LemonSett_UI.transform.localScale;
     }
+    
 }
