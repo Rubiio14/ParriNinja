@@ -46,6 +46,7 @@ public class UI_GamePlay : MonoBehaviour
     [SerializeField] GameObject PanelGameOver;
     [SerializeField] GameObject Score;
     [SerializeField] GameObject NumberScore;*/
+    
 
 
     private void Awake()
@@ -132,7 +133,19 @@ public class UI_GamePlay : MonoBehaviour
             {
                 LeanTween.alphaCanvas(Fondo1, 1, 1f).setOnComplete(() =>
                 {
-                    Screen.SetActive(true);
+
+                    if (WinOrGameOver == WinLevel)
+                    {
+                        Screen.SetActive(true);
+                        VictoryScreen.instance.VictoryScreenCome(); 
+                        this.gameObject.SetActive(false);
+                    }
+                    else if(WinOrGameOver == GameOver) 
+                    {
+                        this.gameObject.SetActive(false);
+                    }
+                    
+                   
                 });
             });
 

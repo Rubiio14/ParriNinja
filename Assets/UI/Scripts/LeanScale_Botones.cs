@@ -55,7 +55,7 @@ public class LeanScale_Botones : MonoBehaviour
 
     public void EnterInLevelMenu()
     {
-        LeanTween.scale(HuesoNiv_UI, huesosFullScale, 0.75f).setDelay(0.2f);
+        LeanTween.scale(HuesoNiv_UI, huesosFullScale, 0.75f);
 
         StartCoroutine(DelayPolloLimon());
         

@@ -21,6 +21,8 @@ public class Score_Manager : MonoBehaviour
     [SerializeField]
     public TextMeshProUGUI m_ScoreTxt;
     [SerializeField]
+    public TextMeshProUGUI m_VictoryScreenScore;
+    [SerializeField]
     public TextMeshProUGUI m_VCarnesTxt;
     [SerializeField]
     public TextMeshProUGUI m_VScoreTxt;
@@ -75,6 +77,7 @@ public class Score_Manager : MonoBehaviour
          m_ScoreTxt.gameObject.SetActive(false);
          m_CarnesTxt.gameObject.SetActive(false); */
         UI_GamePlay.instance.EndOfLevel(Win, m_VictoryCanvas);
+        
 
     }
 
@@ -96,6 +99,7 @@ public class Score_Manager : MonoBehaviour
     {
         m_Score += puntos;
         m_ScoreTxt.text = m_Score.ToString("00");
+        m_VictoryScreenScore.text = m_Score.ToString("00");
         ui_GamePlay.AnimationPoints();
     }
 }
