@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5764641765216814446}
   - component: {fileID: 8890732177392830763}
   - component: {fileID: 8049043668442709865}
+  - component: {fileID: 2440936298487978816}
   m_Layer: 0
   m_Name: Pollo_UI
   m_TagString: Carne
@@ -127,8 +128,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2703cc10da547742bfddb3ede56c2a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 100
-  rotationAxis: {x: 0, y: 0, z: 1}
+  m_RotationSpeed: 0
+  m_RotationAxis: {x: 0, y: 0, z: 0}
+--- !u!114 &2440936298487978816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4333372726155644313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acd07e53c5fe158428ebef90f5fe4c3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &938324792289733758
 PrefabInstance:
   m_ObjectHideFlags: 0

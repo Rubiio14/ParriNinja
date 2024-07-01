@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8887085264195111385}
   - component: {fileID: 499026427532205006}
   - component: {fileID: 5764641765216814446}
+  - component: {fileID: 5116336120677029249}
   m_Layer: 0
   m_Name: Pollo
   m_TagString: Carne
@@ -98,7 +99,6 @@ MonoBehaviour:
   carneParte1: {fileID: 6177153613774864896}
   carneParte2: {fileID: 2930167469620760075}
   m_DespawnTimer: 0
-  m_HPTimer: 0
 --- !u!65 &5764641765216814446
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -120,6 +120,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 0.8133198, z: 1.8129517}
   m_Center: {x: 0, y: 0.023021415, z: -0.25469214}
+--- !u!114 &5116336120677029249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4333372726155644313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d4a42d8aafbc3b4a8955bb223bd584c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &938324792289733758
 PrefabInstance:
   m_ObjectHideFlags: 0

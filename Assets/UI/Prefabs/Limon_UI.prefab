@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2334483840585276065}
   - component: {fileID: 1466025248765682478}
   - component: {fileID: 4729219705881268604}
+  - component: {fileID: 5424282111195238342}
   m_Layer: 0
   m_Name: Limon_UI
   m_TagString: Limon_UI
@@ -132,8 +133,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2703cc10da547742bfddb3ede56c2a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 25
-  rotationAxis: {x: 0, y: 1, z: 0}
+  m_RotationSpeed: 0
+  m_RotationAxis: {x: 0, y: 0, z: 0}
+--- !u!114 &5424282111195238342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1141453317336696702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82ff6847746e91840b026dd1b383d41f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &787210938093083203
 PrefabInstance:
   m_ObjectHideFlags: 0

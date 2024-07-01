@@ -8,6 +8,7 @@ public class UIPolloExample: MonoBehaviour, SlizableItem
 {
     public void Slice()
     {
+        Cuchillo.instance.m_CutSound.Play();
         InitialMenu.instance.GoToLevelMenu();
         Pollo_UI_Behaviour.instance.ActivateParticles();
         Pollo_UI_Behaviour.instance.Piezas();

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 588258789462530501}
   - component: {fileID: 382240848907283869}
   - component: {fileID: 5686232043393021848}
+  - component: {fileID: 3235954553877436647}
   m_Layer: 0
   m_Name: Hueso
   m_TagString: Hueso
@@ -143,6 +144,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   particles: {fileID: 8615475098011739394}
   m_DespawnTimer: 0
+--- !u!114 &3235954553877436647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8999747679949731852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 427a2d6288f2af8429f6dbf74c1223dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6956537964760856210
 PrefabInstance:
   m_ObjectHideFlags: 0

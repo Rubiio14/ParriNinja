@@ -6,9 +6,10 @@ public class UILemonExample : MonoBehaviour, SlizableItem
 {
     public void Slice()
     {
-        InitialMenu.instance.SettingsButton();
         LimonUIBehaviour.instance.ActivateParticles();
         LimonUIBehaviour.instance.Piezas();
+        Cuchillo.instance.m_CutSound.Play();
+        InitialMenu.instance.SettingsButton();
         Pollo_UI_Behaviour.instance.gameObject.SetActive(false);
 
         LeanScale_Botones.instance.EnterInSettings();
