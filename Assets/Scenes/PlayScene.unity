@@ -2114,6 +2114,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29d1f0aac0037db448f9837b4a31a62b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &519574459 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8785500902722903462, guid: d40619e8be32fc64eac6f8fb3bdf59bd, type: 3}
+  m_PrefabInstance: {fileID: 7674318462482827154}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &529160437 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2476489773473693085, guid: d40619e8be32fc64eac6f8fb3bdf59bd, type: 3}
+  m_PrefabInstance: {fileID: 7674318462482827154}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &575357816
 GameObject:
   m_ObjectHideFlags: 0
@@ -2209,11 +2219,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f86192e3bb72874ba4345f408a9c5fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Panel: {fileID: 0}
+  Win: {fileID: 0}
+  GameOver: {fileID: 0}
+  PanelVictory: {fileID: 0}
+  PanelGameOver: {fileID: 0}
   RingNext: {fileID: 0}
   RingQuit: {fileID: 0}
+  RingTryAgain: {fileID: 0}
   ProvisionalButtonQuit: {fileID: 0}
   ProvisionalButtonNext: {fileID: 0}
+  ProvisionalButtonTryAgain: {fileID: 0}
   FondoMiddle: {fileID: 0}
   FondoOn: {fileID: 0}
 --- !u!1 &653908028
@@ -5070,6 +5085,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af13c3eeea4bc8c40b0625f87d407aca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1530784228 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 755046435604440508, guid: d40619e8be32fc64eac6f8fb3bdf59bd, type: 3}
+  m_PrefabInstance: {fileID: 7674318462482827154}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1606417791
 GameObject:
   m_ObjectHideFlags: 0
@@ -5714,6 +5734,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1811474866 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 139648256775435255, guid: d40619e8be32fc64eac6f8fb3bdf59bd, type: 3}
+  m_PrefabInstance: {fileID: 7674318462482827154}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1812897429
 GameObject:
   m_ObjectHideFlags: 0
@@ -5832,7 +5857,7 @@ MonoBehaviour:
   vida2_b: {fileID: 2359297743530256544}
   vida3_b: {fileID: 8858577913916052317}
   lanzadores: {fileID: 934952116}
-  derrotaScreen: {fileID: 693651737}
+  derrotaScreen: {fileID: 2791383504038567423}
   m_DefeatSound: {fileID: 1606417793}
   derrotaCanvasGroup: {fileID: 693651738}
   IsDefeat: 0
@@ -6564,7 +6589,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1419611975648031152, guid: d40619e8be32fc64eac6f8fb3bdf59bd, type: 3}
       propertyPath: m_Name
-      value: 'VictoryMenu '
+      value: 'VictoryGameOverMenu '
       objectReference: {fileID: 0}
     - target: {fileID: 2614179070004248318, guid: d40619e8be32fc64eac6f8fb3bdf59bd, type: 3}
       propertyPath: m_LocalScale.x
@@ -6598,6 +6623,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6530462188190117882, guid: d40619e8be32fc64eac6f8fb3bdf59bd, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a80b84e6dfa799748adee408e409cd79, type: 3}
     - target: {fileID: 7544921186961265931, guid: d40619e8be32fc64eac6f8fb3bdf59bd, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -6679,6 +6708,26 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8501442966704458940, guid: d40619e8be32fc64eac6f8fb3bdf59bd, type: 3}
+      propertyPath: Win
+      value: 
+      objectReference: {fileID: 6343415743821758344}
+    - target: {fileID: 8501442966704458940, guid: d40619e8be32fc64eac6f8fb3bdf59bd, type: 3}
+      propertyPath: GameOver
+      value: 
+      objectReference: {fileID: 2581929268105175181}
+    - target: {fileID: 8501442966704458940, guid: d40619e8be32fc64eac6f8fb3bdf59bd, type: 3}
+      propertyPath: PanelVictory
+      value: 
+      objectReference: {fileID: 529160437}
+    - target: {fileID: 8501442966704458940, guid: d40619e8be32fc64eac6f8fb3bdf59bd, type: 3}
+      propertyPath: RingTryAgain
+      value: 
+      objectReference: {fileID: 519574459}
+    - target: {fileID: 8501442966704458940, guid: d40619e8be32fc64eac6f8fb3bdf59bd, type: 3}
+      propertyPath: PanelGameOver
+      value: 
+      objectReference: {fileID: 1811474866}
+    - target: {fileID: 8501442966704458940, guid: d40619e8be32fc64eac6f8fb3bdf59bd, type: 3}
       propertyPath: ProvisionalButtonNext
       value: 
       objectReference: {fileID: 1202112494}
@@ -6686,6 +6735,10 @@ PrefabInstance:
       propertyPath: ProvisionalButtonQuit
       value: 
       objectReference: {fileID: 1331783756}
+    - target: {fileID: 8501442966704458940, guid: d40619e8be32fc64eac6f8fb3bdf59bd, type: 3}
+      propertyPath: ProvisionalButtonTryAgain
+      value: 
+      objectReference: {fileID: 1530784228}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

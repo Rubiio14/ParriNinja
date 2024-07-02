@@ -261,6 +261,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2210452915795824658, guid: 88ceea7c48f11844e82c881c4463cd36, type: 3}
   m_PrefabInstance: {fileID: 646069702}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &86686876 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 755046435604440508, guid: d40619e8be32fc64eac6f8fb3bdf59bd, type: 3}
+  m_PrefabInstance: {fileID: 2076407644}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &107268846
 GameObject:
   m_ObjectHideFlags: 0
@@ -3067,6 +3072,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &601181645 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 139648256775435255, guid: d40619e8be32fc64eac6f8fb3bdf59bd, type: 3}
+  m_PrefabInstance: {fileID: 2076407644}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &646069702
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3968,6 +3978,11 @@ MonoBehaviour:
   m_ObjetoCreado: {fileID: 6201180298312807719, guid: 686531e598de76f439fdb3af679039e2, type: 3}
   m_Spawn: {fileID: 0}
   m_SpawnRotation: 0
+--- !u!1 &1022129607 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8785500902722903462, guid: d40619e8be32fc64eac6f8fb3bdf59bd, type: 3}
+  m_PrefabInstance: {fileID: 2076407644}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1033127050 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1419611975648031152, guid: d40619e8be32fc64eac6f8fb3bdf59bd, type: 3}
@@ -4364,11 +4379,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f86192e3bb72874ba4345f408a9c5fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Panel: {fileID: 0}
+  Win: {fileID: 0}
+  GameOver: {fileID: 0}
+  PanelVictory: {fileID: 0}
+  PanelGameOver: {fileID: 0}
   RingNext: {fileID: 0}
   RingQuit: {fileID: 0}
+  RingTryAgain: {fileID: 0}
   ProvisionalButtonQuit: {fileID: 0}
   ProvisionalButtonNext: {fileID: 0}
+  ProvisionalButtonTryAgain: {fileID: 0}
   FondoMiddle: {fileID: 0}
   FondoOn: {fileID: 0}
 --- !u!222 &1198346644
@@ -6793,7 +6813,7 @@ MonoBehaviour:
   vida2_b: {fileID: 1636444478}
   vida3_b: {fileID: 2080142764}
   lanzadores: {fileID: 934952116}
-  derrotaScreen: {fileID: 1585340207}
+  derrotaScreen: {fileID: 1033127050}
   m_DefeatSound: {fileID: 406751748}
   derrotaCanvasGroup: {fileID: 1585340208}
   IsDefeat: 0
@@ -7018,7 +7038,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1419611975648031152, guid: d40619e8be32fc64eac6f8fb3bdf59bd, type: 3}
       propertyPath: m_Name
-      value: 'VictoryMenu '
+      value: 'VictoryGameOverMenu '
       objectReference: {fileID: 0}
     - target: {fileID: 1419611975648031152, guid: d40619e8be32fc64eac6f8fb3bdf59bd, type: 3}
       propertyPath: m_IsActive
@@ -7160,6 +7180,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8501442966704458940, guid: d40619e8be32fc64eac6f8fb3bdf59bd, type: 3}
+      propertyPath: Win
+      value: 
+      objectReference: {fileID: 72203898}
+    - target: {fileID: 8501442966704458940, guid: d40619e8be32fc64eac6f8fb3bdf59bd, type: 3}
+      propertyPath: GameOver
+      value: 
+      objectReference: {fileID: 1346153093}
+    - target: {fileID: 8501442966704458940, guid: d40619e8be32fc64eac6f8fb3bdf59bd, type: 3}
+      propertyPath: PanelVictory
+      value: 
+      objectReference: {fileID: 2093504061}
+    - target: {fileID: 8501442966704458940, guid: d40619e8be32fc64eac6f8fb3bdf59bd, type: 3}
+      propertyPath: RingTryAgain
+      value: 
+      objectReference: {fileID: 1022129607}
+    - target: {fileID: 8501442966704458940, guid: d40619e8be32fc64eac6f8fb3bdf59bd, type: 3}
+      propertyPath: PanelGameOver
+      value: 
+      objectReference: {fileID: 601181645}
+    - target: {fileID: 8501442966704458940, guid: d40619e8be32fc64eac6f8fb3bdf59bd, type: 3}
+      propertyPath: ProvisionalButtonTryAgain
+      value: 
+      objectReference: {fileID: 86686876}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7169,6 +7213,11 @@ PrefabInstance:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2094725389977373066, guid: 88ceea7c48f11844e82c881c4463cd36, type: 3}
   m_PrefabInstance: {fileID: 646069702}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2093504061 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2476489773473693085, guid: d40619e8be32fc64eac6f8fb3bdf59bd, type: 3}
+  m_PrefabInstance: {fileID: 2076407644}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &2097992635
 GameObject:

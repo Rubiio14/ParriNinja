@@ -137,11 +137,13 @@ public class UI_GamePlay : MonoBehaviour
                     if (WinOrGameOver == WinLevel)
                     {
                         Screen.SetActive(true);
-                        VictoryScreen.instance.VictoryScreenCome(); 
+                        VictoryScreen.instance.VictoryGameOverScreenCome(WinLevel); 
                         this.gameObject.SetActive(false);
                     }
                     else if(WinOrGameOver == GameOver) 
                     {
+                        Screen.SetActive(true);
+                        VictoryScreen.instance.VictoryGameOverScreenCome(GameOver);
                         this.gameObject.SetActive(false);
                     }
                     
