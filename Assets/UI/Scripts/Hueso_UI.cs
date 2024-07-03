@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Hueso_UI : MonoBehaviour
+public class Hueso_UI : MonoBehaviour, SlizableItem
 {
     public static Hueso_UI instance;
 
@@ -74,6 +74,17 @@ public class Hueso_UI : MonoBehaviour
 
         HuesoUIAudio.Play();
         VFX_Particles.instance.Particles(particles, this.gameObject);
+    }
+
+    public void Slice()
+    {
+        HuesoCortado();
+        SettingsScreen.instance.BackToInitialMenu();
+        LimonUIBehaviour.instance.gameObject.SetActive(true);
+        Pollo_UI_Behaviour.instance.gameObject.SetActive(true);
+        LimonUIBehaviour.instance.ResetToFactorySettings();
+        Pollo_UI_Behaviour.instance.ResetToFactorySettings();
+        HuesoCortado();
     }
 
 }

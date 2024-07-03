@@ -15,21 +15,24 @@ public class VFX_HP : MonoBehaviour
         {
             hp[0].transform.position = other.transform.position;
             BrokenHeart();
-            other.gameObject.SetActive(false);
+            
+            Destroy(other.gameObject);
             Health_Manager.instance.RestaVida();
         }
         else if (other.gameObject.CompareTag("Carne") && hp[1] == true || other.gameObject.CompareTag("Limon") && hp[1] == true || other.gameObject.CompareTag("Costillar") && hp[1] == true)
         {
             hp[1].transform.position = other.transform.position;
             BrokenHeart1();
-            other.gameObject.SetActive(false);
+            
+            Destroy(other.gameObject);
             Health_Manager.instance.RestaVida();
         }
         else if (other.gameObject.CompareTag("Carne") && hp[2] == true || other.gameObject.CompareTag("Limon") && hp[2] == true || other.gameObject.CompareTag("Costillar") && hp[2] == true)
         {
             hp[2].transform.position = other.transform.position;
             BrokenHeart2();
-            other.gameObject.SetActive(false);
+            
+            Destroy(other.gameObject);
             Health_Manager.instance.RestaVida();
         }
     }

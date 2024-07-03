@@ -624,9 +624,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b16ca9ef4d4e9e241bfe2be3daf87ee1, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2779055310815494250}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b16ca9ef4d4e9e241bfe2be3daf87ee1, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1385324355050110554}
     - targetCorrespondingSourceObject: {fileID: 5768469393616622874, guid: b16ca9ef4d4e9e241bfe2be3daf87ee1, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7581975842127569954}
@@ -783,18 +780,6 @@ MonoBehaviour:
   carneParte1: {fileID: 4144904568017400402}
   carneParte2: {fileID: 7196348549757382054}
   m_DespawnTimer: 0
---- !u!114 &1385324355050110554
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7298497945050307097}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d4a42d8aafbc3b4a8955bb223bd584c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &7927084776674295971 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b16ca9ef4d4e9e241bfe2be3daf87ee1, type: 3}

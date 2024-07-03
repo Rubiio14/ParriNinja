@@ -88,8 +88,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2703cc10da547742bfddb3ede56c2a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 25
-  rotationAxis: {x: 0, y: 0, z: 1}
+  m_RotationSpeed: 0
+  m_RotationAxis: {x: 0, y: 0, z: 0}
 --- !u!1 &1684145738519895649
 GameObject:
   m_ObjectHideFlags: 0
@@ -253,8 +253,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2703cc10da547742bfddb3ede56c2a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 25
-  rotationAxis: {x: 0, y: 0, z: 1}
+  m_RotationSpeed: 0
+  m_RotationAxis: {x: 0, y: 0, z: 0}
 --- !u!1 &5156268664182914488
 GameObject:
   m_ObjectHideFlags: 0
@@ -342,7 +342,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &3457739485373130742
 MonoBehaviour:
   m_ObjectHideFlags: 0

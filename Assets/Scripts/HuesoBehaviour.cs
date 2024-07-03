@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HuesoBehaviour : MonoBehaviour
+public class HuesoBehaviour : MonoBehaviour, SlizableItem
 {
     Vector3 m_RotacionHueso;
 
@@ -40,6 +40,13 @@ public class HuesoBehaviour : MonoBehaviour
             Health_Manager.instance.Defeat();
         }
     }
+
+    public void Slice()
+    {
+        Hueso();
+        Cuchillo.instance.m_BoneSound.Play();
+    }
+
     private void OnTriggerEnter(Collider other)
     {
 

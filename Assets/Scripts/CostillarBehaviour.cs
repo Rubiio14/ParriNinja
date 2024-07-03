@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CostillarBehaviour : MonoBehaviour
+public class CostillarBehaviour : MonoBehaviour, SlizableItem
 {
     [SerializeField]
     GameObject[] manchas;
@@ -73,7 +73,7 @@ public class CostillarBehaviour : MonoBehaviour
 
         if (m_DespawnTimer >= 2.5)
         {
-            gameObject.SetActive(false);
+            Destroy(gameObject);
             m_DespawnTimer = 0f;
         }
     }
@@ -113,4 +113,10 @@ public class CostillarBehaviour : MonoBehaviour
         carneParte2.GetComponent<Rigidbody>().AddForce(new Vector3(3, 6, 0), ForceMode.Impulse);
         carneParte3.GetComponent<Rigidbody>().AddForce(new Vector3(0, 6, 3), ForceMode.Impulse);
     }
+    public void Slice()
+    {
+        Cortado();
+        Cuchillo.instance.m_CutSound.Play();
+    }
+
 }

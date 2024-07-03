@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class LimonUIBehaviour : MonoBehaviour
+public class LimonUIBehaviour : MonoBehaviour, SlizableItem
 {
     [SerializeField]
     GameObject[] manchas;
@@ -236,5 +236,18 @@ public class LimonUIBehaviour : MonoBehaviour
         rb_parte4.angularVelocity = Vector3.zero;
 
         m_LimonCollider.enabled = true;
+    }
+
+    public void Slice()
+    {
+        ActivateParticles();
+        Piezas();
+        Cuchillo.instance.m_CutSound.Play();
+        InitialMenu.instance.SettingsButton();
+        Pollo_UI_Behaviour.instance.gameObject.SetActive(false);
+
+        LeanScale_Botones.instance.EnterInSettings();
+
+        Debug.Log("Slice Lemon UI");
     }
 }

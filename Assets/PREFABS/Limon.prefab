@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: -3942217909622996745}
   - component: {fileID: -4618891318507903954}
   - component: {fileID: 82648142925200349}
-  - component: {fileID: 8229787797070519479}
   m_Layer: 0
   m_Name: Limon
   m_TagString: Limon
@@ -123,18 +122,6 @@ MonoBehaviour:
   m_NeedTimerLimon: 0
   m_Smoke: 0
   m_holdTimer: 0
---- !u!114 &8229787797070519479
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1141453317336696702}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50d33d0fe5a61b440899ed7b5bdc91c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &877940746985138408
 PrefabInstance:
   m_ObjectHideFlags: 0

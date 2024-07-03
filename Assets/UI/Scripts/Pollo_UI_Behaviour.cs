@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pollo_UI_Behaviour : MonoBehaviour
+public class Pollo_UI_Behaviour : MonoBehaviour, SlizableItem
 {
     [SerializeField]
     GameObject[] manchas;
@@ -193,5 +193,18 @@ public class Pollo_UI_Behaviour : MonoBehaviour
         m_PolloCollider.enabled = true;
         rbPollo.isKinematic = true;
         rbPollo.useGravity = false;
+    }
+
+    public void Slice()
+    {
+        Cuchillo.instance.m_CutSound.Play();
+        InitialMenu.instance.GoToLevelMenu();
+        ActivateParticles();
+        Piezas();
+        LimonUIBehaviour.instance.gameObject.SetActive(false);
+        Hueso_UI_Levels.instance.HuesoInstanciado();
+        LeanScale_Botones.instance.EnterInLevelMenu();
+
+        Debug.Log("Slice pollo UI");
     }
 }

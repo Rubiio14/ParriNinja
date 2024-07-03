@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using static UnityEngine.ParticleSystem;
 
-public class Hueso_UI_Levels : MonoBehaviour
+public class Hueso_UI_Levels : MonoBehaviour, SlizableItem
 {
     public static Hueso_UI_Levels instance;
 
@@ -68,6 +68,16 @@ public class Hueso_UI_Levels : MonoBehaviour
         HuesoUIAudio.Play();
         VFX_Particles.instance.Particles(particles, this.gameObject);
 
+    }
+
+    public void Slice()
+    {
+        MenuLevels.instance.MenuLevelToInitial();
+        LimonUIBehaviour.instance.ResetToFactorySettings();
+        Pollo_UI_Behaviour.instance.ResetToFactorySettings();
+        LimonUIBehaviour.instance.gameObject.SetActive(true);
+        Pollo_UI_Behaviour.instance.gameObject.SetActive(true);
+        HuesoCortado();
     }
 
 }

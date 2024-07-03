@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Lemon_Behaviour : MonoBehaviour
+public class Lemon_Behaviour : MonoBehaviour, SlizableItem
 {
     public static Lemon_Behaviour instance;
     public int m_PuntosLimon;
@@ -87,7 +87,7 @@ public class Lemon_Behaviour : MonoBehaviour
 
         if (m_DespawnTimerLimon >= 2.5)
         {
-            gameObject.SetActive(false);
+            Destroy(gameObject);
             m_DespawnTimerLimon = 0f;
         }
 
@@ -144,5 +144,11 @@ public class Lemon_Behaviour : MonoBehaviour
         limonParte4.GetComponent<Rigidbody>().AddForce(new Vector3(3, 10, 0), ForceMode.Impulse);
 
         Fade_Manchas.instance.Mancha(manchas, this.gameObject);
+    }
+
+    public void Slice()
+    {
+        Cortado();
+        Cuchillo.instance.m_CutSound.Play();
     }
 }
