@@ -9,11 +9,30 @@ public class PauseMenu : MonoBehaviour
     public bool pauseMenuActive;
     [SerializeField]
     GameObject pauseScreen;
+   // [SerializeField] GameObject ;
+
+    public static PauseMenu instance;
+
+    [SerializeField] CanvasGroup Fondo;
+    [SerializeField] GameObject PanelPause;
+
+
+    public void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(this);
+        }
+    }
 
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.Escape) && pauseMenuActive == true)
+       /* if (Input.GetKeyDown(KeyCode.Escape) && pauseMenuActive == true)
         {
             pauseMenuActive = false;
         }
@@ -25,24 +44,52 @@ public class PauseMenu : MonoBehaviour
         else
         {
             pauseScreen.SetActive(false);
-        }
+        }*/
     }
-    public void PauseButton()
+    public void PauseScreenCome()
     {
-        pauseMenuActive = true;
-        Time.timeScale = 0.0f;
+       // pauseMenuActive = true;
+        LeanTween.alphaCanvas(Fondo, 1, 1).setIgnoreTimeScale(true); 
+        LeanTween.moveLocalY(PanelPause, 0, 1).setIgnoreTimeScale(true);
+
+
     }
     public void ContinueButton()
     {
-        pauseMenuActive = false;
-        Time.timeScale = 1.0f;
+        LeanTween.alphaCanvas(Fondo, 0, 1).setIgnoreTimeScale(true);
+        LeanTween.moveLocalY(PanelPause, 385, 1).setIgnoreTimeScale(true).setOnComplete(() =>
+        {
+            
+            UI_GamePlay.instance.PauseDesactive();
+        });
+       
     }
     public void MainButton()
-    {
-        SceneManager.LoadScene(0);
+    {  
+        UI_GamePlay.instance.TrancisionFondo();
+        UI_GamePlay.instance.UIGamePlayGone();
+        LeanTween.alphaCanvas(Fondo, 0, 1).setIgnoreTimeScale(true);
+        LeanTween.moveLocalY(PanelPause, 385, 1).setIgnoreTimeScale(true).setOnComplete(() =>
+        {
+           
+             SceneManager.LoadScene(0);
+             Time.timeScale = 1.0f;
+
+        });
+        
     }
-    public void ExitGame()
-    {
-        Application.Quit();
+    public void ResetGame()
+    {   
+        UI_GamePlay.instance.UIGamePlayGone();
+        LeanTween.alphaCanvas(Fondo, 0, 1).setIgnoreTimeScale(true);
+        LeanTween.moveLocalY(PanelPause, 385, 1).setIgnoreTimeScale(true).setOnComplete(() =>
+        {
+         string currentSceneName = SceneManager.GetActiveScene().name;       
+         SceneManager.LoadScene(currentSceneName);
+         Time.timeScale = 1.0f;
+           
+        });
+       
+        
     }
 }

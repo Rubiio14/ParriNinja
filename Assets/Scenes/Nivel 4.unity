@@ -2420,6 +2420,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 222658878}
   m_CullTransparentMesh: 1
+--- !u!1 &306348357 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7424492058456710033, guid: 5962135ecacabb14fb84b6de504e7054, type: 3}
+  m_PrefabInstance: {fileID: 1801874470}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &367251616
 GameObject:
   m_ObjectHideFlags: 0
@@ -3105,6 +3110,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI_GamePlay
       objectReference: {fileID: 0}
+    - target: {fileID: 3715332511861095339, guid: 88ceea7c48f11844e82c881c4463cd36, type: 3}
+      propertyPath: Cuchillo
+      value: 
+      objectReference: {fileID: 653908028}
+    - target: {fileID: 3715332511861095339, guid: 88ceea7c48f11844e82c881c4463cd36, type: 3}
+      propertyPath: PauseScreen
+      value: 
+      objectReference: {fileID: 306348357}
     - target: {fileID: 4608655750948831989, guid: 88ceea7c48f11844e82c881c4463cd36, type: 3}
       propertyPath: m_LocalScale.x
       value: 8
@@ -6206,6 +6219,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 954315553355754491, guid: 5962135ecacabb14fb84b6de504e7054, type: 3}
+      propertyPath: pauseScreen
+      value: 
+      objectReference: {fileID: 306348357}
     - target: {fileID: 6130882096655784225, guid: 5962135ecacabb14fb84b6de504e7054, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -6289,6 +6306,10 @@ PrefabInstance:
     - target: {fileID: 7424492058456710033, guid: 5962135ecacabb14fb84b6de504e7054, type: 3}
       propertyPath: m_Name
       value: PauseMenuUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 7424492058456710033, guid: 5962135ecacabb14fb84b6de504e7054, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

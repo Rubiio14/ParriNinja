@@ -3049,6 +3049,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI_GamePlay
       objectReference: {fileID: 0}
+    - target: {fileID: 3715332511861095339, guid: 88ceea7c48f11844e82c881c4463cd36, type: 3}
+      propertyPath: Cuchillo
+      value: 
+      objectReference: {fileID: 653908028}
+    - target: {fileID: 3715332511861095339, guid: 88ceea7c48f11844e82c881c4463cd36, type: 3}
+      propertyPath: PauseScreen
+      value: 
+      objectReference: {fileID: 968085141}
     - target: {fileID: 3850010528974505168, guid: 88ceea7c48f11844e82c881c4463cd36, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -3160,6 +3168,50 @@ PrefabInstance:
     - target: {fileID: 6356469594904710406, guid: 88ceea7c48f11844e82c881c4463cd36, type: 3}
       propertyPath: m_LocalScale.z
       value: 5.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7905703425285360875, guid: 88ceea7c48f11844e82c881c4463cd36, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7905703425285360875, guid: 88ceea7c48f11844e82c881c4463cd36, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7905703425285360875, guid: 88ceea7c48f11844e82c881c4463cd36, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 742693567}
+    - target: {fileID: 7905703425285360875, guid: 88ceea7c48f11844e82c881c4463cd36, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 968085142}
+    - target: {fileID: 7905703425285360875, guid: 88ceea7c48f11844e82c881c4463cd36, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7905703425285360875, guid: 88ceea7c48f11844e82c881c4463cd36, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PauseActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 7905703425285360875, guid: 88ceea7c48f11844e82c881c4463cd36, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PauseButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 7905703425285360875, guid: 88ceea7c48f11844e82c881c4463cd36, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UI_GamePlay, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7905703425285360875, guid: 88ceea7c48f11844e82c881c4463cd36, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: PauseMenu, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7905703425285360875, guid: 88ceea7c48f11844e82c881c4463cd36, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7905703425285360875, guid: 88ceea7c48f11844e82c881c4463cd36, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 9022987293120305512, guid: 88ceea7c48f11844e82c881c4463cd36, type: 3}
       propertyPath: m_Camera
@@ -4019,6 +4071,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 941074713}
   m_CullTransparentMesh: 1
+--- !u!1 &968085141 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7424492058456710033, guid: 5962135ecacabb14fb84b6de504e7054, type: 3}
+  m_PrefabInstance: {fileID: 1761121949}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &968085142 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 954315553355754491, guid: 5962135ecacabb14fb84b6de504e7054, type: 3}
+  m_PrefabInstance: {fileID: 1761121949}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 968085141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 886246ee98da5a84eb304cab22396234, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1004532953
 GameObject:
   m_ObjectHideFlags: 0
@@ -6483,6 +6551,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 954315553355754491, guid: 5962135ecacabb14fb84b6de504e7054, type: 3}
+      propertyPath: pauseScreen
+      value: 
+      objectReference: {fileID: 968085141}
+    - target: {fileID: 3248875113247452779, guid: 5962135ecacabb14fb84b6de504e7054, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4572245451555484084, guid: 5962135ecacabb14fb84b6de504e7054, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 968085142}
+    - target: {fileID: 4572245451555484084, guid: 5962135ecacabb14fb84b6de504e7054, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ResetGame
+      objectReference: {fileID: 0}
     - target: {fileID: 5751302371302127802, guid: 5962135ecacabb14fb84b6de504e7054, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -34.099976
@@ -6571,9 +6655,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6681307938137175335, guid: 5962135ecacabb14fb84b6de504e7054, type: 3}
+      propertyPath: m_Name
+      value: ResetButton
+      objectReference: {fileID: 0}
     - target: {fileID: 7424492058456710033, guid: 5962135ecacabb14fb84b6de504e7054, type: 3}
       propertyPath: m_Name
       value: PauseMenuUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 7424492058456710033, guid: 5962135ecacabb14fb84b6de504e7054, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -2553,6 +2553,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI_GamePlay
       objectReference: {fileID: 0}
+    - target: {fileID: 3715332511861095339, guid: 88ceea7c48f11844e82c881c4463cd36, type: 3}
+      propertyPath: Cuchillo
+      value: 
+      objectReference: {fileID: 653908028}
+    - target: {fileID: 3715332511861095339, guid: 88ceea7c48f11844e82c881c4463cd36, type: 3}
+      propertyPath: PauseScreen
+      value: 
+      objectReference: {fileID: 730025341}
     - target: {fileID: 4608655750948831989, guid: 88ceea7c48f11844e82c881c4463cd36, type: 3}
       propertyPath: m_LocalScale.x
       value: 8
@@ -3183,6 +3191,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 954315553355754491, guid: 5962135ecacabb14fb84b6de504e7054, type: 3}
+      propertyPath: pauseScreen
+      value: 
+      objectReference: {fileID: 730025341}
     - target: {fileID: 6130882096655784225, guid: 5962135ecacabb14fb84b6de504e7054, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -3267,11 +3279,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: PauseMenuUI
       objectReference: {fileID: 0}
+    - target: {fileID: 7424492058456710033, guid: 5962135ecacabb14fb84b6de504e7054, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5962135ecacabb14fb84b6de504e7054, type: 3}
+--- !u!1 &730025341 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7424492058456710033, guid: 5962135ecacabb14fb84b6de504e7054, type: 3}
+  m_PrefabInstance: {fileID: 730025340}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &754010400 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2210452915795824658, guid: 88ceea7c48f11844e82c881c4463cd36, type: 3}

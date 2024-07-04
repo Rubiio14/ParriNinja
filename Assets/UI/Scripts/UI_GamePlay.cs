@@ -36,9 +36,13 @@ public class UI_GamePlay : MonoBehaviour
     [SerializeField] GameObject WinLevel;
 
     [SerializeField] GameObject UI_LifeAndScore;
+    [SerializeField] GameObject PauseScreen;
+    [SerializeField] GameObject Cuchillo;
 
     [SerializeField] CanvasGroup Fondo2;
     [SerializeField] CanvasGroup Fondo1;
+
+    public bool m_GoToMenu;
 
     /*// Pantalla de derrota
     [SerializeField] GameObject ButtonRetry;
@@ -71,6 +75,28 @@ public class UI_GamePlay : MonoBehaviour
     void Update()
     {
         // Aquí puedes manejar las actualizaciones por frame
+    }
+
+    public void PauseActive()
+    {
+        Time.timeScale = 0.0f;
+        PauseScreen.SetActive(true);
+        Cuchillo.SetActive(false);
+        PauseMenu.instance.PauseScreenCome();
+        LeanTween.scale(Pausa, Vector2.zero, 1).setEaseInBack().setIgnoreTimeScale(true).setOnComplete(() =>
+        {
+        Pausa.SetActive(false);
+        });
+       
+    }
+
+    public void PauseDesactive()
+    {
+        Time.timeScale = 1.0f;
+        PauseScreen.SetActive(false);
+        Cuchillo.SetActive(true);
+        Pausa.SetActive(true );
+        LeanTween.scale(Pausa, Vector2.one, 1).setEaseOutBack();
     }
 
     public void GameStart()
@@ -124,6 +150,7 @@ public class UI_GamePlay : MonoBehaviour
   
     public void EndOfLevel(GameObject WinOrGameOver, GameObject Screen)
     {
+        LeanTween.scale(Pausa, Vector3.zero, 1f).setDelay(0.2f).setEaseInBack();
         LeanTween.scale(WinOrGameOver, Vector3.one, 1).setEaseOutBack().setOnComplete(() =>
         {
             LeanTween.scale(WinOrGameOver, Vector3.zero, 1f).setEaseInBack().setDelay(0.2f);
@@ -152,5 +179,20 @@ public class UI_GamePlay : MonoBehaviour
             });
 
         });
+    }
+
+    public void UIGamePlayGone()
+    {
+       
+        LeanTween.moveLocalY(UI_LifeAndScore, 600, 1f).setDelay(0.2f).setIgnoreTimeScale(true);
+        LeanTween.scale(Pausa, Vector3.zero, 1f).setDelay(0.2f).setEaseInBack().setIgnoreTimeScale(true);
+
+    }
+
+    public void TrancisionFondo() 
+    {
+            LeanTween.alphaCanvas(Fondo2, 1, 1f).setIgnoreTimeScale(true);
+            LeanTween.alphaCanvas(Fondo1, 1, 1f).setIgnoreTimeScale(true);
+
     }
 }

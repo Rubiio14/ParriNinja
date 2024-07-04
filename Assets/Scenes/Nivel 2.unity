@@ -3397,7 +3397,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 954315553355754491, guid: 5962135ecacabb14fb84b6de504e7054, type: 3}
   m_PrefabInstance: {fileID: 1093907194}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1923538617}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 886246ee98da5a84eb304cab22396234, type: 3}
@@ -4409,6 +4409,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 954315553355754491, guid: 5962135ecacabb14fb84b6de504e7054, type: 3}
+      propertyPath: pauseScreen
+      value: 
+      objectReference: {fileID: 1923538617}
     - target: {fileID: 5751302371302127802, guid: 5962135ecacabb14fb84b6de504e7054, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -34.099976
@@ -5029,6 +5033,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI_GamePlay
       objectReference: {fileID: 0}
+    - target: {fileID: 3715332511861095339, guid: 88ceea7c48f11844e82c881c4463cd36, type: 3}
+      propertyPath: Cuchillo
+      value: 
+      objectReference: {fileID: 653908028}
+    - target: {fileID: 3715332511861095339, guid: 88ceea7c48f11844e82c881c4463cd36, type: 3}
+      propertyPath: PauseScreen
+      value: 
+      objectReference: {fileID: 1923538617}
     - target: {fileID: 4899455058004569422, guid: 88ceea7c48f11844e82c881c4463cd36, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -6830,6 +6842,11 @@ GameObject:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2094725389977373066, guid: 88ceea7c48f11844e82c881c4463cd36, type: 3}
   m_PrefabInstance: {fileID: 1339876169}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1923538617 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7424492058456710033, guid: 5962135ecacabb14fb84b6de504e7054, type: 3}
+  m_PrefabInstance: {fileID: 1093907194}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1973473983 stripped
 GameObject:

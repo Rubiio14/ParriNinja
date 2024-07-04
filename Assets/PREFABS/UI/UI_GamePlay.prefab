@@ -1458,8 +1458,11 @@ MonoBehaviour:
   GameOver: {fileID: 2935730098359821948}
   WinLevel: {fileID: 2210452915795824658}
   UI_LifeAndScore: {fileID: 2666987664087207289}
+  PauseScreen: {fileID: 0}
+  Cuchillo: {fileID: 0}
   Fondo2: {fileID: 4056780926324654500}
   Fondo1: {fileID: 2388497344958635091}
+  m_GoToMenu: 0
 --- !u!1 &3978138487687386680
 GameObject:
   m_ObjectHideFlags: 0
@@ -2102,9 +2105,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
-        m_MethodName: PauseButton
+      - m_Target: {fileID: 3715332511861095339}
+        m_TargetAssemblyTypeName: UI_GamePlay, Assembly-CSharp
+        m_MethodName: PauseActive
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
