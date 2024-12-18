@@ -86,6 +86,6 @@ public class Health_Manager : MonoBehaviour
         // derrotaScreen.SetActive(true);
         UI_GamePlay.instance.EndOfLevel(GameOver, derrotaScreen);
         LeanTween.alphaCanvas(derrotaCanvasGroup, 1, 0.5f);
-        RythmManager.instance.StopTime();
+        //RythmManager.instance.StopTime();
     }
 }

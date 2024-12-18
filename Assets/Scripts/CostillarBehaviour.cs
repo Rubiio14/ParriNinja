@@ -97,7 +97,8 @@ public class CostillarBehaviour : MonoBehaviour, SlizableItem
         }
         else
         {
-            Score_Manager.instance.SumaPuntos(m_PuntosCarne);
+            //Score_Manager.instance.SumaPuntos(m_PuntosCarne);
+            NewScoreManager.instance.SumaPuntos(m_PuntosCarne);
             VFX_Particles.instance.Particles(particles[0], carneEntera);
         }
         Piezas();

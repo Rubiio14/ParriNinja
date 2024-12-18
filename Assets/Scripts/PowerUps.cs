@@ -19,7 +19,8 @@ public class PowerUps : MonoBehaviour
 
     public void CriticalHit(int m_Puntos)
     {
-        Score_Manager.instance.SumaPuntos(m_Puntos * 2);
+        //Score_Manager.instance.SumaPuntos(m_Puntos * 2);
+        NewScoreManager.instance.SumaPuntos(m_Puntos * 2);
         Debug.Log("Critico");
     }
 

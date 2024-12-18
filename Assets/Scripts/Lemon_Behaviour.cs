@@ -112,9 +112,10 @@ public class Lemon_Behaviour : MonoBehaviour, SlizableItem
         m_NeedHoldTimer = true;
         rbLimon.isKinematic = true;
         rbLimon.useGravity = false;
-        RythmManager.instance.m_IsLemonActive = true;
+        //RythmManager.instance.m_IsLemonActive = true;
         VFX_Particles.instance.Particles(particles, limonEntero);
-        Score_Manager.instance.SumaPuntos(m_PuntosLimon);
+        //Score_Manager.instance.SumaPuntos(m_PuntosLimon);
+        NewScoreManager.instance.SumaPuntos(m_PuntosLimon);
 
         if (m_holdTimer >= 3f)
         {
@@ -126,7 +127,7 @@ public class Lemon_Behaviour : MonoBehaviour, SlizableItem
     {
         limonEntero.SetActive(false);
         m_LimonCollider.enabled = false;
-        RythmManager.instance.m_IsLemonActive = false;
+        //RythmManager.instance.m_IsLemonActive = false;
 
         m_NeedTimerLimon = true;
 
