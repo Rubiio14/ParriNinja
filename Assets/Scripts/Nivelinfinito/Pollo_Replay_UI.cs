@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-public class Pollo_UI_Behaviour : MonoBehaviour, SlizableItem
+
+public class Pollo_Replay_UI : MonoBehaviour, SlizableItem
 {
     [SerializeField]
     GameObject[] manchas;
@@ -22,7 +23,7 @@ public class Pollo_UI_Behaviour : MonoBehaviour, SlizableItem
 
     Rigidbody rb_polloEntero, rb_parte1, rb_parte2;
 
-    public static Pollo_UI_Behaviour instance;
+    public static Pollo_Replay_UI instance;
 
     Rigidbody rbPollo;
 
@@ -125,8 +126,8 @@ public class Pollo_UI_Behaviour : MonoBehaviour, SlizableItem
                 VFX_Smoke.instance.Smoke(smoke[1], polloParte2);
                 m_Smoke = true;
             }
-            polloParte1.SetActive(false);
-            polloParte2.SetActive(false);
+            //polloParte1.SetActive(false);
+            //polloParte2.SetActive(false);
             m_DespawnTimer = 0;
             m_NeedTimer = false;
             m_Smoke = false;
@@ -146,8 +147,8 @@ public class Pollo_UI_Behaviour : MonoBehaviour, SlizableItem
         polloParte1.SetActive(true);
         polloParte2.SetActive(true);
 
-        polloParte1.GetComponent<Rigidbody>().AddForce(new Vector3(-3, 6, 0), ForceMode.Impulse);
-        polloParte2.GetComponent<Rigidbody>().AddForce(new Vector3(3, 6, 0), ForceMode.Impulse);
+        polloParte1.GetComponent<Rigidbody>().AddForce(new Vector3(-3 * 2, 6 * 2, 0), ForceMode.Impulse);
+        polloParte2.GetComponent<Rigidbody>().AddForce(new Vector3(3 * 2, 6 * 2, 0), ForceMode.Impulse);
     }
 
     //Effects
@@ -199,19 +200,13 @@ public class Pollo_UI_Behaviour : MonoBehaviour, SlizableItem
     {
         StartCoroutine(DelayRecarga());
         Cuchillo.instance.m_CutSound.Play();
-        //InitialMenu.instance.GoToLevelMenu();
         ActivateParticles();
-        //SceneManager.LoadScene("Infinito");
         Piezas();
-        //LimonUIBehaviour.instance.gameObject.SetActive(false);
-        //Hueso_UI_Levels.instance.HuesoInstanciado();
-        //LeanScale_Botones.instance.EnterInLevelMenu();
-
         Debug.Log("Slice pollo UI");
     }
     IEnumerator DelayRecarga()
     {
         yield return new WaitForSeconds(2f);
-        SceneManager.LoadScene("Infinito");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
