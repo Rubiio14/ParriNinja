@@ -14,6 +14,7 @@ public class NewScoreManager : MonoBehaviour
     [SerializeField]
     UI_GamePlay ui_GamePlay;
 
+
     public static NewScoreManager instance;
     public void Awake()
     {

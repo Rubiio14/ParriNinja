@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Health_Manager : MonoBehaviour
 {
@@ -21,6 +22,8 @@ public class Health_Manager : MonoBehaviour
     [SerializeField]
     CanvasGroup derrotaCanvasGroup;
     public bool IsDefeat = false;
+    [SerializeField]
+    public TextMeshProUGUI m_DefeatScreenScore;
 
     [SerializeField] GameObject GameOver;
     public void Awake()
@@ -86,6 +89,7 @@ public class Health_Manager : MonoBehaviour
         // derrotaScreen.SetActive(true);
         UI_GamePlay.instance.EndOfLevel(GameOver, derrotaScreen);
         LeanTween.alphaCanvas(derrotaCanvasGroup, 1, 0.5f);
+        m_DefeatScreenScore.text = "Score " + NewScoreManager.instance.m_Score.ToString("00");
         //RythmManager.instance.StopTime();
     }
 }

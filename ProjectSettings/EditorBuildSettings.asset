@@ -9,18 +9,21 @@ EditorBuildSettings:
     path: Assets/Scenes/InitialScene.unity
     guid: c12a91a5f28b6824cb04e742bdbbfe99
   - enabled: 1
-    path: Assets/Scenes/PlayScene.unity
+    path: Assets/Scenes/Niveles/PlayScene.unity
     guid: 6d55b2d518cdf5f42b466ca820918e0c
   - enabled: 1
-    path: Assets/Scenes/Nivel 2.unity
+    path: Assets/Scenes/Niveles/Nivel 2.unity
     guid: a257c20027dbbbd4dab9505413585892
   - enabled: 1
-    path: Assets/Scenes/Nivel 3.unity
+    path: Assets/Scenes/Niveles/Nivel 3.unity
     guid: d8843fb71fb14944ba544873bfc8c885
   - enabled: 1
-    path: Assets/Scenes/Nivel 4.unity
+    path: Assets/Scenes/Niveles/Nivel 4.unity
     guid: 56a6089456c668b43b1b89ca49c81767
   - enabled: 1
-    path: Assets/Scenes/Nivel 5.unity
+    path: Assets/Scenes/Niveles/Nivel 5.unity
     guid: 70f1f6ac7a4aa4243b2ec80be8127721
+  - enabled: 1
+    path: Assets/Scenes/Infinito.unity
+    guid: afe6b35515c84664090fb97492c55203
   m_configObjects: {}

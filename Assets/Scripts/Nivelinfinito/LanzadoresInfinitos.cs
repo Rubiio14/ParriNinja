@@ -12,20 +12,23 @@ public class LanzadoresInfinitos : MonoBehaviour
     public GameObject m_Meatball;
     public GameObject m_Bone;
     public GameObject m_Lemon;
-    [Header("Comprobaciones")]
+
+    [Header("Configuraciones")]
+    [TooltipAttribute("Probabilidad de aparición del limón")] [Range(0f, 1f)] public float lemonSpawnChance = 0.1f;
+    [TooltipAttribute("Tiempo mínimo entre carne y carne")] public float minTime = 1f;
+    [TooltipAttribute("Tiempo máximo entre carne y carne")] public float maxTime = 3f; 
+
+    [Header("Comprobaciones(No tocar)")]
     public GameObject m_ObjetoCreado;
     private Transform m_Spawn;
     public string SpawnSeleccionado;
     public float m_SpawnRotation;
-    private int n_SpawnElegido;
-    private int n_SpawnAnterior = -1; // Variable para almacenar el último spawn
-    private int n_CarneElegida;
+    public float TiempoEntreCarnes;
 
     public static LanzadoresInfinitos instance;
-    public float TiempoEntreCarnes;
-    public float minTime = 1f; // Tiempo mínimo entre lanzamientos
-    public float maxTime = 3f; // Tiempo máximo entre lanzamientos
-
+    private int n_SpawnElegido;
+    private int n_SpawnAnterior = -1;
+    private int n_CarneElegida;
     public void Awake()
     {
         if (instance == null)
@@ -37,21 +40,26 @@ public class LanzadoresInfinitos : MonoBehaviour
             Destroy(this);
         }
     }
+    public void Start()
+    {
+        //Inicia la corutina que genera un spawn cada X tiempo
+        StartCoroutine(SpawnCoroutine());
+    }
 
     public void SpawnSelector()
     {
         int nuevoSpawn;
 
-        // Generar un nuevo spawn que no sea igual al anterior
+        //Genera un nuevo spawn que no sea igual al anterior
         do
         {
-            nuevoSpawn = Random.Range(1, 5); // Ajustar el rango según la cantidad de spawns disponibles
+            nuevoSpawn = Random.Range(1, transform.childCount); //Ajusta el rango según la cantidad de spawns disponibles(Son hijos de éste objeto)
         } while (nuevoSpawn == n_SpawnAnterior);
 
         n_SpawnElegido = nuevoSpawn;
-        n_SpawnAnterior = n_SpawnElegido; // Actualizar el último spawn
+        n_SpawnAnterior = n_SpawnElegido; //Actualiza el último spawn
 
-        // Asignar la rotación según el spawn elegido
+        //Asigna la rotación según el spawn elegido
         if (n_SpawnElegido == 1)
         {
             m_SpawnRotation = Random.Range(1f, 2f);
@@ -73,41 +81,49 @@ public class LanzadoresInfinitos : MonoBehaviour
             m_SpawnRotation = Random.Range(-1f, -2f);
         }
 
-        // Obtener el Transform del spawn seleccionado
+        //Obtiene el Transform del spawn seleccionado
         SpawnSeleccionado = this.gameObject.transform.GetChild(n_SpawnElegido).ToString();
         m_Spawn = this.gameObject.transform.GetChild(n_SpawnElegido);
-        Debug.Log(m_Spawn);
-
-        // Seleccionar y lanzar carne
+        // Selecciona y lanza carne
         MeatSelector(m_Spawn);
     }
 
     public void MeatSelector(Transform m_spawn)
     {
-        n_CarneElegida = Random.Range(0, 7); // Ajustar el rango según la cantidad de carnes
-        List<GameObject> Carnes = new List<GameObject> { m_Chicken, m_Lamb, m_Ribs, m_Sausage, m_Meatball, m_Bone, m_Lemon };
+        GameObject m_meatClone;
 
-        GameObject m_meatClone = Instantiate(Carnes[n_CarneElegida]);
+        List<GameObject> Carnes = new List<GameObject>
+        {
+            m_Chicken, m_Lamb, m_Ribs, m_Sausage, m_Meatball, m_Bone
+        };
+
+        //Agrega el limón dependiendo de su probabilidad, si no lanza una carne
+        if (Random.value <= lemonSpawnChance)
+        {
+            m_meatClone = Instantiate(m_Lemon);
+        }
+        else
+        { 
+            n_CarneElegida = Random.Range(0, Carnes.Count);
+            m_meatClone = Instantiate(Carnes[n_CarneElegida]);
+        }
+
+
         m_ObjetoCreado = m_meatClone;
         m_meatClone.transform.position = m_spawn.position;
-        m_meatClone.GetComponent<Rigidbody>().AddForce(new Vector3(m_SpawnRotation, Random.Range(5, 15), 0), ForceMode.Impulse);
+        m_meatClone.GetComponent<Rigidbody>().AddForce(new Vector3(m_SpawnRotation, Random.Range(8, 15), 0), ForceMode.Impulse);
         Debug.Log(Carnes[n_CarneElegida]);
     }
 
-    public void Start()
-    {
-        // Iniciar la corutina que genera un spawn cada X tiempo
-        StartCoroutine(SpawnCoroutine());
-    }
 
     private IEnumerator SpawnCoroutine()
     {
         while (true)
         {
-            float timeBetweenSpawns = Random.Range(minTime, maxTime);// Tiempo aleatorio entre minTime y maxTime
+            float timeBetweenSpawns = Random.Range(minTime, maxTime); //Tiempo aleatorio entre minTime y maxTime
             TiempoEntreCarnes = timeBetweenSpawns;
-            yield return new WaitForSeconds(timeBetweenSpawns); // Espera hasta el siguiente spawn
-            SpawnSelector(); // Ejecuta la función SpawnSelector
+            yield return new WaitForSeconds(timeBetweenSpawns); //Espera hasta el siguiente spawn
+            SpawnSelector(); //Ejecuta la función SpawnSelector
         }
     }
 }
